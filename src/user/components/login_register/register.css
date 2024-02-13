@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.box_container {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============== body box_container =============*/
+.box_container {
+  width: 700px;
+  height: 700px;
+  position: relative;
+  border-radius: 1em;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.box_cancel_register {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#icon_cancel_register {
+  width: 30px;
+  height: 30px;
+
+}
+
+.container_register {
+  display: grid;
+  text-align: center;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.text_register {
+  color: rgba(0, 0, 0, 0.80);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.box_form_register {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.box_form input {
+  width: 450px;
+  height: 58px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.input_form {
+  padding: 20px 15px;
+}
+
+.box_form1 {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.box_form1 input {
+  width: 220px;
+  height: 58px;
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+}
+
+.input_form1 {
+  padding: 20px 15px;
+}
+
+
+/* ================= Button Login with Google ================= */
+
+.google_btn {
+  width: 450px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 5px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  margin-left: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.40);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.google_btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.google_btn p {
+  color: rgba(0, 0, 0, 0.60);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* ================= Button signup_btn ================= */
+.signup_btn {
+  width: 450px;
+  height: 58px;
+  margin-top: 2px;
+  background: #FA442C;
+  color: #FFF;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  font-size: 20px;
+}
+
+.box_already {
+  display: grid;
+  gap: 5px;
+  padding: 20px 0;
+}
+
+.loginmoreLink{
+  color: #FA442C;
+}
+
+/* ================= Responsive ================= */
+
+@media screen and (max-width: 1025px) {
+  .box_container {
+    width: 70%;
+    top: 40%;
+    height: 750px;
+    overflow: hidden;
+  }
+
+  .input_form1,
+  .box_form1 input,
+  .signup_btn {
+    width: 100%;
+  }
+
+  .google_btn {
+    width: 600px;
+  }
+
+}
+
+@media screen and (max-width: 830px) {
+  .box_container {
+    width: 90%;
+    top: 45%;
+  }
+
+  .input_form1 {
+    width: 100%;
+  }
+
+  .box_form1 input {
+    width: 100%;
+  }
+
+  .signup_btn {
+    width: 100%;
+  }
+
+  .google_btn {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  .container_register {
+    padding: 0 10px;
+  }
+
+  .box_container {
+    margin: auto;
+    width: 100%;
+    top: 50%;
+  }
+
+  .input_form1 {
+    margin: auto;
+    width: 80%;
+  }
+
+  .box_form1 input {
+    margin: auto;
+    width: 80%;
+  }
+
+  .signup_btn {
+    width: 100%;
+  }
+
+  .google_btn {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .container_register {
+    padding: 20px 10px;
+  }
+}
+
+
+@media screen and (max-width: 280px) {
+  .input_form {
+    width: 100%;
+  }
+
+}
