@@ -107,7 +107,6 @@ const UpdateProduct = () => {
 
             <div className="input-box">
               <div className="box">
-                <label htmlFor="productName">Product name</label>
                 <input
                   type="text"
                   id="productName"
@@ -119,7 +118,6 @@ const UpdateProduct = () => {
               </div>
 
               <div className="box">
-                <label htmlFor="price">Price</label>
                 <input
                   type="text"
                   id="price"
@@ -131,8 +129,16 @@ const UpdateProduct = () => {
               </div>
             </div>
 
-            
-            <div className="submit1">
+            <div className='box_popular'>
+              <label htmlFor="box_popular">Popular</label>
+              <input
+                type="checkbox"
+                id="popular"
+                name="popular"
+              />
+            </div>
+
+            <div className="btn_submit2">
               <button type="submit">Update</button>
             </div>
           </form>

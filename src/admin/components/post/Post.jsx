@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import AdminMenu from "../adminMenu/AdminMenu";
 import './post.css'
+import imageicon from "../../../img/imageicon.jpg";
+import { HiMiniShoppingBag } from "react-icons/hi2";
 
 const Post = () => {
     const [mainImage, setMainImage] = useState(null);
@@ -15,6 +17,7 @@ const Post = () => {
             "Product name": productName,
             "Product price": price,
             "ImageDescroption": mainImage,
+            "popular": popular,
 
         });
         setProductName('');
@@ -54,7 +57,6 @@ const Post = () => {
         <>
             <AdminMenu />
             <section id="post">
-
                 <div className="boxcontainerSpan_Box"></div>
                 <div className="box_container_product">
                     <div className="box_text">
@@ -62,51 +64,64 @@ const Post = () => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="edit-product-form">
-                        <div className="input-img">
-                            <div className="box_description">
-                                <h3>Description Image</h3>
-                                <div className="image">
-                                    <label htmlFor="img">
-                                        {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <p>Choose image</p>} {/** This is description image */}
-                                    </label>
+                        <div className='post_add_product'>
+                            <div className='iconimage'><HiMiniShoppingBag id="icon_shoppingbag"/></div>
+                        </div>
+                        <div className='box_container_image'>
+                            <div className="input-img">
+                                <div className="box_description">
+                                    <div className="image">
+                                        <label htmlFor="img">
+                                            {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={imageicon}></img>}
+                                        </label>
+                                        <input
+                                            type="file"
+                                            id="img"
+                                            onChange={handleImage}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="input-box">
+                                <div className="box">
                                     <input
-                                        type="file"
-                                        id="img"
-                                        onChange={handleImage}
+                                        type="text"
+                                        id="productName"
+                                        placeholder="Product Name"
+                                        value={productName}
+                                        onChange={handleProductName}
+                                        required
+                                    />
+                                </div>
+                                <div className="box">
+                                    <input
+                                        type="text"
+                                        id="price"
+                                        placeholder="Product Price"
+                                        value={price}
+                                        onChange={handleProductPrice}
                                         required
                                     />
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="input-box">
-                            <div className="box">
+                            <div className='box_popular'>
+                                <label htmlFor="box_popular">Popular</label>
                                 <input
-                                    type="text"
-                                    id="productName"
-                                    placeholder="Product Name"
-                                    value={productName}
-                                    onChange={handleProductName}
-                                    required
+                                    type="checkbox"
+                                    id="popular"
+                                    name="popular"
                                 />
                             </div>
-                            <div className="box">
-                                <input
-                                    type="text"
-                                    id="price"
-                                    placeholder="Product Price"
-                                    value={price}
-                                    onChange={handleProductPrice}
-                                    required
-                                />
-                            </div>
-                        </div>
-                        
 
-                        <div className="btn_submit">
-                            <button type="submit">Post</button>
+                            {/* <div className="btn_submit">
+                                <button type="submit">Post</button>
+                            </div> */}
                         </div>
+                       
                     </form>
+                    
                 </div>
 
             </section>

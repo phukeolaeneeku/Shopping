@@ -20,15 +20,14 @@
     padding: 20px 0;
 }
 
-#post .edit-product-form {
+.edit-product-form {
+    display: flex;
+    gap: 2rem;
     margin-right: 1rem;
-    padding: 0 2.5rem 2.5rem 2.5rem;
-    margin: auto;
 }
 
 #post .edit-product-form .input-box {
-    width: 500px;
-    margin: auto;
+    width: 380px;
 }
 
 /* Hidden product ID */
@@ -37,8 +36,8 @@
 }
 
 #post .edit-product-form .input-box .box input {
-    width: 25rem;
-    height: 2.5rem;
+    width: 19rem;
+    height: 2.3rem;
     border: 1px solid #ccc;
     margin-top: 1rem;
     padding: 0.2rem 1rem;
@@ -47,15 +46,25 @@
 }
 
 /* input image */
+/* .box_container_addproduct .input-img{
+    margin-left: -22rem;
+}
+.box_container_addproduct .input-box{
+    margin-left: -22rem;
+}
+.box_container_addproduct .box_popular{
+    margin-left: -22rem;
+} */
+
+
+
+
 #post .edit-product-form .input-img {
-    width: 500px;
-    margin: auto;
+    width: 380px;
 }
 
 .box_description h3{
     text-align: start;
-
-    /* padding: 15px 0 ; */
 }
 
 .image {
@@ -77,7 +86,6 @@
     width: fit-content;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    margin: auto;
 }
 
 #post .edit-product-form .input-img .image img {
@@ -91,141 +99,74 @@
     display: none;
 }
 
+/* box_popular */
 
-/* Add gallery button */
-#post .edit-product-form .input-img .gallery .gallery-box .add-gallery {
-    background-color: #3498DB;
-    border-radius: 4px;
-    text-align: center;
-    padding: 0.7rem 10px;
-    margin: 20px 0 20px 12rem;
-    cursor: pointer;
-    position: absolute;
+.box_popular{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+.box_popular input{
+    width: 10%;
     
 }
 
-#post .edit-product-form .input-img .gallery .gallery-box .add-more {
-    color: #3498DB;
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid #ccc;
-    padding: 0.3rem 0.7rem;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-#post .edit-product-form .input-img .gallery #gallery {
-    display: none;
-} */
-
-.box_color_product {
-    width: 100;
-}
-
-.box_size_product {
-    margin-top: 8rem;
-}
-
-.color_box {
-    width: 100%;
-    height: 165px;
-    margin-top: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 20px 20px 20px 20px;
-}
-
-.box_choose_color {
-    width: 70px;
-    height: 28px;
-    display: flex;
-    gap: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.choose_color {
-    display: flex;
-    gap: 0.3rem;
-    align-items: center;
-    margin-left: 0.2rem;
-}
-
-.choose {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.size_box {
-    width: 100%;
-    height: 165px;
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px 20px 20px 20px;
-}
-
-.box_size_color {
-    width: 60px;
-    height: 28px;
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-
-}
-
-.color_choose {
-    display: flex;
-    gap: 1rem;
-}
-
-.choose_size {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    margin-left: 0.2rem;
-    justify-content: center;
-}
-
-/* Search add color */
-
-.search_color {
-    padding: 3px 8px;
-    margin-top: 4rem;
-    display: flex;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
 /* Submit button */
-.edit-product-form.btn_submit{
-    width: 500px;
+.btn_submit{
+    margin-left: 13.5rem;
 }
-
 .btn_submit button {
     background-color: #FF4F16;
     color: #fff;
     border-radius: 5px;
     font-size: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1.8rem;
+    cursor: pointer;
+    border: none;
+}
+.btn_submit2{
+    margin-left: 18.5rem;
+}
+.btn_submit2 button {
+    background-color: #FF4F16;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
     padding: 0.5rem 1.8rem;
     cursor: pointer;
     border: none;
 }
 
 
+/*========= post_add_product ============*/
 
+.post_add_product{
+    width: 25%;
+    display: flex;
+    gap: 1rem;
+}
 
+.iconimage{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: #fcfcfc;
+    
+}
+#icon_shoppingbag{
+    width: 80px;
+    height: 80px;
+    color: #f46738;
+    padding: 10px 15px;
+    border: solid 1px #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+}
