@@ -33,7 +33,7 @@ const Header = ({ handleSearch }) => {
           <div className="headWithBox">
             <div className="headMenu">
 
-              <div className="storename"><div><img src={storename} alt="Logo" /></div></div>
+              <div className="storename"><Link to="/"><img src={storename} alt="Logo" /></Link></div>
               <div className="logo1"><Link to="/"><img src={Logo} alt="Logo" /></Link></div>
 
               <div className="boxLiMenu">
