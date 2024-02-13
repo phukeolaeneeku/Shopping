@@ -23,39 +23,24 @@
 #post .edit-product-form {
     margin-right: 1rem;
     padding: 0 2.5rem 2.5rem 2.5rem;
-    margin: 0;
-    /* display: flex; */
+    margin: auto;
 }
 
 #post .edit-product-form .input-box {
-    width: 48%;
-    /* padding: 8px 15px; */
-    /* padding: 0 20px 0 20px; */
+    width: 500px;
+    margin: auto;
 }
 
 /* Hidden product ID */
 #post .edit-product-form .input-box .id {
     display: none;
 }
-.box{
-    width: 100%;
-    height: 18%;
-}
+
 #post .edit-product-form .input-box .box input {
+    width: 25rem;
+    height: 2.5rem;
     border: 1px solid #ccc;
-    margin-top: 0.5rem;
-    padding: 0.2rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-.box2{
-    width: 100%;
-    height: 18%;
-    margin-top: 2.8rem;
-}
-#post .edit-product-form .input-box .box2 input {
-    border: 1px solid #ccc;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding: 0.2rem 1rem;
     border-radius: 5px;
     font-size: 1rem;
@@ -64,16 +49,19 @@
 /* input image */
 #post .edit-product-form .input-img {
     width: 500px;
+    margin: auto;
 }
 
-.box_description{
-    padding: 15px 0 ;
+.box_description h3{
+    text-align: start;
+
+    /* padding: 15px 0 ; */
 }
 
 .image {
-    width: 100%;
+    width: 80%;
     display: grid;
-    height: 25vh;
+    height: 40vh;
     margin-top: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -84,7 +72,7 @@
 
 #post .edit-product-form .input-img .image label p {
     display: grid;
-    background-color: #3498DB;
+    background-color: #22ab5d;
     border-radius: 4px;
     width: fit-content;
     padding: 0.5rem 1rem;
@@ -94,7 +82,7 @@
 
 #post .edit-product-form .input-img .image img {
     width: 100%;
-    height: 30vh;
+    height:35vh;
     cursor: pointer;
     object-fit: contain;
 }
@@ -223,21 +211,21 @@
 
 
 /* Submit button */
-#post .edit-product-form .submit1 {
-    margin-top: -1.5rem;
-    position: absolute;
-    font-size: 18px;
-    right: 7rem;
+.edit-product-form.btn_submit{
+    width: 500px;
 }
 
-#post .edit-product-form .submit1 button {
+.btn_submit button {
     background-color: #FF4F16;
     color: #fff;
     border-radius: 5px;
     font-size: 1rem;
+    margin-top: 1.5rem;
     padding: 0.5rem 1.8rem;
     cursor: pointer;
     border: none;
 }
+
+
 
 

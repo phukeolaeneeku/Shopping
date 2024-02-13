@@ -49,6 +49,7 @@ const Post = () => {
         }
     };
 
+
     return (
         <>
             <AdminMenu />
@@ -80,31 +81,29 @@ const Post = () => {
 
                         <div className="input-box">
                             <div className="box">
-                                <label htmlFor="productName">Product name</label>
                                 <input
                                     type="text"
                                     id="productName"
-                                    placeholder="Name"
+                                    placeholder="Product Name"
                                     value={productName}
                                     onChange={handleProductName}
                                     required
                                 />
                             </div>
-                            <div className="box2">
-                                <label htmlFor="price">Price</label>
+                            <div className="box">
                                 <input
                                     type="text"
                                     id="price"
-                                    placeholder="Price"
+                                    placeholder="Product Price"
                                     value={price}
                                     onChange={handleProductPrice}
                                     required
                                 />
                             </div>
                         </div>
-
                         
-                        <div className="submit1">
+
+                        <div className="btn_submit">
                             <button type="submit">Post</button>
                         </div>
                     </form>

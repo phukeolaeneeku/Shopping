@@ -88,31 +88,6 @@ const UpdateProduct = () => {
 
           {/* The form to update the product */}
           <form onSubmit={handleSubmit} className="edit-product-form">
-            <div className="input-box">
-              <div className="box">
-                <label htmlFor="productName">Product name</label>
-                <input
-                  type="text"
-                  id="productName"
-                  placeholder="Name"
-                  value={productName}
-                  onChange={handleProductName}
-                  required
-                />
-              </div>
-
-              <div className="box2">
-                <label htmlFor="price">Price</label>
-                <input
-                  type="text"
-                  id="price"
-                  placeholder="Price"
-                  value={price}
-                  onChange={handleProductPrice}
-                  required
-                />
-              </div>
-            </div>
 
             <div className="input-img">
               <div className="box_description">
@@ -129,6 +104,34 @@ const UpdateProduct = () => {
                 </div>
               </div>
             </div>
+
+            <div className="input-box">
+              <div className="box">
+                <label htmlFor="productName">Product name</label>
+                <input
+                  type="text"
+                  id="productName"
+                  placeholder="Name"
+                  value={productName}
+                  onChange={handleProductName}
+                  required
+                />
+              </div>
+
+              <div className="box">
+                <label htmlFor="price">Price</label>
+                <input
+                  type="text"
+                  id="price"
+                  placeholder="Price"
+                  value={price}
+                  onChange={handleProductPrice}
+                  required
+                />
+              </div>
+            </div>
+
+            
             <div className="submit1">
               <button type="submit">Update</button>
             </div>
