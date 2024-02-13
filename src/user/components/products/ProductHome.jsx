@@ -1,9 +1,12 @@
 import "./productHome.css";
 import 깻잎 from "../../../img/깻잎.jpg";
 import 더덕무침 from "../../../img/더덕무침.jpg";
-import Header from "../header/Header";
 import 멸치볶음 from "../../../img/멸치볶음.jpg";
 import 진미채볶음 from "../../../img/진미채볶음.jpg";
+import 물김치 from "../../../img/물김치.jpg";
+import 참외장아찌 from "../../../img/참외장아찌.jpg";
+import 파김치 from "../../../img/파김치.jpg";
+import Header from "../header/Header";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
@@ -43,10 +46,33 @@ const ProductHome = () => {
       popular: true,
       images: [ { src: 진미채볶음 }],
     }, 
+    {
+      productID: 5,
+      productName: "물김치",
+      price: 9.500,
+      review: 39,
+      popular: true,
+      images: [ { src: 물김치 }],
+    }, 
+    {
+      productID: 6,
+      productName: "참외장아찌",
+      price: 12.500,
+      review: 35,
+      popular: true,
+      images: [ { src: 참외장아찌 }],
+    }, 
+    {
+      productID: 7,
+      productName: "파김치.jgp",
+      price: 11.500,
+      review: 25,
+      popular: true,
+      images: [ { src: 파김치 }],
+    },
   ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const [selectedFilter, setSelectedFilter] = useState("default");
   const [displayCount, setDisplayCount] = useState(8);
   const [showButton, setShowButton] = useState(true);
 
@@ -55,59 +81,6 @@ const ProductHome = () => {
       product.productName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
-  };
-
-  // Handle inputChange
-  // Function to handle the filter change
-  const handleFilterChange = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedFilter(selectedValue);
-    switch (selectedValue) {
-      case "higherPrice":
-        filterByHigherPrice();
-        break;
-      case "lowerPrice":
-        filterByLowerPrice();
-        break;
-      case "newProducts":
-        filterByNewProducts();
-        break;
-      case "popularProducts":
-        filterByPopularProducts();
-        break;
-      default:
-        setFilteredProducts(products);
-    }
-  };
-
-  // Function to filter products by higher price
-  const filterByHigherPrice = () => {
-    const sortedProducts = [...products].sort((a, b) => b.price - a.price);
-    setFilteredProducts(sortedProducts);
-  };
-
-  // Function to filter products by lower price
-  const filterByLowerPrice = () => {
-    const sortedProducts = [...products].sort((a, b) => a.price - b.price);
-    setFilteredProducts(sortedProducts);
-  };
-
-  // Function to filter products by new products (assuming newer products have higher productID)
-  const filterByNewProducts = () => {
-    const sortedProducts = [...products].sort(
-      (a, b) => b.productID - a.productID
-    );
-    setFilteredProducts(sortedProducts);
-  };
-
-  // Function to filter products by popularity (you can customize the popularity criteria)
-  const filterByPopularProducts = () => {
-    // Implement your popularity criteria here
-    // For simplicity, let's assume popularity is based on productID
-    const sortedProducts = [...products].sort(
-      (a, b) => b.productID - a.productID
-    );
-    setFilteredProducts(sortedProducts);
   };
 
   const displayedProducts = filteredProducts.slice(0, displayCount);
@@ -133,68 +106,123 @@ const ProductHome = () => {
       <section id="product">
         <div className="productHead_content">
           <h1 className="htxthead">
-            <span className="spennofStyle"></span>인기 반찬
-            
+            <span className="spennofStyle"></span>Popular side dishes
           </h1>
-          <div className="categoryBoxfiler">
-            <form className="boxfilterseach">
-              <label>Select Filter</label>
-              <select
-                className="filter_priceProduct"
-                value={selectedFilter}
-                onChange={handleFilterChange}
-              >
-                <option value="default">All Product</option>
-                <option value="higherPrice">Higher Price</option>
-                <option value="lowerPrice">Lower Price</option>
-                <option value="newProducts">New Products</option>
-                <option value="popularProducts">Popular Products</option>
-              </select>
-            </form>
-            <box-icon name="filter"></box-icon>
-          </div>
         </div>
-
-        <div className="product-area">
-          {displayedProducts.map((product, index) => (
-            <div className="box-product" key={index}>
-              <div onClick={() => handleProduct(product.productID)}>
+        <div className="contentImageProducts">
+          {/* {displayedProducts.map((product, index) => ( */}
+            <div>
+              <div className="group_itemBox">
                 <div className="img">
-                  <img src={product.images[0].src} alt="image" />
+                  <img src={깻잎} alt="img" />
                 </div>
-                
-                <div className="box_cart">
-                  <FaCartShopping className="box_icon_cart" />
-                </div>               
-
-                <ul className="txtOFproduct2">
-                  <li>
-                    <input
-                      className="name"
-                      type="text"
-                      value={product.productName}
-                      onChange={(e) => handleInputChange(e, index, "name")}
-                    />
-                  </li>
-                  <li>
-                    <input
-                      className="price"
-                      type="text"
-                      value={product.price}
-                      onChange={(e) => handleInputChange(e, index, "price")}
-                    />
-                  </li>
-                  <p>Review: {product.review}</p>
-                </ul>
+                <div className="box_cart_search">
+                  <FaCartShopping className="box_icon_search" />
+                </div> 
+                <div className="txtOFproduct">
+                  <h4>
+                  깻잎
+                  </h4>
+                  <p>
+                    $ 10
+                  </p>
+                  <p>Review: 100</p>
+                </div>
               </div>
             </div>
-          ))}
+            <div>
+              <div className="group_itemBox">
+                <div className="img">
+                  <img src={깻잎} alt="img" />
+                </div>
+                <div className="box_cart_search">
+                  <FaCartShopping className="box_icon_search" />
+                </div> 
+                <div className="txtOFproduct">
+                  <h4>
+                  깻잎
+                  </h4>
+                  <p>
+                    $ 10
+                  </p>
+                  <p>Review: 100</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="group_itemBox">
+                <div className="img">
+                  <img src={깻잎} alt="img" />
+                </div>
+                <div className="box_cart_search">
+                  <FaCartShopping className="box_icon_search" />
+                </div> 
+                <div className="txtOFproduct">
+                  <h4>
+                  깻잎
+                  </h4>
+                  <p>
+                    $ 10
+                  </p>
+                  <p>Review: 100</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="group_itemBox">
+                <div className="img">
+                  <img src={깻잎} alt="img" />
+                </div>
+                <div className="box_cart_search">
+                  <FaCartShopping className="box_icon_search" />
+                </div> 
+                <div className="txtOFproduct">
+                  <h4>
+                  깻잎
+                  </h4>
+                  <p>
+                    $ 10
+                  </p>
+                  <p>Review: 100</p>
+                </div>
+              </div>
+            </div>
+          {/* ))} */}
         </div>
-        {showButton && filteredProducts.length > displayCount && (
-          <button className="btnViewProduct" onClick={handleViewMore}>
-            View More
-          </button>
-        )}
+
+        <div className="content_itemBox">
+          <div className="container_product">
+            <h3 className="htxthead">
+              <span className="spennofStyle"></span>All Product
+            </h3>
+          </div>
+          <div className="contentImageProducts">
+            {displayedProducts.map((product, index) => (
+              <div key={index}>
+                <div
+                  className="group_itemBox"
+                  onClick={() => handleProduct(product.productID)}
+                >
+                  <div className="img">
+                    <img src={product.images[0].src} alt="img" />
+                  </div>
+                  <div className="box_cart_search">
+                    <FaCartShopping className="box_icon_search" />
+                  </div> 
+                  <div className="txtOFproduct">
+                    <h4>
+                      {product.productName}
+                    </h4>
+                    <p>
+                      $ {product.price} 
+                    </p>
+                    <p>Review: {product.review}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );

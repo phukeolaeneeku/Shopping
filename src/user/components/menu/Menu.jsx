@@ -54,7 +54,7 @@ const Menu = () => {
                     <span className="iconMenuSpan"><HiOutlineHome/></span><span>Home</span>
                 </Link>
                 <Link to="/product_search" className="box-menu">
-                    <span className="iconMenuSpan"><BsShop /></span><span>Shop</span>
+                    <span className="iconMenuSpan"><BsShop /></span><span>Intro</span>
                 </Link>
                 <Link to="/order" className="box-menu">
                     <span className="iconMenuSpan"><BsClipboardCheck/></span><span>Order</span>

@@ -7,7 +7,6 @@ const Post = () => {
     const [productName, setProductName] = useState('');
     const [price, setPrice] = useState('');
     
-
     // Hanle submit
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +22,6 @@ const Post = () => {
         setMainImage([]);
     };
 
-
     // handle Product name
     const handleProductName = (e) => {
         const value = e.target.value
@@ -35,8 +33,6 @@ const Post = () => {
         const value = e.target.value
         setPrice(value)
     };
-
-    
 
     // image handle
     const handleImage = (e) => {
@@ -53,8 +49,6 @@ const Post = () => {
         }
     };
 
-    
-
     return (
         <>
             <AdminMenu />
@@ -67,6 +61,22 @@ const Post = () => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="edit-product-form">
+                        <div className="input-img">
+                            <div className="box_description">
+                                <h3>Description Image</h3>
+                                <div className="image">
+                                    <label htmlFor="img">
+                                        {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <p>Choose image</p>} {/** This is description image */}
+                                    </label>
+                                    <input
+                                        type="file"
+                                        id="img"
+                                        onChange={handleImage}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
                         <div className="input-box">
                             <div className="box">
@@ -93,22 +103,7 @@ const Post = () => {
                             </div>
                         </div>
 
-                        <div className="input-img">
-                            <div className="box_description">
-                                <h3>Description Image</h3>
-                                <div className="image">
-                                    <label htmlFor="img">
-                                        {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <p>Choose image</p>} {/** This is description image */}
-                                    </label>
-                                    <input
-                                        type="file"
-                                        id="img"
-                                        onChange={handleImage}
-                                        required
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div className="submit1">
                             <button type="submit">Post</button>
                         </div>

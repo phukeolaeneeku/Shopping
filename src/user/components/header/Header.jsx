@@ -12,9 +12,8 @@ const Header = ({ handleSearch }) => {
   const location = useLocation();
 
   const menuItems = [
-    { label: "Best", path: "/" },
-    { label: "Product", path: "/product_search" },
-    { label: "Special", path: "/productkinds" },
+    { label: "Home", path: "/" },
+    { label: "Intro", path: "/product_search" },
     { label: "Orders", path: "/order" },
   ];
 

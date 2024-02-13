@@ -10,7 +10,6 @@ import Cart from "../user/components/cart/Cart";
 import Address from "../user/components/cart/Address";
 import Contacts from "../user/components/contact/Contact";
 import Bill from "../user/components/order/Bill";
-import ProductKinds from "../user/components/products/ProductKind"
 import Dashboard from "../admin/Dashboard";
 import Post from "../admin/components/post/Post";
 
@@ -53,7 +52,6 @@ const Links = () => {
                 <Route exact path="/order" Component={Order}/>
                 <Route exact path="/order/bill" Component={Bill}/>
                 <Route exact path="/cart/successfulBuy" Component={SuccessfulBuy}/>
-                <Route exact path="/productkinds" Component={ProductKinds}/>
                 <Route exact path="/test" Component={Test}/>
 
                 {/*====================== */}
