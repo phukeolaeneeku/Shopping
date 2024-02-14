@@ -86,7 +86,6 @@ const Post = () => {
                     <form onSubmit={handleSubmit} className="edit-product-form">
                         <div className='product-form_container'>
                             <div className='box_container_image'>
-                                {!showForm && (
                                 <div className="input-img">
                                     <div className="box_description">
                                         <div className="image">
@@ -102,7 +101,6 @@ const Post = () => {
                                         </div>
                                     </div>
                                 </div>
-                                )}
 
                                 <div className="input-box">
                                     <div className="box">
@@ -148,7 +146,7 @@ const Post = () => {
                             <button type="submit">Post Product</button>
                         </div>
                     </form>
-                     {/* )}  */}
+                    {/* )} */}
                     
                 </div>
 
