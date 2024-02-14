@@ -8,6 +8,7 @@ import 참외장아찌 from "../../../img/참외장아찌.jpg";
 import 파김치 from "../../../img/파김치.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AdminMenu from "../adminMenu/AdminMenu";
 import { BiPlus } from "react-icons/bi";
 import { IoSearchOutline } from "react-icons/io5";
@@ -103,20 +104,23 @@ const Product = () => {
   const npage = Math.ceil(products.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
-   // Handle product
-  const handleProduct = () => {
-    const selectedProducts = filteredProducts.map((products) => ({
-      productID: products.productID,
-      productName: products.productName,
-      price: products.price,
-      images: products.images
-    }));
-    // navigate("/product/updateproduct", {
-    //   state: { product: selectedProducts },
 
-    // }); 
+    // Get send ID
+  const navigate = useNavigate();
+   // Handle product
+  const handleProductID = () => {
+    const setProducts = products.map((product) => ({
+      productID: product.productID,
+      productName: product.productName,
+      price: product.price,
+      images: product.images
+    }));
+    navigate("/product/updateproduct", {
+      state: { product: setProducts },
+
+    }); 
     
-    console.log(selectedProducts)
+    // console.log(setProducts)
   };
  
 
@@ -159,11 +163,11 @@ const Product = () => {
                   <div className="box_btn_edit_delete">
                     <button
                       className="btn_icon_delete_user" >
-                      <AiOutlineDelete id="btn_icon_edit" />
+                      <AiOutlineDelete id="btn_icon_edit"/>
                     </button>
-                    <button className="btn_icon_edit_user" onClick={() => handleProduct}>
+                    <Link to="/updateproduct" className="btn_icon_edit_user" onClick={handleProductID}>
                       <MdOutlineEdit id="btn_icon_edit" />
-                    </button>
+                    </Link>
                   </div>
                 </ul>
               </div>
