@@ -130,7 +130,7 @@ const Bill = () => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Amount</th>
-                    <th>Discount</th>
+                    {/* <th>Discount</th> */}
                     <th>delivery</th>
                   </tr>
                 </thead>
@@ -147,7 +147,7 @@ const Bill = () => {
                       <td>{product.productName}</td>
                       <td>${product.price}</td>
                       <td>{product.amount}</td>
-                      <td>..</td>
+                      {/* <td>..</td> */}
                       <td>${product.delivery}</td>
                     </tr>
                   </tbody>

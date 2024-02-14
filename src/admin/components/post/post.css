@@ -21,21 +21,37 @@
 }
 
 .edit-product-form {
-    display: flex;
+    /* display: flex; */
     gap: 2rem;
     margin-right: 1rem;
 }
+.edit-product-form2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-right: 1rem;
+}
+.product-form_container{
+    display: flex;
+    gap: 1rem;
+    margin-right: 1rem;
+}
 
-#post .edit-product-form .input-box {
+.box_container_image{
+    padding: 5px;
+}
+
+#post .product-form_container .input-box {
     width: 380px;
 }
 
 /* Hidden product ID */
-#post .edit-product-form .input-box .id {
+#post .product-form_container .input-box .id {
     display: none;
 }
 
-#post .edit-product-form .input-box .box input {
+#post .product-form_container .input-box .box input {
     width: 19rem;
     height: 2.3rem;
     border: 1px solid #ccc;
@@ -45,21 +61,7 @@
     font-size: 1rem;
 }
 
-/* input image */
-/* .box_container_addproduct .input-img{
-    margin-left: -22rem;
-}
-.box_container_addproduct .input-box{
-    margin-left: -22rem;
-}
-.box_container_addproduct .box_popular{
-    margin-left: -22rem;
-} */
-
-
-
-
-#post .edit-product-form .input-img {
+#post .product-form_container .input-img {
     width: 380px;
 }
 
@@ -79,7 +81,7 @@
     color: #fff;
 }
 
-#post .edit-product-form .input-img .image label p {
+#post .product-form_container .input-img .image label p {
     display: grid;
     background-color: #22ab5d;
     border-radius: 4px;
@@ -88,14 +90,14 @@
     cursor: pointer;
 }
 
-#post .edit-product-form .input-img .image img {
+#post .product-form_container .input-img .image img {
     width: 100%;
     height:35vh;
     cursor: pointer;
     object-fit: contain;
 }
 
-#post .edit-product-form .input-img .image #img {
+#post .product-form_container .input-img .image #img {
     display: none;
 }
 
@@ -115,7 +117,10 @@
 
 /* Submit button */
 .btn_submit{
-    margin-left: 13.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
 }
 .btn_submit button {
     background-color: #FF4F16;
@@ -128,7 +133,7 @@
     border: none;
 }
 .btn_submit2{
-    margin-left: 18.5rem;
+    margin-left: 12rem;
 }
 .btn_submit2 button {
     background-color: #FF4F16;
@@ -168,5 +173,16 @@
     padding: 10px 15px;
     border: solid 1px #ccc;
     border-radius: 50px;
+    cursor: pointer;
+}
+#icon_goplus{
+    width: 20px;
+    height: 20px;
+    margin-top: 2.5rem;
+    margin-left: -1.8rem;
+    border: solid 1px #ccc;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    color: #f46738;
     cursor: pointer;
 }

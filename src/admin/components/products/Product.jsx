@@ -3,6 +3,9 @@ import 깻잎 from "../../../img/깻잎.jpg";
 import 더덕무침 from "../../../img/더덕무침.jpg";
 import 멸치볶음 from "../../../img/멸치볶음.jpg";
 import 진미채볶음 from "../../../img/진미채볶음.jpg";
+import 물김치 from "../../../img/물김치.jpg";
+import 참외장아찌 from "../../../img/참외장아찌.jpg";
+import 파김치 from "../../../img/파김치.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import AdminMenu from "../adminMenu/AdminMenu";
@@ -12,7 +15,64 @@ import { MdOutlineEdit } from "react-icons/md";
 import { AiOutlineDelete, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Product = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([
+    {
+      productID: 1,
+      productName: "깻잎",
+      price: 8.500,
+      review: 50,
+      popular: true,
+      images: [ { src: 깻잎 }],
+    },
+    {
+      productID: 2,
+      productName: "더덕무침",
+      price: 7.520,
+      review: 45,
+      popular: true,
+      images: [ { src: 더덕무침 }],
+    },
+    {
+      productID: 3,
+      productName: "멸치볶음",
+      price: 9.250,
+      review: 30,
+      popular: true,
+      images: [ { src: 멸치볶음 }],
+    },
+    {
+      productID: 4,
+      productName: "진미채볶음",
+      price: 8.500,
+      review: 29,
+      popular: true,
+      images: [ { src: 진미채볶음 }],
+    }, 
+    {
+      productID: 5,
+      productName: "물김치",
+      price: 9.500,
+      review: 39,
+      popular: true,
+      images: [ { src: 물김치 }],
+    }, 
+    {
+      productID: 6,
+      productName: "참외장아찌",
+      price: 12.500,
+      review: 35,
+      popular: true,
+      images: [ { src: 참외장아찌 }],
+    }, 
+    {
+      productID: 7,
+      productName: "파김치.jgp",
+      price: 11.500,
+      review: 25,
+      popular: true,
+      images: [ { src: 파김치 }],
+    },
+  ]);
 
    // Delete product
    const [deleteProductId, setDeleteProductId] = useState(null);
@@ -36,12 +96,29 @@ const Product = () => {
 
   // prev next button user in react
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 8;
+  const recordsPerPage = 4;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const records = products.slice(firstIndex, lastIndex);
   const npage = Math.ceil(products.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
+
+   // Handle product
+  const handleProduct = () => {
+    const selectedProducts = filteredProducts.map((products) => ({
+      productID: products.productID,
+      productName: products.productName,
+      price: products.price,
+      images: products.images
+    }));
+    // navigate("/product/updateproduct", {
+    //   state: { product: selectedProducts },
+
+    // }); 
+    
+    console.log(selectedProducts)
+  };
+ 
 
   return (
     <>
@@ -71,79 +148,26 @@ const Product = () => {
           </div>
 
           <div className="product-area">
-            <div className="box-product" >
-              <div>
-                <img src={깻잎} alt="image" />
-              </div>
-              <ul className="txtOFproduct">
-                <li>ProductName: 깻잎</li>
-                <li>Price: $10</li>
-                <div className="box_btn_edit_delete">
-                  <button
-                    className="btn_icon_delete_user" >
-                    <AiOutlineDelete id="btn_icon_edit" />
-                  </button>
-                  <Link to='/updateproduct' className="btn_icon_edit_user">
-                    <MdOutlineEdit id="btn_icon_edit" />
-                  </Link>
+            {products.map((product, index) => (
+              <div className="box-product" key={index}>
+                <div>
+                  <img src={product.images[0].src} alt="image" />
                 </div>
-              </ul>
-            </div>
-            
-            <div className="box-product" >
-              <div>
-                <img src={더덕무침} alt="image" />
+                <ul className="txtOFproduct">
+                  <li>ProductName: {product.productName}</li>
+                  <li>Price: ${product.price}</li>
+                  <div className="box_btn_edit_delete">
+                    <button
+                      className="btn_icon_delete_user" >
+                      <AiOutlineDelete id="btn_icon_edit" />
+                    </button>
+                    <button className="btn_icon_edit_user" onClick={() => handleProduct}>
+                      <MdOutlineEdit id="btn_icon_edit" />
+                    </button>
+                  </div>
+                </ul>
               </div>
-              <ul className="txtOFproduct">
-                <li>ProductName: 더덕무침</li>
-                <li>Price: $7.50</li>
-                <div className="box_btn_edit_delete">
-                  <button
-                    className="btn_icon_delete_user" >
-                    <AiOutlineDelete id="btn_icon_edit" />
-                  </button>
-                  <Link to='/updateproduct' className="btn_icon_edit_user">
-                    <MdOutlineEdit id="btn_icon_edit" />
-                  </Link>
-                </div>
-              </ul>
-            </div>
-            <div className="box-product" >
-              <div>
-                <img src={멸치볶음} alt="image" />
-              </div>
-              <ul className="txtOFproduct">
-                <li>ProductName: 멸치볶음</li>
-                <li>Price: $8</li>
-                <div className="box_btn_edit_delete">
-                  <button
-                    className="btn_icon_delete_user" >
-                    <AiOutlineDelete id="btn_icon_edit" />
-                  </button>
-                  <Link to='/updateproduct' className="btn_icon_edit_user">
-                    <MdOutlineEdit id="btn_icon_edit" />
-                  </Link>
-                </div>
-              </ul>
-            </div>
-            <div className="box-product" >
-              <div>
-                <img src={진미채볶음} alt="image" />
-              </div>
-              <ul className="txtOFproduct">
-                <li>ProductName: 진미채볶음</li>
-                <li>Price: $12</li>
-                <div className="box_btn_edit_delete">
-                  <button
-                    className="btn_icon_delete_user" >
-                    <AiOutlineDelete id="btn_icon_edit" onClick={() => openConfirmationPopup(product.productID)} />
-                  </button>
-                  <Link to='/updateproduct' className="btn_icon_edit_user">
-                    <MdOutlineEdit id="btn_icon_edit" />
-                  </Link>
-                </div>
-              </ul>
-            </div>
+            ))}
           
             {isConfirmationPopupOpen && (
               <div className="confirmation-popup">
@@ -158,7 +182,6 @@ const Product = () => {
                 </div>
               </div>
             )}
-
           </div>
 
           <div className="box_container_next_product">
@@ -185,7 +208,6 @@ const Product = () => {
               <AiOutlineRight id="box_icon_left_right_product" />
             </button>
           </div>
-          
         </div>
       </section>
     </>

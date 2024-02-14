@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import AdminMenu from "../adminMenu/AdminMenu";
 import { useLocation } from "react-router-dom";
+import imageicon from "../../../img/imageicon.jpg";
 
 import "./post.css";
 
@@ -60,10 +61,10 @@ const UpdateProduct = () => {
     }
   };
 
-  const handleImageUpload = (e) => {
-    const uploadedGallery = Array.from(e.target.files);
-    setGallery([...gallery, ...uploadedGallery]);
-  };
+  // const handleImageUpload = (e) => {
+  //   const uploadedGallery = Array.from(e.target.files);
+  //   setGallery([...gallery, ...uploadedGallery]);
+  // };
 
   // handle Product name
   const handleProductName = (e) => {
@@ -87,25 +88,26 @@ const UpdateProduct = () => {
           </div>
 
           {/* The form to update the product */}
-          <form onSubmit={handleSubmit} className="edit-product-form">
-
-            <div className="input-img">
-              <div className="box_description">
-                <h3>Description Image</h3>
-                <div className="image">
-                  <label htmlFor="img">
-                    {mainImage ? (
-                      <img src={mainImage} alt="Main Product" />
-                    ) : (
-                      <p>Choose image</p>
-                    )}
-                  </label>
-                  <input type="file" id="img" onChange={handleImage} />
+          <form onSubmit={handleSubmit} className="edit-product-form2">
+            <div className='product-form_container'>
+              <div className='box_container_image'>
+                <div className="input-img">
+                  <div className="box_description">
+                    <div className="image">
+                      <label htmlFor="img">
+                          {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={imageicon}></img>}
+                      </label>
+                      <input
+                          type="file"
+                          id="img"
+                          onChange={handleImage}
+                          required
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="input-box">
+                <div className="input-box">
               <div className="box">
                 <input
                   type="text"
@@ -127,19 +129,21 @@ const UpdateProduct = () => {
                   required
                 />
               </div>
-            </div>
+                </div>
 
-            <div className='box_popular'>
+                <div className='box_popular'>
               <label htmlFor="box_popular">Popular</label>
               <input
                 type="checkbox"
                 id="popular"
                 name="popular"
               />
-            </div>
+                </div>
 
-            <div className="btn_submit2">
-              <button type="submit">Update</button>
+                <div className="btn_submit2">
+                  <button type="submit">Update</button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

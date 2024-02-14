@@ -209,6 +209,9 @@
         box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
     }
     .billGopBox{
+        margin-top: -0.5rem;
+    }
+    /* .billGopBox{
         display: flex;
     }
     .billGopBox table{
@@ -226,24 +229,31 @@
     .billGopBox table tr td {
         display: block;
         padding: 5px 5px;
-    }
+    } */
     .hr{
         display: none;
     }
    
-    /* .popular{
+    .popular{
         display: none;
-    } */
+    }
     
     .box_btn_product{
-        gap: 0.3rem;
-        margin-left: -0.8rem;
+        display: none;
+        /* gap: 0.3rem;
+        margin-left: -0.8rem; */
     }
     .btn_delete_save{
         gap: 0.3rem;
     }
     .btn_select_all{
         gap: 0.3rem;
+    }
+    .titlePrice {
+        margin-top: -0.5rem;
+    }
+    .place-on {
+        margin-top: -0.5rem;
     }
 
 }

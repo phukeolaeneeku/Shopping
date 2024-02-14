@@ -132,73 +132,15 @@ function ProductDetails() {
     }
   };
 
-  //Start image gallery
   const [slideIndex, setSlideIndex] = useState(1)
 
-  const [width, setWidth] = useState(0)
-  const [start, setStart] = useState(0)
-  const [change, setChange] = useState(9)
-
-  const slideRef = useRef();
-
-  useEffect(() => {
-    if (!slideRef.current) return;
-    const scrollWidth = slideRef.current.scrollWidth;
-    const childrenElementCount = slideRef.current.childElementCount;
-    const width = scrollWidth / childrenElementCount;
-    setWidth(width)
-  }, [])
-
-  // const [slideIndex, setSlideIndex] = useState(1);
-
-  function plusSlides(n) {
-    showSlides(slideIndex + n);
-  }
-
-  // function currentSlide(n) {
-  //   showSlides(n);
-  // }
-
-  function showSlides(n) {
-    const currentProduct = filteredProducts[0]; // Assuming there's only one product in the array
-
-    if (n > currentProduct.images.length) {
-      setSlideIndex(1);
-    } else if (n < 1) {
-      setSlideIndex(currentProduct.images.length);
-    } else {
-      setSlideIndex(n);
-    }
-  }
-  //Drag
-  function dragStart(e) {
-    setStart(e.clientX)
-  }
-  function dragOver(e) {
-    let touch = e.clientX;
-    setChange(start - touch);
-  }
-  function dragEnd(e) {
-    if (change > 0) {
-      slideRef.current.scrollLeft += width;
-    } else {
-      slideRef.current.scrollLeft -= width;
-    }
-  }
-
-  useEffect(() => {
-    if (!slideRef.current || !width) return;
-    let numOfThumb = Math.round(slideRef.current.offsetWidth / width);
-    slideRef.current.scrollLeft = slideIndex > numOfThumb ? (slideIndex - 1) * width : 0;
-  }, [width, slideIndex])
-  //End image gallery
 
   return (
     <>
       <Header />
 
       <div className="contentBody">
-        <Link to="/product_search" className="box_container_back_icons_back">
+        <Link to="/" className="box_container_back_icons_back">
           <IoIosArrowBack id="icons_back" />
           <p>Back</p>
         </Link>
@@ -216,21 +158,6 @@ function ProductDetails() {
                         </div>
                       ))
                     }
-
-                    {/* <a className='prev' onClick={() => plusSlides(-1)}>&#10094;</a>
-                    <a className='next' onClick={() => plusSlides(1)}>&#10095;</a> */}
-
-                    {/* <div className="slider_img" draggable={true} ref={slideRef}
-                      onDragStart={dragStart} onDragOver={dragOver} onDragEnd={dragEnd}>
-                      {
-                        product.images.map((image, index) => (
-                          <div key={index} className={`slider-box ${index + 1 === slideIndex && 'active'}`}
-                            onClick={() => setSlideIndex(index + 1)}>
-                            <img src={image.src} alt="" />
-                          </div>
-                        ))
-                      }
-                    </div> */}
                   </div>
                 </section>
               </React.Fragment>
@@ -240,20 +167,7 @@ function ProductDetails() {
               <div className="txtContentproduct">
                 <h1 className="txt_nameP">{product.productName}</h1>
                 <p className="money_txt">${product.price}</p>
-                {/* Star Box */}
-                {/* <div className="startBox">
-                  <div className="sartBox_icon">
-                    <AiFillStar id="icon_stars" />
-                    <AiFillStar id="icon_stars" />
-                    <AiFillStar id="icon_stars" />
-                    <AiFillStar id="icon_stars" />
-                    <AiOutlineStar id="icon_star" />
-                  </div>
-
-                  <div>
-                    <p>( 150 Reviews )</p>
-                  </div>
-                </div> */}
+                
                 <p className="txt_description">Review: {product.review}</p>
 
                 <div className="hr">
