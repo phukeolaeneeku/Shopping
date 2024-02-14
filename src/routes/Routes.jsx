@@ -26,6 +26,7 @@ import OrderBill from "../admin/components/orderPage/OrderBill";
 import Admins from "../admin/components/menagerAdmin/Admins";
 import Product from "../admin/components/products/Product";
 import Test from "../user/components/order/Text";
+import ForgotPassword from "../user/components/login_register/ForgotPassword";
 
 // ===============================
 import Users from "../admin/components/menagerUser/users";
@@ -62,6 +63,7 @@ const Links = () => {
                 <Route exact path="/cart" Component={Cart}/>
                 <Route exact path="/alertLogin" Component={AlertLogin}/>
                 <Route exact path="/alertSignup" Component={AlertSignup}/>
+                <Route exact path="/forgotpassword" Component={ForgotPassword}/>
 
                 {/* Admin routes */}
                 <Route exact path="/dashboard" Component={Dashboard}/>
