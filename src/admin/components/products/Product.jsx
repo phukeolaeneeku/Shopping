@@ -13,6 +13,7 @@ import AdminMenu from "../adminMenu/AdminMenu";
 import { BiPlus } from "react-icons/bi";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineEdit } from "react-icons/md";
+import { CiCamera } from "react-icons/ci";
 import { AiOutlineDelete, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Product = () => {
@@ -67,7 +68,7 @@ const Product = () => {
     }, 
     {
       productID: 7,
-      productName: "파김치.jgp",
+      productName: "파김치",
       price: 11.500,
       review: 25,
       popular: true,
@@ -122,7 +123,22 @@ const Product = () => {
     
     // console.log(setProducts)
   };
- 
+
+  const [mainImage, setMainImage] = useState(null);
+  // image handle
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setMainImage([file]);
+        };
+
+        reader.readAsDataURL(file);
+    }
+};
 
   return (
     <>
@@ -155,12 +171,34 @@ const Product = () => {
             {products.map((product, index) => (
               <div className="box-product" key={index}>
                 <div>
-                  <img src={product.images[0].src} alt="image" />
+                  {/* <img src={product.images[0].src} alt="image" />
+                  <CiCamera/> */}
+                  <div className="box_input-img">
+                    <div className="image2">
+                      <label htmlFor="img2">
+                          {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={product.images[0].src} alt="image" />}
+                      </label>
+                      <input
+                          type="file"
+                          id="img2"
+                          onChange={handleImage}
+                          required
+                      />
+                    </div>
+                  </div>
                 </div>
+                
                 <ul className="txtOFproduct">
-                  <li>ProductName: {product.productName}</li>
-                  <li>Price: ${product.price}</li>
-                  <div className="box_btn_edit_delete">
+                  <div className="box_icon_MdOutlineEdit">
+                    <li>ProductName: {product.productName}</li>
+                    <MdOutlineEdit id="icon_edit"/>
+                  </div>
+                  <div className="box_icon_MdOutlineEdit"> 
+                    <li>Price: ${product.price}</li>
+                    <MdOutlineEdit id="icon_edit"/>
+                  </div>
+                  
+                  {/* <div className="box_btn_edit_delete">
                     <button
                       className="btn_icon_delete_user" >
                       <AiOutlineDelete id="btn_icon_edit"/>
@@ -168,7 +206,7 @@ const Product = () => {
                     <Link to="/updateproduct" className="btn_icon_edit_user" onClick={handleProductID}>
                       <MdOutlineEdit id="btn_icon_edit" />
                     </Link>
-                  </div>
+                  </div> */}
                 </ul>
               </div>
             ))}

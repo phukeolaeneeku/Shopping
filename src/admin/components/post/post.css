@@ -81,25 +81,7 @@
     color: #fff;
 }
 
-#post .product-form_container .input-img .image label p {
-    display: grid;
-    background-color: #22ab5d;
-    border-radius: 4px;
-    width: fit-content;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
 
-#post .product-form_container .input-img .image img {
-    width: 100%;
-    height:35vh;
-    cursor: pointer;
-    object-fit: contain;
-}
-
-#post .product-form_container .input-img .image #img {
-    display: none;
-}
 
 /* box_popular */
 

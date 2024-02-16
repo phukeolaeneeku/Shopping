@@ -23,6 +23,32 @@ a {
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+.box_icon_MdOutlineEdit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#icon_edit{
+    width: 16px;
+    height: 16px;
+}
+
+
+#post .product-form_container .input-img {
+    width: 380px;
+}
+#post .product-form_container .input-img .image img {
+    width: 100%;
+    height:35vh;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+#post .product-form_container .input-img .image #img {
+    display: none;
+}
+
 
 .productHead_content {
     width: 100%;
@@ -97,7 +123,7 @@ a {
 }
 
 .txtOFproduct {
-    width: 80%;
+    width: 100%;
     display: flex;
     padding: 10px;
     flex-direction: column;
