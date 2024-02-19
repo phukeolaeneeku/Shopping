@@ -7,13 +7,19 @@ import 물김치 from "../../../img/물김치.jpg";
 import 참외장아찌 from "../../../img/참외장아찌.jpg";
 import 파김치 from "../../../img/파김치.jpg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminMenu from "../adminMenu/AdminMenu";
 import { BiPlus } from "react-icons/bi";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiCamera } from "react-icons/ci";
+
+
+import banner1 from "../../../img/banner1.png";
+import banner2 from "../../../img/banner2.png";
+import banner3 from "../../../img/banner3.png";
+
 import { AiOutlineDelete, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Product = () => {
@@ -75,26 +81,59 @@ const Product = () => {
       images: [ { src: 파김치 }],
     },
   ]);
+  const [populars, setPopular] = useState([
+    {
+      productID: 8,
+      productName: "깻잎",
+      price: 8.500,
+      popular: true,
+      img: [ { src: 깻잎 }],
+    },
+    {
+      productID: 9,
+      productName: "더덕무침",
+      price: 7.520,
+      popular: true,
+      img: [ { src: 더덕무침 }],
+    },
+    {
+      productID: 10,
+      productName: "멸치볶음",
+      price: 9.250,
+      popular: true,
+      img: [ { src: 멸치볶음 }],
+    },
+    {
+      productID: 11,
+      productName: "진미채볶음",
+      price: 8.500,
+      popular: true,
+      img: [ { src: 진미채볶음 }],
+    }
+  ]);
 
-   // Delete product
-   const [deleteProductId, setDeleteProductId] = useState(null);
-   const [isConfirmationPopupOpen, setConfirmationPopupOpen] = useState(false);
-
-   const openConfirmationPopup = (productID) => {
-    setDeleteProductId(productID);
-     setConfirmationPopupOpen(true);
+   //////banner
+   const [slides, setSlides] = useState([banner1, banner2, banner3]);
+   const [activeSlide, setActiveSlide] = useState(0);
+   const [direction, setDirection] = useState("right");
+ 
+   const handlePrevSlide = () => {
+     setDirection("left");
+     setActiveSlide(activeSlide === 0 ? slides.length - 1 : activeSlide - 1);
    };
-
-   const closeConfirmationPopup = () => {
-    setDeleteProductId(null);
-     setConfirmationPopupOpen(false);
+ 
+   const handleNextSlide = () => {
+     setDirection("right");
+     setActiveSlide(activeSlide === slides.length - 1 ? 0 : activeSlide + 1);
    };
+ 
+   useEffect(() => {
+     const interval = setInterval(() => {
+       handleNextSlide();
+     }, 4000);
+     return () => clearInterval(interval);
+   }, [activeSlide]);
 
-   const deleteProducts = () => {
-     console.log('Successful')
-     
-     closeConfirmationPopup();
-   };
 
   // prev next button user in react
   const [currentPage, setCurrentPage] = useState(1);
@@ -106,39 +145,57 @@ const Product = () => {
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
 
-    // Get send ID
-  const navigate = useNavigate();
-   // Handle product
-  const handleProductID = () => {
-    const setProducts = products.map((product) => ({
-      productID: product.productID,
-      productName: product.productName,
-      price: product.price,
-      images: product.images
-    }));
-    navigate("/product/updateproduct", {
-      state: { product: setProducts },
-
-    }); 
-    
-    // console.log(setProducts)
+   
+/// Choose image All product
+  const [selectedImages, setSelectedImages] = useState(Array(products.length).fill(null)); // State to hold selected images
+  // Function to handle image selection for a specific product
+  const handleImage = (event, index) => {
+    const selectedImage = event.target.files[0];
+    const updatedImages = [...selectedImages];
+    updatedImages[index] = selectedImage;
+    setSelectedImages(updatedImages);
   };
 
-  const [mainImage, setMainImage] = useState(null);
-  // image handle
-  const handleImage = (e) => {
-    const file = e.target.files[0];
 
-    if (file) {
-        const reader = new FileReader();
+/// Choose image Popular product
+  const [selectedImagespopular, setSelectedImagespopular] = useState(Array(populars.length).fill(null)); // State to hold selected images
+  // Function to handle image selection for a specific product
+  const handleImagepopular = (event, i) => {
+    const selectedImage = event.target.files[0];
+    const updatedImages = [...selectedImages];
+    updatedImages[i] = selectedImage;
+    setSelectedImagespopular(updatedImages);
+  };
 
-        reader.onloadend = () => {
-            setMainImage([file]);
-        };
 
-        reader.readAsDataURL(file);
+  ////edit product
+  const [updateProductId, setUpdateProductId] = useState(null);
+  const [isConfirmationPopupOpen, setConfirmationPopupOpen] = useState(false);
+
+  const openConfirmationPopup = (productID) => {
+    setUpdateProductId(productID);
+    setConfirmationPopupOpen(true);
+  };
+
+  const closeConfirmationPopup = () => {
+    setUpdateProductId(null);
+    setConfirmationPopupOpen(false);
+  };
+
+  const updateProduct = () => {
+    if (updateProductId !== null) {
+      // Filter out the product with the specified ID
+      const updatedProducts = products.filter(
+        (product) => product.productID !== updateProductId
+      );
+
+      // Update the state with the new array of products
+      setProducts(updatedProducts);
+
+      // Close the confirmation popup after deleting
+      closeConfirmationPopup();
     }
-};
+  };
 
   return (
     <>
@@ -167,90 +224,149 @@ const Product = () => {
             </div>
           </div>
 
-          <div className="product-area">
-            {products.map((product, index) => (
-              <div className="box-product" key={index}>
-                <div>
-                  {/* <img src={product.images[0].src} alt="image" />
-                  <CiCamera/> */}
-                  <div className="box_input-img">
-                    <div className="image2">
-                      <label htmlFor="img2">
-                          {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={product.images[0].src} alt="image" />}
-                      </label>
-                      <input
-                          type="file"
-                          id="img2"
-                          onChange={handleImage}
-                          required
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <ul className="txtOFproduct">
-                  <div className="box_icon_MdOutlineEdit">
-                    <li>ProductName: {product.productName}</li>
-                    <MdOutlineEdit id="icon_edit"/>
-                  </div>
-                  <div className="box_icon_MdOutlineEdit"> 
-                    <li>Price: ${product.price}</li>
-                    <MdOutlineEdit id="icon_edit"/>
-                  </div>
-                  
-                  {/* <div className="box_btn_edit_delete">
-                    <button
-                      className="btn_icon_delete_user" >
-                      <AiOutlineDelete id="btn_icon_edit"/>
-                    </button>
-                    <Link to="/updateproduct" className="btn_icon_edit_user" onClick={handleProductID}>
-                      <MdOutlineEdit id="btn_icon_edit" />
-                    </Link>
-                  </div> */}
-                </ul>
-              </div>
-            ))}
-          
-            {isConfirmationPopupOpen && (
-              <div className="confirmation-popup">
-                <p>Are you sure you want to delete?</p>
-                <div className="btn_ok_on">
-                  <button onClick={deleteProducts} className="btn_yes">
-                    Yes
-                  </button>
-                  <button onClick={closeConfirmationPopup} className="btn_on">
-                    No
-                  </button>
-                </div>
-              </div>
-            )}
+          <div className="slider_banner">
+            <div className={`slide_banner ${direction}`} style={{backgroundImage: `url(${slides[activeSlide]})`}}></div>
+            <div className="navigation_banner but1_banner">
+              <div className="nav-btn_banner " onClick={handlePrevSlide}>&#8249;</div>
+            </div>
+            <div className="navigation_banner but2_banner">
+              <div className="nav-btn_banner " onClick={handleNextSlide}>&#8250;</div>
+            </div>
           </div>
 
-          <div className="box_container_next_product">
-            <button className="box_prev_left_product" onClick={prePage}>
-              <AiOutlineLeft id="box_icon_left_right_product" />
-              <p>Prev</p>
-            </button>
+        
+          <div id="container_product_admin">
+            <div className="productHead_content">
+              <h1 className="htxthead">
+                <span className="spennofStyle"></span>Popular side dishes
+              </h1>
+            </div>
 
-            <div className="box_num_product">
-              {numbers.map((n, i) => (
-                <div
-                  className={`page-link ${currentPage === n ? "active" : ""}`}
-                  key={i}
-                >
-                  <div className="num_admin_product">
-                    <p onClick={() => changeCPage(n)}>{n}</p>
+            <div className="contentImageProducts">
+              {populars.map((popular, i) => (
+                <div className="box-product" key={i}>
+                  <div>
+                    <div className="box_input-img">
+                      <div className="img">
+                        <label htmlFor={`image-${i}`}>
+                          
+                          {selectedImagespopular[i] ? <img src={URL.createObjectURL(selectedImagespopular[i])} alt="image" /> : <img src={popular.img[0].src} alt="image" />}
+                          
+                        </label>
+                          {/* <CiCamera id="icon_camera"/> */}
+                        <input
+                          type="file"
+                          id={`image-${i}`}
+                          onChange={(e) => handleImagepopular(e, i)}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div className="txtOFproduct">
+                    <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopup(popular.productID)}>
+                      <li>ProductName: {popular.productName}</li>
+                      <MdOutlineEdit id="icon_edit"/>
+                    </div>
+
+                    <div className="box_icon_MdOutlineEdit"> 
+                      <li>Price: ${popular.price}</li>
+                      <MdOutlineEdit id="icon_edit"/>
+                    </div>
+
+                    {isConfirmationPopupOpen && (
+                      <div className="confirmation-popup">
+                        <p>Are you sure you want to edit product?</p>
+                        <input 
+                          type="text" 
+                          placeholder="Product name..."
+                        />
+                        <div className="btn_ok_on">
+                          <button onClick={closeConfirmationPopup} className="btn_on">
+                            Cancle
+                          </button>
+                          <button onClick={updateProduct} className="btn_yes">
+                            Update
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="box_prev_right_product" onClick={nextPage}>
-              <p>Next</p>
-              <AiOutlineRight id="box_icon_left_right_product" />
-            </button>
+            <div className="content_itemBox">
+              <div className="container_product">
+                <h3 className="htxthead">
+                  <span className="spennofStyle"></span>All Product
+                </h3>
+              </div>
+              <div className="contentImageProducts">
+                {products.map((product, index) => (
+                  <div className="box-product" key={index}>
+                    <div>
+                      <div className="box_input-img">
+                        <div className="img">
+                          <label htmlFor={`image-${index}`}>
+                            {selectedImages[index] ? <img src={URL.createObjectURL(selectedImages[index])} alt="image" /> : <img src={product.images[0].src} alt="image" />}
+                          </label>
+                          <input
+                            type="file"
+                            id={`image-${index}`}
+                            onChange={(e) => handleImage(e, index)}
+                            required
+                          />
+                          {/* <CiCamera id="icon_camera"/> */}
+                        </div>
+                      </div>
+
+                    </div>
+                    <div className="txtOFproduct">
+                      <div className="box_icon_MdOutlineEdit">
+                        <li>ProductName: {product.productName}</li>
+                        <MdOutlineEdit id="icon_edit"/>
+                      </div>
+                      <div className="box_icon_MdOutlineEdit"> 
+                        <li>Price: ${product.price}</li>
+                        <MdOutlineEdit id="icon_edit"/>
+                      </div>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
+              
         </div>
+
+            {/* <div className="box_container_next_product">
+              <button className="box_prev_left_product" onClick={prePage}>
+                <AiOutlineLeft id="box_icon_left_right_product" />
+                <p>Prev</p>
+              </button>
+
+              <div className="box_num_product">
+                {numbers.map((n, i) => (
+                  <div
+                    className={`page-link ${currentPage === n ? "active" : ""}`}
+                    key={i}
+                  >
+                    <div className="num_admin_product">
+                      <p onClick={() => changeCPage(n)}>{n}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button className="box_prev_right_product" onClick={nextPage}>
+                <p>Next</p>
+                <AiOutlineRight id="box_icon_left_right_product" />
+              </button>
+            </div> */}
       </section>
     </>
   );
@@ -270,3 +386,6 @@ const Product = () => {
 };
 
 export default Product;
+
+
+

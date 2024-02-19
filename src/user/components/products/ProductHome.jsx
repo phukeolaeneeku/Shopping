@@ -73,7 +73,6 @@ const ProductHome = () => {
   ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const [displayCount, setDisplayCount] = useState(8);
   const [showButton, setShowButton] = useState(true);
 
   const handleSearch = (searchTerm) => {
@@ -81,13 +80,6 @@ const ProductHome = () => {
       product.productName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
-  };
-
-  const displayedProducts = filteredProducts.slice(0, displayCount);
-  // Read more
-  const handleViewMore = () => {
-    setDisplayCount(30);
-    setShowButton(false);
   };
 
   // Get send ID
@@ -110,7 +102,7 @@ const ProductHome = () => {
           </h1>
         </div>
         <div className="contentImageProducts">
-          {/* {displayedProducts.map((product, index) => ( */}
+          {/* {product.map((product, index) => ( */}
             <div>
               <div className="group_itemBox">
                 <div className="img">
@@ -197,7 +189,7 @@ const ProductHome = () => {
             </h3>
           </div>
           <div className="contentImageProducts">
-            {displayedProducts.map((product, index) => (
+            {products.map((product, index) => (
               <div key={index}>
                 <div
                   className="group_itemBox"
