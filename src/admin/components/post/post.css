@@ -20,30 +20,19 @@
     padding: 20px 0;
 }
 
-.edit-product-form {
-    /* display: flex; */
-    gap: 2rem;
-    margin-right: 1rem;
-}
-.edit-product-form2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-right: 1rem;
-}
 .product-form_container{
+    width: 100%;
     display: flex;
-    gap: 1rem;
-    margin-right: 1rem;
+    gap: 2rem;
+    align-items: center;
 }
 
 .box_container_image{
-    padding: 5px;
+    padding: 2px;
 }
 
 #post .product-form_container .input-box {
-    width: 380px;
+    width: 350px;
 }
 
 /* Hidden product ID */
@@ -52,27 +41,37 @@
 }
 
 #post .product-form_container .input-box .box input {
-    width: 19rem;
+    width: 15rem;
     height: 2.3rem;
-    border: 1px solid #ccc;
     margin-top: 1rem;
-    padding: 0.2rem 1rem;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 #post .product-form_container .input-img {
     width: 380px;
 }
 
-.box_description h3{
-    text-align: start;
+#post .product-form_container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
 }
 
+#post .product-form_container img {
+    width: 100%;
+    height: 30vh;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
 .image {
-    width: 80%;
+    width: 60%;
     display: grid;
-    height: 40vh;
+    height: 30vh;
     margin-top: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -132,7 +131,8 @@
 /*========= post_add_product ============*/
 
 .post_add_product{
-    width: 25%;
+    width: 20%;
+    height: 55vh;
     display: flex;
     gap: 1rem;
 }

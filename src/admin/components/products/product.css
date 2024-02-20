@@ -451,10 +451,12 @@ input:focus {
 #container_product_admin .box-product:hover {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
 }
+
 #product .box-product .img {
     width: 100%;
     height: 30vh;
     padding: 10px;
+    
 }
 
 #product .box-product .img img {
@@ -467,16 +469,30 @@ input:focus {
     width: 100%;
     height: 30vh;
     padding: 10px;
+    cursor: pointer;
+}
+.box_icon_camera{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 #icon_camera{
-    width: 20px;
-    height: 20px;
-    
+    width: 32px;
+    height: 32px;
+    border: solid 1px #ccc;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    color: #f46738;
+    cursor: pointer;
+    margin-top: -24.8rem;
+    margin-left: 11.5rem;
+    padding:5px 5px;
 }
 .box_input-img .img input{
     display: none;
 } 
-
 
 .txtOFproduct {
     width: 100%;
@@ -494,8 +510,8 @@ input:focus {
 
 .confirmation-popup{
     position: fixed;
-    width: 22%;
-    height: 15%;
+    width: 28%;
+    height: 22%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -506,31 +522,33 @@ input:focus {
     font-size: 18px;
     transform: translate(-50%, -50%);
 }
+.confirmation-popup input{
+    padding: 0 10px;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+    font-size: 17px;
+}
 .btn_ok_on{
     display: flex;
-    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
 
 .btn_yes{
-    padding: 6px 18px;
+    padding: 12px 68px;
     border: none;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    background: rgb(248, 74, 74);
+    background: #157DEC;
     
 }
 .btn_on{
-    padding: 6px 18px;
+    padding: 12px 68px;
     border: none;
-    color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    background: #157DEC;
+    background: #fff;
 }

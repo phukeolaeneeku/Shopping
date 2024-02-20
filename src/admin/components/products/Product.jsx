@@ -111,6 +111,11 @@ const Product = () => {
       img: [ { src: 진미채볶음 }],
     }
   ]);
+  const [banners, setBanner] = useState([
+    {
+      image: [ { src: banner1 }],
+    }
+  ]);
 
    //////banner
    const [slides, setSlides] = useState([banner1, banner2, banner3]);
@@ -168,7 +173,7 @@ const Product = () => {
   };
 
 
-  ////edit product
+  ////edit product name
   const [updateProductId, setUpdateProductId] = useState(null);
   const [isConfirmationPopupOpen, setConfirmationPopupOpen] = useState(false);
 
@@ -196,6 +201,53 @@ const Product = () => {
       closeConfirmationPopup();
     }
   };
+  ////edit product price
+  const [isConfirmationPopupOpenPrice, setConfirmationPopupOpenPrice] = useState(false);
+
+
+  const openConfirmationPopupPrice = (productID) => {
+    setUpdateProductId(productID);
+    setConfirmationPopupOpenPrice(true);
+  };
+
+  const closeConfirmationPopupPrice = () => {
+    setUpdateProductId(null);
+    setConfirmationPopupOpenPrice(false);
+  };
+
+  const updatePrice = () => {
+    if (updateProductId !== null) {
+      // Filter out the product with the specified ID
+      const updatedProducts = products.filter(
+        (product) => product.productID !== updateProductId
+      );
+
+      // Update the state with the new array of products
+      setProducts(updatedProducts);
+
+      // Close the confirmation popup after deleting
+      closeConfirmationPopup();
+    }
+  };
+
+
+
+  //// Choose file image banner
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setSelectedImage(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
 
   return (
     <>
@@ -224,16 +276,37 @@ const Product = () => {
             </div>
           </div>
 
-          <div className="slider_banner">
+          {/* <div className="slider_banner">
+
             <div className={`slide_banner ${direction}`} style={{backgroundImage: `url(${slides[activeSlide]})`}}></div>
+            
             <div className="navigation_banner but1_banner">
               <div className="nav-btn_banner " onClick={handlePrevSlide}>&#8249;</div>
             </div>
             <div className="navigation_banner but2_banner">
               <div className="nav-btn_banner " onClick={handleNextSlide}>&#8250;</div>
             </div>
-          </div>
+          </div> */}
+          
+            <div className="slider_banner">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                style={{ display: 'none' }}
+                id="imageInput"
+              />
 
+                <div className={`slide_banner ${direction}`} style={{backgroundImage: `url(${slides[activeSlide]})`}}></div>
+
+              <label htmlFor="imageInput" className="navigation_banner but1_banner">
+                <div className="nav-btn_banner">&#8249;</div>
+              </label>
+
+              <label htmlFor="imageInput" className="navigation_banner but2_banner">
+                <div className="nav-btn_banner">&#8250;</div>
+              </label>
+            </div>
         
           <div id="container_product_admin">
             <div className="productHead_content">
@@ -248,20 +321,23 @@ const Product = () => {
                   <div>
                     <div className="box_input-img">
                       <div className="img">
+                        
                         <label htmlFor={`image-${i}`}>
                           
                           {selectedImagespopular[i] ? <img src={URL.createObjectURL(selectedImagespopular[i])} alt="image" /> : <img src={popular.img[0].src} alt="image" />}
                           
                         </label>
-                          {/* <CiCamera id="icon_camera"/> */}
+                        
                         <input
                           type="file"
                           id={`image-${i}`}
                           onChange={(e) => handleImagepopular(e, i)}
                           required
                         />
-                        
                       </div>
+                        <div className="box_icon_camera">
+                          <CiCamera id="icon_camera"/>
+                        </div>
                     </div>
                   </div>
                   <div className="txtOFproduct">
@@ -270,14 +346,9 @@ const Product = () => {
                       <MdOutlineEdit id="icon_edit"/>
                     </div>
 
-                    <div className="box_icon_MdOutlineEdit"> 
-                      <li>Price: ${popular.price}</li>
-                      <MdOutlineEdit id="icon_edit"/>
-                    </div>
-
                     {isConfirmationPopupOpen && (
                       <div className="confirmation-popup">
-                        <p>Are you sure you want to edit product?</p>
+                        <p>Please enter the product name?</p>
                         <input 
                           type="text" 
                           placeholder="Product name..."
@@ -292,6 +363,29 @@ const Product = () => {
                         </div>
                       </div>
                     )}
+
+                    <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopupPrice(popular.productID)}> 
+                      <li>Price: ${popular.price}</li>
+                      <MdOutlineEdit id="icon_edit"/>
+                    </div>
+                    {isConfirmationPopupOpenPrice && (
+                      <div className="confirmation-popup">
+                        <p>Please enter the product price?</p>
+                        <input 
+                          type="text" 
+                          placeholder="Product price..."
+                        />
+                        <div className="btn_ok_on">
+                          <button onClick={closeConfirmationPopupPrice} className="btn_on">
+                            Cancle
+                          </button>
+                          <button onClick={updatePrice} className="btn_yes">
+                            Update
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
                   </div>
                 </div>
               ))}
@@ -320,18 +414,22 @@ const Product = () => {
                           />
                           {/* <CiCamera id="icon_camera"/> */}
                         </div>
+                        <div className="box_icon_camera">
+                          <CiCamera id="icon_camera"/>
+                        </div>
                       </div>
 
                     </div>
                     <div className="txtOFproduct">
-                      <div className="box_icon_MdOutlineEdit">
+                      <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopup(product.productID)}>
                         <li>ProductName: {product.productName}</li>
                         <MdOutlineEdit id="icon_edit"/>
                       </div>
-                      <div className="box_icon_MdOutlineEdit"> 
+                      <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopupPrice(product.productID)}> 
                         <li>Price: ${product.price}</li>
                         <MdOutlineEdit id="icon_edit"/>
                       </div>
+
                     </div>
 
                   </div>

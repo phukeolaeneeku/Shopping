@@ -4,6 +4,7 @@ import './post.css'
 import imageicon from "../../../img/imageicon.jpg";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 import { LuPlus } from "react-icons/lu";
+import { MdOutlineEdit } from "react-icons/md";
 
 const Post = () => {
     const [mainImage, setMainImage] = useState(null);
@@ -85,20 +86,24 @@ const Post = () => {
                     {/* {showForm && ( */}
                     <form onSubmit={handleSubmit} className="edit-product-form">
                         <div className='product-form_container'>
+                            <div className='post_add_product' onClick={handleonClick}>
+                                <div className='iconimage'>
+                                    <HiMiniShoppingBag id="icon_shoppingbag"/> 
+                                    <LuPlus id='icon_goplus'/>
+                                </div>
+                            </div>
                             <div className='box_container_image'>
                                 <div className="input-img">
-                                    <div className="box_description">
-                                        <div className="image">
-                                            <label htmlFor="img">
-                                                {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={imageicon}></img>}
-                                            </label>
-                                            <input
-                                                type="file"
-                                                id="img"
-                                                onChange={handleImage}
-                                                required
-                                            />
-                                        </div>
+                                    <div className="image">
+                                        <label htmlFor="img">
+                                            {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={imageicon}></img>}
+                                        </label>
+                                        <input
+                                            type="file"
+                                            id="img"
+                                            onChange={handleImage}
+                                            required
+                                        />
                                     </div>
                                 </div>
 
@@ -134,12 +139,7 @@ const Post = () => {
                                     />
                                 </div>
                             </div>
-                            <div className='post_add_product' onClick={handleonClick}>
-                                <div className='iconimage'>
-                                    <HiMiniShoppingBag id="icon_shoppingbag"/> 
-                                    <LuPlus id='icon_goplus'/>
-                                </div>
-                            </div>
+                            
                         </div>
                         
                         <div className="btn_submit">
