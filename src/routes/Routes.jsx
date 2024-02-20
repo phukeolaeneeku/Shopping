@@ -25,7 +25,7 @@ import OrderPage from "../admin/components/orderPage/OrderPage";
 import OrderBill from "../admin/components/orderPage/OrderBill";
 import Admins from "../admin/components/menagerAdmin/Admins";
 import Product from "../admin/components/products/Product";
-import Test from "../user/components/order/Text";
+import Text from "../user/components/order/Text";
 import ForgotPassword from "../user/components/login_register/ForgotPassword";
 
 // ===============================
@@ -35,6 +35,7 @@ import Admin from "../admin/components/menagerAdmin/admin";
 import AddAdmin from "../admin/components/menagerAdmin/AddAdmin";
 import UpdateProduct from "../admin/components/post/UpdateProduct";
 import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
+import AddProduct from "../admin/components/products/Addproduct";
 
 
 const Links = () => {
@@ -53,7 +54,7 @@ const Links = () => {
                 <Route exact path="/order" Component={Order}/>
                 <Route exact path="/order/bill" Component={Bill}/>
                 <Route exact path="/cart/successfulBuy" Component={SuccessfulBuy}/>
-                <Route exact path="/test" Component={Test}/>
+                <Route exact path="/text" Component={Text}/>
 
                 {/*====================== */}
                 <Route exact path="/product_search" Component={Product_search}/>
@@ -79,6 +80,7 @@ const Links = () => {
                 <Route exact path="/updateproduct" Component={UpdateProduct}/>
                 <Route exact path="/adminacount" Component={Admin_acount}/>
                 <Route exact path="/updateproduct" Component={UpdateProduct}/>
+                <Route exact path="/addproduct" Component={AddProduct}/>
 
             </Routes>
         </Router>

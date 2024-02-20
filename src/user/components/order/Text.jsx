@@ -3,8 +3,8 @@ import Menu from "../menu/Menu";
 import Header from "../header/Header";
 import { IoIosArrowBack } from "react-icons/io";
 
-import "./test.css";
-const Test = () => {
+import "./text.css";
+const Text = () => {
   return (
     <>
       <Header></Header>
@@ -54,4 +54,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Text;

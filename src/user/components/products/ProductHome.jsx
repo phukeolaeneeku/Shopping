@@ -71,6 +71,40 @@ const ProductHome = () => {
       images: [ { src: 파김치 }],
     },
   ]);
+  const [populars, setPopular] = useState([
+    {
+      productID: 8,
+      productName: "깻잎",
+      price: 8.500,
+      review: 100,
+      popular: true,
+      img: [ { src: 깻잎 }],
+    },
+    {
+      productID: 9,
+      productName: "더덕무침",
+      price: 7.520,
+      review: 150,
+      popular: true,
+      img: [ { src: 더덕무침 }],
+    },
+    {
+      productID: 10,
+      productName: "멸치볶음",
+      price: 9.250,
+      review: 190,
+      popular: true,
+      img: [ { src: 멸치볶음 }],
+    },
+    {
+      productID: 11,
+      productName: "진미채볶음",
+      price: 8.500,
+      review: 180,
+      popular: true,
+      img: [ { src: 진미채볶음 }],
+    }
+  ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [showButton, setShowButton] = useState(true);
@@ -102,84 +136,27 @@ const ProductHome = () => {
           </h1>
         </div>
         <div className="contentImageProducts">
-          {/* {product.map((product, index) => ( */}
-            <div>
+          {populars.map((popular, i) => (
+            <div key={i}>
               <div className="group_itemBox">
                 <div className="img">
-                  <img src={깻잎} alt="img" />
+                  <img src={popular.img[0].src} alt="img" />
                 </div>
                 <div className="box_cart_search">
                   <FaCartShopping className="box_icon_search" />
                 </div> 
                 <div className="txtOFproduct">
                   <h4>
-                  깻잎
+                  {popular.productName}
                   </h4>
                   <p>
-                    $ 10
+                    $ ${popular.price}
                   </p>
-                  <p>Review: 100</p>
+                  <p>Review: {popular.review}</p>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="group_itemBox">
-                <div className="img">
-                  <img src={깻잎} alt="img" />
-                </div>
-                <div className="box_cart_search">
-                  <FaCartShopping className="box_icon_search" />
-                </div> 
-                <div className="txtOFproduct">
-                  <h4>
-                  깻잎
-                  </h4>
-                  <p>
-                    $ 10
-                  </p>
-                  <p>Review: 100</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="group_itemBox">
-                <div className="img">
-                  <img src={깻잎} alt="img" />
-                </div>
-                <div className="box_cart_search">
-                  <FaCartShopping className="box_icon_search" />
-                </div> 
-                <div className="txtOFproduct">
-                  <h4>
-                  깻잎
-                  </h4>
-                  <p>
-                    $ 10
-                  </p>
-                  <p>Review: 100</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="group_itemBox">
-                <div className="img">
-                  <img src={깻잎} alt="img" />
-                </div>
-                <div className="box_cart_search">
-                  <FaCartShopping className="box_icon_search" />
-                </div> 
-                <div className="txtOFproduct">
-                  <h4>
-                  깻잎
-                  </h4>
-                  <p>
-                    $ 10
-                  </p>
-                  <p>Review: 100</p>
-                </div>
-              </div>
-            </div>
-          {/* ))} */}
+          ))}
         </div>
 
         <div className="content_itemBox">
