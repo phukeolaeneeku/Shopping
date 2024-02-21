@@ -1,6 +1,109 @@
-.addProduct_box_content_afterThat{
+
+.box_store {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding-bottom: 20px;
+
+}
+.store_item_head {
     width: 100%;
+    height: 70px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.back_icons_back {
+    display: flex;
+    font-size: 20px;
+    gap: 0.5rem;
+    color: #858080;
+    align-items: center;
+}
+
+.banner_no_box {
+    position: relative;
+    margin-bottom: 10px;
+}
+.banner_no_box_img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 30vh;
+}
+
+.banner_no_box_img img {
+    width: 100%;
+}
+.banner_no_box_img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 30vh;
+}
+
+.banner_no_box_img img {
+    width: 100%;
+}
+.edit_image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #FFF;
+    border-radius: 100px;
+    padding: 5px 5px 0 5px;
+    font-size: 25px;
+    margin: 3px;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    position: relative;
+}
+
+.hover_bkgr_fricc {
+    position: fixed;
+    left: 32%;
+    bottom: 55%;
+    width: 35%;
+    height: 30vh;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    z-index: 999;
+    border-radius: 20px;
+}
+
+.hover_bkgr_fricc p {
+    font-size: 16px;
+    margin-top: 1rem;
+}
+.popupCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 33px;
+    padding: 1px 10px;
+    border-radius: 100px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.popup_txt_Boximagae {
+    border: #eee solid 1px;
+    width: 80%;
+    height: 15vh;
+    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_txt_Boximagae input {
+    margin-left: 5rem;
+}
+
+.back_icons_back p {
+    font-size: 18px;
+    color: #858080;
 }
 .btn_saveProdcut {
     width: 60%;
@@ -15,6 +118,9 @@
     margin: 2rem auto;
     text-align: center;
     color: #FFF;
+}
+.group_container_product{
+    display: flex;
 }
 
 .addProduct_box_content {
@@ -109,6 +215,12 @@
     width: 100%;
     border: none;
     padding: 20px;
+}
+.group_container_product {
+    display: grid;
+    width: 100%;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .btn_foasdf {

@@ -156,6 +156,58 @@ a {
     overflow: hidden;
 }
 
+.banner_no_box {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 2.5rem;
+}
+.banner_no_box_image {
+    object-fit: cover;
+    overflow: hidden;
+    height: 60vh;
+}
+
+.banner_no_box_image img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.edit_image_banner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 5px 5px 0 5px;
+    font-size: 25px;
+    margin: 3px;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    position: relative;
+}
+#box_icon_camera{
+    color: #f46738;
+}
+
+.hover_bkgr_fricc {
+    position: fixed;
+    left: 32%;
+    bottom: 55%;
+    width: 35%;
+    height: 50vh;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    z-index: 999;
+    border-radius: 20px;
+}
+
+.hover_bkgr_fricc p {
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
 .txtOFproduct {
     display: flex;
     padding: 0 20px 10px 20px;

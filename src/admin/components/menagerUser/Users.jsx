@@ -3,11 +3,35 @@ import "./users.css"
 import { AiOutlineLeft,AiOutlineRight } from 'react-icons/ai';
 import { IoSearchOutline } from 'react-icons/io5';
 import AdminMenu from '../adminMenu/AdminMenu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import user from '../../../img/users.png'
+import users from '../../../img/users.png'
+
 
 const Users = () => {
-    const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([
+        {
+            userID: 1, 
+            userName: "Sompong", 
+            email: "sompong@gmail.com", 
+            image: []
+        },
+        {
+            userID: 2, 
+            userName: "Sompheng", 
+            email: "sompheng@gmail.com", 
+            image: []
+        }
+    ]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+
+      // Filter user based on search 
+      const filtereduser = users.filter((user) => {
+        const nameMatch = user.userName.toLowerCase().includes(searchTerm.toLowerCase());
+        return nameMatch;
+    });
 
     // prev next button user in react
     const [currentPage, setCurrentPage] = useState(1);
@@ -31,6 +55,8 @@ const Users = () => {
                                 <input 
                                     type="text" 
                                     placeholder="Search ..." 
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
                                 />
                                 <button type="submit">
                                 <IoSearchOutline />
@@ -38,25 +64,20 @@ const Users = () => {
                             </div>
                         </form>
                     </div>
-                   
-                    <div className='box_users_user' >
-                        <Link to='/users/user' className='box_user_text'>
-                            <img src='' alt='image'></img>
-                            <div className='container_chat_name'>
-                                <h4>Sompong</h4>
-                                <p>sompong@gmail.com</p>
+                    {filtereduser && records.map((user) => (
+                        <div key={user.userID}>
+                            <div className='box_users_user' >
+                                <Link to='/users/user' className='box_user_text'>
+                                    <img src={users}alt="img" />
+                                    <div className='container_chat_name'>
+                                        <h4>Name: {user.userName}</h4>
+                                        <p>Eamil: {user.email}</p>
+                                    </div>
+                                </Link>
                             </div>
-                        </Link>
-                    </div>
-                    <div className='box_users_user' >
-                        <Link to='/users/user' className='box_user_text'>
-                            <img src='' alt='image'></img>
-                            <div className='container_chat_name'>
-                                <h4>Sompong</h4>
-                                <p>sompong@gmail.com</p>
-                            </div>
-                        </Link>
-                    </div>
+                        </div>
+                        
+                    ))}
                        
 
                     <div className="box_container_next_product">

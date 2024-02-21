@@ -14,13 +14,7 @@ import { BiPlus } from "react-icons/bi";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiCamera } from "react-icons/ci";
-
-
 import banner1 from "../../../img/banner1.png";
-import banner2 from "../../../img/banner2.png";
-import banner3 from "../../../img/banner3.png";
-
-import { AiOutlineDelete, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Product = () => {
   const [products, setProducts] = useState([
@@ -111,46 +105,8 @@ const Product = () => {
       img: [ { src: 진미채볶음 }],
     }
   ]);
-  const [banners, setBanner] = useState([
-    {
-      image: [ { src: banner1 }],
-    }
-  ]);
 
-   //////banner
-   const [slides, setSlides] = useState([banner1, banner2, banner3]);
-   const [activeSlide, setActiveSlide] = useState(0);
-   const [direction, setDirection] = useState("right");
- 
-   const handlePrevSlide = () => {
-     setDirection("left");
-     setActiveSlide(activeSlide === 0 ? slides.length - 1 : activeSlide - 1);
-   };
- 
-   const handleNextSlide = () => {
-     setDirection("right");
-     setActiveSlide(activeSlide === slides.length - 1 ? 0 : activeSlide + 1);
-   };
- 
-   useEffect(() => {
-     const interval = setInterval(() => {
-       handleNextSlide();
-     }, 4000);
-     return () => clearInterval(interval);
-   }, [activeSlide]);
-
-
-  // prev next button user in react
-  const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 4;
-  const lastIndex = currentPage * recordsPerPage;
-  const firstIndex = lastIndex - recordsPerPage;
-  const records = products.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(products.length / recordsPerPage);
-  const numbers = [...Array(npage + 1).keys()].slice(1);
-
-
-   
+  
 /// Choose image All product
   const [selectedImages, setSelectedImages] = useState(Array(products.length).fill(null)); // State to hold selected images
   // Function to handle image selection for a specific product
@@ -201,9 +157,10 @@ const Product = () => {
       closeConfirmationPopup();
     }
   };
+
+
   ////edit product price
   const [isConfirmationPopupOpenPrice, setConfirmationPopupOpenPrice] = useState(false);
-
 
   const openConfirmationPopupPrice = (productID) => {
     setUpdateProductId(productID);
@@ -230,24 +187,22 @@ const Product = () => {
     }
   };
 
-
-
   //// Choose file image banner
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [mainImage, setMainImage] = useState(null);
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      setSelectedImage(reader.result);
-    };
+  const handleImageBanner = (e) => {
+    const file = e.target.files[0];
 
     if (file) {
-      reader.readAsDataURL(file);
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setMainImage([file]);
+        };
+
+        reader.readAsDataURL(file);
     }
   };
-
 
   return (
     <>
@@ -276,37 +231,28 @@ const Product = () => {
             </div>
           </div>
 
-          {/* <div className="slider_banner">
-
-            <div className={`slide_banner ${direction}`} style={{backgroundImage: `url(${slides[activeSlide]})`}}></div>
-            
-            <div className="navigation_banner but1_banner">
-              <div className="nav-btn_banner " onClick={handlePrevSlide}>&#8249;</div>
+          <div className="banner_no_box">
+            <div className="banner_no_box_image">
+              <div className="banner_no_box_image">
+                <div className="img">
+                  <label htmlFor="img">
+                    {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={banner1}></img>}
+                  </label>
+                  <input
+                    type="file"
+                    id="img"
+                    onChange={handleImageBanner}
+                    required
+                  />
+                </div>
+              </div>
             </div>
-            <div className="navigation_banner but2_banner">
-              <div className="nav-btn_banner " onClick={handleNextSlide}>&#8250;</div>
-            </div>
-          </div> */}
-          
-            <div className="slider_banner">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                style={{ display: 'none' }}
-                id="imageInput"
-              />
-
-                <div className={`slide_banner ${direction}`} style={{backgroundImage: `url(${slides[activeSlide]})`}}></div>
-
-              <label htmlFor="imageInput" className="navigation_banner but1_banner">
-                <div className="nav-btn_banner">&#8249;</div>
-              </label>
-
-              <label htmlFor="imageInput" className="navigation_banner but2_banner">
-                <div className="nav-btn_banner">&#8250;</div>
+            <div className="edit_image_banner">
+              <label htmlFor="img" className="trigger_popup_fricc">
+                <CiCamera id="box_icon_camera"/>
               </label>
             </div>
+          </div>
         
           <div id="container_product_admin">
             <div className="productHead_content">
@@ -436,35 +382,8 @@ const Product = () => {
                 ))}
               </div>
             </div>
-
           </div>
-              
         </div>
-
-            {/* <div className="box_container_next_product">
-              <button className="box_prev_left_product" onClick={prePage}>
-                <AiOutlineLeft id="box_icon_left_right_product" />
-                <p>Prev</p>
-              </button>
-
-              <div className="box_num_product">
-                {numbers.map((n, i) => (
-                  <div
-                    className={`page-link ${currentPage === n ? "active" : ""}`}
-                    key={i}
-                  >
-                    <div className="num_admin_product">
-                      <p onClick={() => changeCPage(n)}>{n}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button className="box_prev_right_product" onClick={nextPage}>
-                <p>Next</p>
-                <AiOutlineRight id="box_icon_left_right_product" />
-              </button>
-            </div> */}
       </section>
     </>
   );

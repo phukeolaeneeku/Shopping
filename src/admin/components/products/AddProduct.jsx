@@ -12,6 +12,7 @@ import imageicon from "../../../img/imageicon.jpg";
 import productImage from "../../../img/productImage.png";
 import { FaPencil } from "react-icons/fa6";
 import { AiOutlineDelete } from "react-icons/ai";
+
 function AddProduct() {
     const [category, set_category] = useState(6);
     const [goods_list, set_goods_list] = useState([]);
@@ -146,9 +147,6 @@ function AddProduct() {
                     </div>
 
                     <div className="group_container_product">
-                        <div onClick={() => handleAdd()} className="addProduct_box_content">
-                            <div className="addplue_ofProduct">+</div>
-                        </div>
                         {val.map((data, i) => {
                             return (
                                 <div>
@@ -280,14 +278,11 @@ function AddProduct() {
                                 </div>
                             )
                         })}
-
-
-
+                        <div onClick={() => handleAdd()} className="addProduct_box_content">
+                            <div className="addplue_ofProduct">+</div>
+                        </div>
                     </div>
                 </div>
-                <Link to="#" className="btn_saveProdcut">
-                    Save
-                </Link>
             </div>
         </>
     )

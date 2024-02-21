@@ -324,29 +324,29 @@ const OrderPage = () => {
                 {records.map((order) => (
                     <div key={order.orderID}>
                         <form className='box_users_order'>
-                            <div className='box_order_text'>
-                              <p>No: {order.orderID}</p>
-                              <div>
-                                  {order.products.slice(0, 2).map((product, index) => (
-                                      <span key={product.productID}>
-                                          {product.productName}
-                                          {index === 0 && order.products.length > 1
-                                          ? ", " : " ..."}
-                                      </span>
-                                  ))}
+                          <div className='box_order_text'>
+                            <p>No: {order.orderID}</p>
+                            <div>
+                                {order.products.slice(0, 2).map((product, index) => (
+                                    <span key={product.productID}>
+                                        {product.productName}
+                                        {index === 0 && order.products.length > 1
+                                        ? ", " : " ..."}
+                                    </span>
+                                ))}
+                            </div>
+                          </div>
+                          <div className='box_container_time'>
+                              <p>{order.orderDate}</p>
+                          </div>
+                          <div className='container_order_icon'>
+                              <div className='btn_pending'>
+                                  Pending
                               </div>
-                            </div>
-                            <div className='box_container_time'>
-                                <p>{order.orderDate}</p>
-                            </div>
-                            <div className='container_order_icon'>
-                                <div className='btn_pending'>
-                                    Pending
-                                </div>
-                                <button className='btn_view' onClick={() => handleOrder(order.orderID)}>
-                                    View
-                                </button>
-                            </div>
+                              <button className='btn_view' onClick={() => handleOrder(order.orderID)}>
+                                  View
+                              </button>
+                          </div>
                         </form>
                     </div>
                 ))}
