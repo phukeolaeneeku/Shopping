@@ -73,15 +73,25 @@ body {
     padding: 0 2rem;
 }
 .logo_store{
-    /* width: 30rem; */
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 }
 
+.logo .logo_store .image_logo img {
+    cursor: pointer;
+}
+.box_store_logo{
+    width: 60px;
+    height: auto;
+}
 /* form */
 .logo {
     width: 20%;
     margin-left: 1cm;
+}
+.logo input{
+    display: none;
 }
 
 

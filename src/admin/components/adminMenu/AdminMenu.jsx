@@ -35,6 +35,39 @@ const AdminMenu = () => {
     setShowConfirmation(false);
   };
 
+   // image handle logo store nmae
+   const [mainImageStore, setMainImageStore] = useState(null);
+
+   const handleImageStoreName = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+          setMainImageStore([file]);
+        };
+
+        reader.readAsDataURL(file);
+    }
+};
+   // image handle logo store logo
+   const [mainImages, setMainImages] = useState(null);
+
+   const handleImageStoreLogo = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setMainImages([file]);
+        };
+
+        reader.readAsDataURL(file);
+    }
+};
+
   return (
     <>
       <section id="dashboard">
@@ -79,12 +112,40 @@ const AdminMenu = () => {
             )}
           </div>
           <div className="right">
-            <NavLink to="/dashboard" className="logo">
+            {/* <NavLink to="/dashboard" className="logo" >
               <span className="logo_store">
                 <img src={storename} alt="image" />
                 <img src={Logo} alt="image" />
               </span>
-            </NavLink>
+            </NavLink> */}
+            <div className="logo" >
+              <span className="logo_store">
+                <div className="image_logo">
+                  <label htmlFor="img_store">
+                    {(mainImageStore && mainImageStore.length > 0) ? <img src={URL.createObjectURL(mainImageStore[0])} /> : <img src={storename} className="box_logo_storename"></img>}
+                  </label>
+                  <input
+                    type="file"
+                    id="img_store"
+                    onChange={handleImageStoreName}
+                    required
+                  />
+                </div>
+                <div className="image_logo">
+                  <label htmlFor="image">
+                    {(mainImages && mainImages.length > 0) ? <img src={URL.createObjectURL(mainImages[0])} /> : <img src={Logo} className="box_store_logo"></img>}
+                  </label>
+                  <input
+                    type="file"
+                    id="image"
+                    onChange={handleImageStoreLogo}
+                    required
+                  />
+                </div>
+                {/* <img src={storename} alt="image" /> */}
+                {/* <img src={Logo} alt="image" /> */}
+              </span>
+            </div>
 
             <NavLink to="/adminacount" className="userAdminImage">
               <img src={user} alt="Logo_Profile" />

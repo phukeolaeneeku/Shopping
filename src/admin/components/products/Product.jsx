@@ -188,7 +188,7 @@ const Product = () => {
   };
 
   //// Choose file image banner
-  const [mainImage, setMainImage] = useState(null);
+  const [mainImageBanner, setMainImageBanner] = useState(null);
 
   const handleImageBanner = (e) => {
     const file = e.target.files[0];
@@ -197,7 +197,7 @@ const Product = () => {
         const reader = new FileReader();
 
         reader.onloadend = () => {
-            setMainImage([file]);
+          setMainImageBanner([file]);
         };
 
         reader.readAsDataURL(file);
@@ -236,7 +236,7 @@ const Product = () => {
               <div className="banner_no_box_image">
                 <div className="img">
                   <label htmlFor="img">
-                    {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={banner1}></img>}
+                    {(mainImageBanner && mainImageBanner.length > 0) ? <img src={URL.createObjectURL(mainImageBanner[0])} /> : <img src={banner1}></img>}
                   </label>
                   <input
                     type="file"

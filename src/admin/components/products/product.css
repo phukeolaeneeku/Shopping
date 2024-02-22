@@ -161,6 +161,9 @@ a {
     margin-bottom: 10px;
     margin-top: 2.5rem;
 }
+.banner_no_box input{
+    display: none;
+}
 .banner_no_box_image {
     object-fit: cover;
     overflow: hidden;
