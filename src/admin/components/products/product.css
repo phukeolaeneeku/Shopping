@@ -372,6 +372,12 @@ input:focus {
     gap: 1rem;
     margin-top: 3rem;
 }
+.contentImageProduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
 
 .group_itemBox:hover {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
@@ -593,8 +599,8 @@ input:focus {
 
 .confirmation-popup{
     position: fixed;
-    width: 28%;
-    height: 22%;
+    width: 35%;
+    height: 28%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -605,6 +611,7 @@ input:focus {
     font-size: 18px;
     transform: translate(-50%, -50%);
 }
+
 .confirmation-popup input{
     padding: 0 10px;
     border: solid 1px #ccc;

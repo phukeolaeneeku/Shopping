@@ -267,13 +267,9 @@ const Product = () => {
                   <div>
                     <div className="box_input-img">
                       <div className="img">
-                        
                         <label htmlFor={`image-${i}`}>
-                          
                           {selectedImagespopular[i] ? <img src={URL.createObjectURL(selectedImagespopular[i])} alt="image" /> : <img src={popular.img[0].src} alt="image" />}
-                          
                         </label>
-                        
                         <input
                           type="file"
                           id={`image-${i}`}
@@ -292,46 +288,12 @@ const Product = () => {
                       <MdOutlineEdit id="icon_edit"/>
                     </div>
 
-                    {isConfirmationPopupOpen && (
-                      <div className="confirmation-popup">
-                        <p>Please enter the product name?</p>
-                        <input 
-                          type="text" 
-                          placeholder="Product name..."
-                        />
-                        <div className="btn_ok_on">
-                          <button onClick={closeConfirmationPopup} className="btn_on">
-                            Cancle
-                          </button>
-                          <button onClick={updateProduct} className="btn_yes">
-                            Update
-                          </button>
-                        </div>
-                      </div>
-                    )}
+                    
 
                     <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopupPrice(popular.productID)}> 
                       <li>Price: ${popular.price}</li>
                       <MdOutlineEdit id="icon_edit"/>
                     </div>
-                    {isConfirmationPopupOpenPrice && (
-                      <div className="confirmation-popup">
-                        <p>Please enter the product price?</p>
-                        <input 
-                          type="text" 
-                          placeholder="Product price..."
-                        />
-                        <div className="btn_ok_on">
-                          <button onClick={closeConfirmationPopupPrice} className="btn_on">
-                            Cancle
-                          </button>
-                          <button onClick={updatePrice} className="btn_yes">
-                            Update
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
                   </div>
                 </div>
               ))}
@@ -344,7 +306,7 @@ const Product = () => {
                   <span className="spennofStyle"></span>All Product
                 </h3>
               </div>
-              <div className="contentImageProducts">
+              <div className="contentImageProduct">
                 {products.map((product, index) => (
                   <div className="box-product" key={index}>
                     <div>
@@ -384,6 +346,42 @@ const Product = () => {
               </div>
               
             </div>
+            {isConfirmationPopupOpen && (
+              <div className="confirmation-popup">
+                <p>Please enter the product name?</p>
+                <input 
+                  type="text" 
+                  placeholder="Product name..."
+                />
+                <div className="btn_ok_on">
+                  <button onClick={closeConfirmationPopup} className="btn_on">
+                    Cancle
+                  </button>
+                  <button onClick={updateProduct} className="btn_yes">
+                    Update
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {isConfirmationPopupOpenPrice && (
+              <div className="confirmation-popup">
+                <p>Please enter the product price?</p>
+                <input 
+                  type="text" 
+                  placeholder="Product price..."
+                />
+                <div className="btn_ok_on">
+                  <button onClick={closeConfirmationPopupPrice} className="btn_on">
+                    Cancle
+                  </button>
+                  <button onClick={updatePrice} className="btn_yes">
+                    Update
+                  </button>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </section>
