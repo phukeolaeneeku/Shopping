@@ -281,9 +281,9 @@ const Product = () => {
                           required
                         />
                       </div>
-                        <div className="box_icon_camera">
-                          <CiCamera id="icon_camera"/>
-                        </div>
+                      <div className="edit_image_product">
+                        <CiCamera id="box_icon_camera_product"/>
+                      </div>
                     </div>
                   </div>
                   <div className="txtOFproduct">
@@ -335,6 +335,7 @@ const Product = () => {
                   </div>
                 </div>
               ))}
+
             </div>
 
             <div className="content_itemBox">
@@ -358,13 +359,13 @@ const Product = () => {
                             onChange={(e) => handleImage(e, index)}
                             required
                           />
-                          {/* <CiCamera id="icon_camera"/> */}
                         </div>
-                        <div className="box_icon_camera">
-                          <CiCamera id="icon_camera"/>
+                        
+                        <div className="edit_image_product">
+                          <CiCamera id="box_icon_camera_product"/>
                         </div>
                       </div>
-
+                      
                     </div>
                     <div className="txtOFproduct">
                       <div className="box_icon_MdOutlineEdit" onClick={() => openConfirmationPopup(product.productID)}>
@@ -381,6 +382,7 @@ const Product = () => {
                   </div>
                 ))}
               </div>
+              
             </div>
           </div>
         </div>
