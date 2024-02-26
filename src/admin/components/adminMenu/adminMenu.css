@@ -73,6 +73,7 @@ body {
     padding: 0 2rem;
 }
 .logo_store{
+    width: 100%;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -101,4 +102,100 @@ body {
 }
 .userAdminImage img {
     width: 10%;
+}
+
+
+.confirmation-logout{
+    position: fixed;
+    width: 25%;
+    height: 18%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2eeee;
+    border-radius: 5px;
+    top: 50%;
+    left: 57%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+}
+
+.btn_ok_on{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_yes{
+    padding: 12px 68px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #157DEC;
+    
+}
+
+
+/* ============= icon camera ===========*/
+
+.image_logo{
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 10vh;
+    overflow: hidden;
+}
+
+.image_logo img{
+    position: relative;
+    cursor: pointer;
+    width: 75%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.edit_image_logo {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    border: solid 1px #ccc;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 4px 4px 0 4px;
+    font-size: 15px;
+    margin: 3px;
+}
+
+
+.image_logo_store_name{
+    position: relative;
+    cursor: pointer;
+    width: 350px;
+    height: 10vh;
+    overflow: hidden;
+}
+.image_logo_store_name img{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.edit_image_logo_store {
+    position: absolute;
+    top: 40px;
+    right: 1px;
+    border: solid 1px #ccc;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 4px 4px 0 4px;
+    font-size: 15px;
+    margin: 3px;
+}
+
+#box_icon_camera_product{
+    color: #f46738;
 }

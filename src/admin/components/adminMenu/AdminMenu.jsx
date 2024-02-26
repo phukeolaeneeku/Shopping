@@ -14,6 +14,7 @@ import storename from "../../../img/storename.png";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CiCamera } from "react-icons/ci";
 
 const AdminMenu = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -98,52 +99,54 @@ const AdminMenu = () => {
               <p>Log Out</p>
             </div>
             {showConfirmation && (
-              <div className="confirmation-popup">
+              <div className="confirmation-logout">
                 <p>Are you sure you want to logout?</p>
                 <div className="btn_ok_on">
-                  <button onClick={handleConfirmLogout} className="btn_yes">
-                    Yes
-                  </button>
                   <button onClick={handleCancelLogout} className="btn_on">
                     No
+                  </button>
+
+                  <button onClick={handleConfirmLogout} className="btn_yes">
+                    Yes
                   </button>
                 </div>
               </div>
             )}
           </div>
           <div className="right">
-            {/* <NavLink to="/dashboard" className="logo" >
-              <span className="logo_store">
-                <img src={storename} alt="image" />
-                <img src={Logo} alt="image" />
-              </span>
-            </NavLink> */}
             <div className="logo" >
               <span className="logo_store">
-                <div className="image_logo">
-                  <label htmlFor="img_store">
-                    {(mainImageStore && mainImageStore.length > 0) ? <img src={URL.createObjectURL(mainImageStore[0])} /> : <img src={storename} className="box_logo_storename"></img>}
-                  </label>
+                <div className="image_logo_store_name">
+                  {(mainImageStore && mainImageStore.length > 0) ? <img src={URL.createObjectURL(mainImageStore[0])} /> : <img src={storename} className="box_logo_storename"></img>}
                   <input
                     type="file"
                     id="img_store"
                     onChange={handleImageStoreName}
                     required
                   />
+
+                  <div className="edit_image_logo_store">
+                    <label htmlFor="img_store">
+                      <CiCamera id="box_icon_camera_product" />
+                    </label>
+                  </div>
                 </div>
+
                 <div className="image_logo">
-                  <label htmlFor="image">
-                    {(mainImages && mainImages.length > 0) ? <img src={URL.createObjectURL(mainImages[0])} /> : <img src={Logo} className="box_store_logo"></img>}
-                  </label>
+                  {(mainImages && mainImages.length > 0) ? <img src={URL.createObjectURL(mainImages[0])} /> : <img src={Logo} className="box_store_logo"></img>}
                   <input
                     type="file"
                     id="image"
                     onChange={handleImageStoreLogo}
                     required
                   />
+                  <div className="edit_image_logo">
+                    <label htmlFor="image">
+                      <CiCamera id="box_icon_camera_product" />
+                    </label>
+                  </div>
                 </div>
-                {/* <img src={storename} alt="image" /> */}
-                {/* <img src={Logo} alt="image" /> */}
+
               </span>
             </div>
 

@@ -107,56 +107,56 @@ const Post = () => {
                         </div>
 
                         <div className="box_input-img">
-                            {product.mainImage ? (
-                              <img src={product.mainImage} alt="product" />
-                            ) : (
-                              <img src={imageicon} alt="default" />
-                            )}
-                            <input
-                              type="file"
-                              id={`img-${index}`}
-                              onChange={(e) => handleImage(e, index)}
-                              required
-                            />
+                          {product.mainImage ? (
+                            <img src={product.mainImage} alt="product" />
+                          ) : (
+                            <img src={imageicon} alt="default" />
+                          )}
+                          <input
+                            type="file"
+                            id={`img-${index}`}
+                            onChange={(e) => handleImage(e, index)}
+                            required
+                          />
                         </div>
 
                         <div className="edit_images">
-                            <label
-                              htmlFor={`img-${index}`}
-                              className="trigger_popup_fricc"
-                            >
-                              <CiCamera id="icon_ci_camera" />
-                            </label>
+                          <label
+                            htmlFor={`img-${index}`}
+                            className="trigger_popup_fricc"
+                          >
+                            <CiCamera id="icon_ci_camera" />
+                          </label>
                         </div>
                         <div className="box_container_image">
                         <div className="input-box">
-                            <div className="box">
-                                <input
-                                  type="text"
-                                  placeholder="Product Name"
-                                  value={product.productName}
-                                  onChange={(e) => handleProductName(e, index)}
-                                  required
-                                />
-                            </div>
-                            <div className="box">
-                                <input
-                                  type="text"
-                                  placeholder="Product Price"
-                                  value={product.price}
-                                  onChange={(e) => handleProductPrice(e, index)}
-                                  required
-                                />
-                            </div>
+                          <div className="box">
+                              <input
+                                type="text"
+                                placeholder="Product Name"
+                                value={product.productName}
+                                onChange={(e) => handleProductName(e, index)}
+                                required
+                              />
+                          </div>
+                          <div className="box">
+                              <input
+                                type="text"
+                                placeholder="Product Price"
+                                value={product.price}
+                                onChange={(e) => handleProductPrice(e, index)}
+                                required
+                              />
+                          </div>
                         </div>
                         <div className="box_popular">
-                            <label htmlFor={`popular-${index}`}>Popular</label>
-                            <input
-                              type="checkbox"
-                              id={`popular-${index}`}
-                              checked={product.popular}
-                              onChange={(e) => handlePopularChange(e, index)}
-                            />
+                          <label htmlFor={`popular-${index}`}>Popular</label>
+                          <input
+                            type="checkbox"
+                            id={`popular-${index}`}
+                            checked={product.popular}
+                            onChange={(e) => handlePopularChange(e, index)}
+                          />
                         </div>
                         </div>
                     </div>
