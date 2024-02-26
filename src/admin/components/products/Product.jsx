@@ -93,6 +93,7 @@ const Product = () => {
     setSelectedImages(updatedImages);
   };
 
+  ///Choose image handleImageBanner
   const handleImageBanner = (e) => {
     const file = e.target.files[0];
 
@@ -107,11 +108,13 @@ const Product = () => {
     }
   };
 
+
+  //// onClick icon edit product name
   const openConfirmationPopup = (productID) => {
-    setUpdateProductId(productID);
+    setUpdateProductId(productID.productName);
     setConfirmationPopupOpen(true);
   };
-
+  
   const closeConfirmationPopup = () => {
     setUpdateProductId(null);
     setConfirmationPopupOpen(false);
@@ -127,6 +130,8 @@ const Product = () => {
     }
   };
 
+
+  ///// onClick icon edit product price
   const openConfirmationPopupPrice = (productID) => {
     setUpdateProductId(productID);
     setConfirmationPopupOpenPrice(true);
@@ -146,6 +151,8 @@ const Product = () => {
       closeConfirmationPopupPrice();
     }
   };
+
+  
 
   return (
     <>
