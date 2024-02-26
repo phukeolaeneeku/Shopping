@@ -15,14 +15,14 @@ const Users = () => {
             userID: 1, 
             userName: "Sompong", 
             email: "sompong@gmail.com", 
-            image: []
+            image: [user]
         },
         {
             userID: 2, 
             userName: "Sompheng", 
             email: "sompheng@gmail.com", 
-            image: []
-        }
+            image: [user]
+        },
     ]);
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
@@ -68,7 +68,7 @@ const Users = () => {
                         <div key={user.userID}>
                             <div className='box_users_user' >
                                 <Link to='/users/user' className='box_user_text'>
-                                    <img src={users}alt="img" />
+                                    <img src={users} alt="img" />
                                     <div className='container_chat_name'>
                                         <h4>Name: {user.userName}</h4>
                                         <p>Eamil: {user.email}</p>

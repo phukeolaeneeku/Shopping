@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import acer from '../../../img/acer.png';
+import 깻잎 from "../../../img/깻잎.jpg";
+import 더덕무침 from "../../../img/더덕무침.jpg";
+import 멸치볶음 from "../../../img/멸치볶음.jpg";
 import Header from '../header/Header';
 import Menu from '../menu/Menu'
+import { AiOutlineDelete } from "react-icons/ai";
 
 import './cart.css';
 
 const Cart = () => {
   const [products, setProducts] = useState([
-    { productID: 1, productName: 'Product 1', productType: "clothes", description: 'This is product 1', colorName: "black", price: 10, images: [acer], size: "m"},
-    { productID: 2, productName: 'Product 2', productType: "clothes", description: 'This is product 2', colorName: "red", price: 20, images: [acer], size: "l" },
-    { productID: 3, productName: 'Product 3', productType: "clothes", description: 'This is product 3', colorName: "blue", price: 30, images: [acer], size: "xl" },
+    { productID: 1, productName: '깻잎', price: 10, images: [깻잎]},
+    { productID: 2, productName: '더덕무침', price: 20, images: [더덕무침]},
+    { productID: 3, productName: '멸치볶음', price: 30, images: [멸치볶음]},
   ]);
 
   const [price, setPrice] = useState(0);
@@ -31,12 +34,6 @@ const Cart = () => {
     setGrandTotal(grandTotal);
   }, [products, productCounts]);
 
-  
-  const handleInputChange = (e, index, field) => {
-    const updatedProducts = [...products];
-    updatedProducts[index][field] = e.target.value;
-    setProducts(updatedProducts);
-  };
 
   const incrementCount = (productID) => {
     setProductCounts((prevCounts) => ({
@@ -94,36 +91,29 @@ const Cart = () => {
                 <div className="box_item_image">
                   <img src={product.images[0]} alt='img'></img>
                   <div className='box_item_text'>
-                    <input
-                      type="text"
-                      value={product.productName}
-                      onChange={(e) => handleInputChange(e, index, "name")}
-                      className='name'
-                    />
-                    <input
-                      type="text"
-                      value={product.description}
-                      onChange={(e) => handleInputChange(e, index, "description")}
-                      className='description'
-                    />
-                    <input
-                      type="text"
-                      value={product.price}
-                      onChange={(e) => handleInputChange(e, index, "price")}
-                    />
+                    
+                    <p>Name: {product.productName}</p>
+                    <p>Price: ${product.price}</p>
                   </div>
                 </div>
-                <div className='box_item_icon'>
-                  <div className="icon_minus_plus" onClick={() => decrementCount(product.productID)}>-</div>
-                  <span>
-                    <input
-                      type="text"
-                      value={productCounts[product.productID] || 0}
-                      onChange={() => { }}
-                    />
-                  </span>
-                  <div className="icon_minus_plus" onClick={() => incrementCount(product.productID)}>+</div>
+                <div className='box_icon_order'>
+                  <div className="btnicon_delete_order" >
+                    <AiOutlineDelete id="btnicon_delete" />
+                  </div>
+
+                  <div className='box_item_icon'>
+                    <div className="icon_minus_plus" onClick={() => decrementCount(product.productID)}>-</div>
+                    <span>
+                      <input
+                        type="text"
+                        value={productCounts[product.productID] || 0}
+                        onChange={() => { }}
+                      />
+                    </span>
+                    <div className="icon_minus_plus" onClick={() => incrementCount(product.productID)}>+</div>
+                  </div>
                 </div>
+                
               </div>
             ))}
           </div>

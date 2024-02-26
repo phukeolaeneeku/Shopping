@@ -50,6 +50,7 @@ a {
     gap: 1rem;
     flex-direction: column;
     margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 .box_item_icon {
@@ -57,9 +58,33 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    margin-top: 7rem;
+    margin-top: 7.8rem;
     font-size: 22px;
 }
+/* icon delete*/
+
+#btnicon_delete {
+    font-size: 20px;
+    color: #FFF;
+}
+.box_icon_order {
+    position: relative;
+
+}
+
+.btnicon_delete_order {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: #FA442C;
+    border-radius: 8px;
+    justify-content: center;
+    padding: 7px;
+    top: 0;
+    right: 0;
+}
+
 
 /* Amount */
 .box_item_icon span {
@@ -197,10 +222,10 @@ a {
     }
 
     /* Text products */
-    .box_item_text {
+    /* .box_item_text {
         font-size: 10px;
         margin-left: 1rem;
-    }
+    } */
 
     .box_item_text .name,
     .box_item_text .description {
@@ -214,8 +239,8 @@ a {
     }
 
     .box_item_icon {
-        width: 30%;
-        margin-top: 3rem;
+        width: 100%;
+        margin-top: 3.8rem;
         font-size: 1.3rem;
     }
 

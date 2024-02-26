@@ -1,184 +1,183 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from "react";
 import AdminMenu from "../adminMenu/AdminMenu";
-import './post.css'
+import "./post.css";
 import imageicon from "../../../img/imageicon.jpg";
-import { HiMiniShoppingBag } from "react-icons/hi2";
-import { LuPlus } from "react-icons/lu";
-import { MdOutlineEdit } from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
-import { IoCameraSharp } from "react-icons/io5";
-import { FaPencil } from "react-icons/fa6";
 import { CiCamera } from "react-icons/ci";
+import {
+  HiOutlineShoppingBag as HiMiniShoppingBag,
+  HiPlus,
+} from "react-icons/hi";
 
 const Post = () => {
-    const [mainImage, setMainImage] = useState(null);
-    const [productName, setProductName] = useState('');
-    const [price, setPrice] = useState('');
-    const [popular, setPopular] = useState(false);
+  const [products, setProducts] = useState([
+    {
+      mainImage: null,
+      productName: "",
+      price: "",
+      popular: false,
+    },
+  ]);
 
-    
-    
-    // handle Product name
-    const handleProductName = (e) => {
-        const value = e.target.value
-        setProductName(value)
-    };
+  const handleProductName = (e, index) => {
+    const value = e.target.value;
+    const updatedProducts = [...products];
+    updatedProducts[index].productName = value;
+    setProducts(updatedProducts);
+  };
 
-    // handle Product price
-    const handleProductPrice = (e) => {
-        const value = e.target.value
-        setPrice(value)
-    };
+  const handleProductPrice = (e, index) => {
+    const value = e.target.value;
+    const updatedProducts = [...products];
+    updatedProducts[index].price = value;
+    setProducts(updatedProducts);
+  };
 
-    //popular
-    const handlePopularChange = (event) => {
-        setPopular(event.target.checked);
-    };
+  const handlePopularChange = (event, index) => {
+    const checked = event.target.checked;
+    const updatedProducts = [...products];
+    updatedProducts[index].popular = checked;
+    setProducts(updatedProducts);
+  };
 
-    // image handle
-    const handleImage = (e) => {
-        const file = e.target.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-
-            reader.onloadend = () => {
-                setMainImage([file]);
-            };
-
-            reader.readAsDataURL(file);
-        }
-    };
-
-    const handleonClick = (event) => {
-        event.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted!");
-        // Reset form fields and states after submission
-        setMainImage(null);
-        setProductName('');
-        setPrice('');
-        setPopular(false);
-    };
-
-
-    //////////Add form Post Porduct
-    const [val, setVal] = useState([]);
-
-    const handleAdd = () => {
-        const abc = [...val, []]
-        setVal(abc)
+  const handleImage = (e, index) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const updatedProducts = [...products];
+        updatedProducts[index].mainImage = reader.result;
+        setProducts(updatedProducts);
+      };
+      reader.readAsDataURL(file);
     }
+  };
 
-    const handleDelete = (i) => {
-        const deletVal = [...val]
-        deletVal.splice(i, 1)
-        setVal(deletVal)
-    }
+  const handleAdd = () => {
+    setProducts([
+      ...products,
+      {
+        mainImage: null,
+        productName: "",
+        price: "",
+        popular: false,
+      },
+    ]);
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        try {
-            const formData = new FormData();
-            formData.append("name", product.name);
-            formData.append("price", product.price);
-            
-        } catch (error) {
-            console.error("Error submitting form:", error);
-        }
-        console.log(product);
-    };
+  const handleDelete = (index) => {
+    const updatedProducts = [...products];
+    updatedProducts.splice(index, 1);
+    setProducts(updatedProducts);
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
 
-    return (
-        <>
-            <AdminMenu />
-            <section id="post">
-                <div className="boxcontainerSpan_Box"></div>
-                <div className="box_container_product">
-                    <div className="box_text">
-                        <h2>Post Product</h2>
-                    </div>
-                    
-                    <div className="group_container_product">
-                        {val.map((data, i) => {
-                            return (
-                                <div>
-                                    <div className="addProduct_box_content_afterThat">
-                                        <div className='deleteBox_productconotent' onClick={() => handleDelete(i)}><AiOutlineDelete /></div>
-                                        <div className="box_input-img">
-                                            <div className="img">
-                                                <label htmlFor="img">
-                                                    {(mainImage && mainImage.length > 0) ? <img src={URL.createObjectURL(mainImage[0])} /> : <img src={imageicon}></img>}
-                                                </label>
-                                                <input
-                                                    type="file"
-                                                    id="img"
-                                                    onChange={handleImage}
-                                                    required
-                                                />
-                                            </div>
-                                        </div>
-                                        
+    products.forEach((product, index) => {
+      console.log("Product:", product);
+      formData.append(`name${index}`, product.productName);
+      formData.append(`price${index}`, product.price);
+      formData.append(`popular${index}`, product.popular ? "Yes" : "No");
+      if (product.mainImage) {
+        formData.append(`image${index}`, product.mainImage);
+      }
+    });
+    console.log("FormData:", formData);
+  };
 
-                                        <div className="edit_image">
-                                            <a className="trigger_popup_fricc" >
-                                                <CiCamera id="icon_ci_camera"/>
-                                            </a>
-                                        </div>
-                                        <div className='box_container_image'>
-                                            <div className="input-box">
-                                                <div className="box">
-                                                    <input
-                                                        type="text"
-                                                        id="productName"
-                                                        placeholder="Product Name"
-                                                        value={productName}
-                                                        onChange={handleProductName}
-                                                        required
-                                                    />
-                                                </div>
-                                                <div className="box">
-                                                    <input
-                                                        type="text"
-                                                        id="price"
-                                                        placeholder="Product Price"
-                                                        value={price}
-                                                        onChange={handleProductPrice}
-                                                        required
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className='box_popular'>
-                                                <label htmlFor="box_popular">Popular</label>
-                                                <input
-                                                    type="checkbox"
-                                                    id="popular"
-                                                    name="popular"
-                                                    onChange={handlePopularChange}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                        <div onClick={() => handleAdd()} >
-                            <div className="iconimage">
-                                <HiMiniShoppingBag id="icon_shoppingbag"/>
-                                <LuPlus id='icon_goplus'/>
+  return (
+    <>
+      <AdminMenu />
+      <section id="post">
+        <div className="boxcontainerSpan_Box"></div>
+        <div className="box_container_product">
+            <div className="box_text">
+              <h2>Post Product</h2>
+            </div>
+
+            <div className="group_container_product">
+                {products.map((product, index) => (
+                  <div key={index}>
+                    <div className="addProduct_box_content_afterThat">
+                        <div className="deleteBox_productconotent"
+                          onClick={() => handleDelete(index)} >
+                          <AiOutlineDelete />
+                        </div>
+
+                        <div className="box_input-img">
+                            {product.mainImage ? (
+                              <img src={product.mainImage} alt="product" />
+                            ) : (
+                              <img src={imageicon} alt="default" />
+                            )}
+                            <input
+                              type="file"
+                              id={`img-${index}`}
+                              onChange={(e) => handleImage(e, index)}
+                              required
+                            />
+                        </div>
+
+                        <div className="edit_images">
+                            <label
+                              htmlFor={`img-${index}`}
+                              className="trigger_popup_fricc"
+                            >
+                              <CiCamera id="icon_ci_camera" />
+                            </label>
+                        </div>
+                        <div className="box_container_image">
+                        <div className="input-box">
+                            <div className="box">
+                                <input
+                                  type="text"
+                                  placeholder="Product Name"
+                                  value={product.productName}
+                                  onChange={(e) => handleProductName(e, index)}
+                                  required
+                                />
+                            </div>
+                            <div className="box">
+                                <input
+                                  type="text"
+                                  placeholder="Product Price"
+                                  value={product.price}
+                                  onChange={(e) => handleProductPrice(e, index)}
+                                  required
+                                />
                             </div>
                         </div>
+                        <div className="box_popular">
+                            <label htmlFor={`popular-${index}`}>Popular</label>
+                            <input
+                              type="checkbox"
+                              id={`popular-${index}`}
+                              checked={product.popular}
+                              onChange={(e) => handlePopularChange(e, index)}
+                            />
+                        </div>
+                        </div>
                     </div>
-                    <div className="btn_submit">
-                        <button type="submit">Post Product</button>
+                  </div>
+                ))}
+                <div onClick={handleAdd}>
+                    <div className="iconimage">
+                      <HiMiniShoppingBag id="icon_shoppingbag" />
+                      <HiPlus id="icon_goplus" />
                     </div>
-                    
                 </div>
-
-            </section>
-        </>
-    )
-}
+            </div>
+            <div className="btn_submit">
+              <button type="submit" onClick={handleSubmit}>
+                Post Product
+              </button>
+            </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default Post;
