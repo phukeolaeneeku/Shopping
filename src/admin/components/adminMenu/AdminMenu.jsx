@@ -99,16 +99,15 @@ const AdminMenu = () => {
               <p>Log Out</p>
             </div>
             {showConfirmation && (
-              <div className="confirmation-logout">
-                <p>Are you sure you want to logout?</p>
-                <div className="btn_ok_on">
-                  <button onClick={handleCancelLogout} className="btn_on">
-                    No
-                  </button>
-
-                  <button onClick={handleConfirmLogout} className="btn_yes">
-                    Yes
-                  </button>
+              <div className="background_addproductpopup_box">
+                <div className="hover_addproductpopup_box">
+                  <div className="box_logout">
+                    <p>Are you sure you want to logout?</p>
+                  </div>
+                  <div className="btn_foasdf">
+                    <button className='btn_cancel btn_addproducttxt_popup' onClick={handleCancelLogout}>Cancel</button>
+                    <button className='btn_confirm btn_addproducttxt_popup' onClick={handleConfirmLogout}>Yes</button>
+                  </div>
                 </div>
               </div>
             )}

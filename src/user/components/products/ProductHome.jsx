@@ -19,7 +19,7 @@ const ProductHome = () => {
       productName: "깻잎",
       price: 8.500,
       review: 50,
-      popular: true,
+      popular: false,
       images: [ { src: 깻잎 }],
     },
     {
@@ -27,7 +27,7 @@ const ProductHome = () => {
       productName: "더덕무침",
       price: 7.520,
       review: 45,
-      popular: true,
+      popular: false,
       images: [ { src: 더덕무침 }],
     },
     {
@@ -35,7 +35,7 @@ const ProductHome = () => {
       productName: "멸치볶음",
       price: 9.250,
       review: 30,
-      popular: true,
+      popular: false,
       images: [ { src: 멸치볶음 }],
     },
     {
@@ -71,40 +71,40 @@ const ProductHome = () => {
       images: [ { src: 파김치 }],
     },
   ]);
-  const [populars, setPopular] = useState([
-    {
-      productID: 8,
-      productName: "깻잎",
-      price: 8.500,
-      review: 100,
-      popular: true,
-      img: [ { src: 깻잎 }],
-    },
-    {
-      productID: 9,
-      productName: "더덕무침",
-      price: 7.520,
-      review: 150,
-      popular: true,
-      img: [ { src: 더덕무침 }],
-    },
-    {
-      productID: 10,
-      productName: "멸치볶음",
-      price: 9.250,
-      review: 190,
-      popular: true,
-      img: [ { src: 멸치볶음 }],
-    },
-    {
-      productID: 11,
-      productName: "진미채볶음",
-      price: 8.500,
-      review: 180,
-      popular: true,
-      img: [ { src: 진미채볶음 }],
-    }
-  ]);
+  // const [populars, setPopular] = useState([
+  //   {
+  //     productID: 8,
+  //     productName: "깻잎",
+  //     price: 8.500,
+  //     review: 100,
+  //     popular: true,
+  //     img: [ { src: 깻잎 }],
+  //   },
+  //   {
+  //     productID: 9,
+  //     productName: "더덕무침",
+  //     price: 7.520,
+  //     review: 150,
+  //     popular: true,
+  //     img: [ { src: 더덕무침 }],
+  //   },
+  //   {
+  //     productID: 10,
+  //     productName: "멸치볶음",
+  //     price: 9.250,
+  //     review: 190,
+  //     popular: true,
+  //     img: [ { src: 멸치볶음 }],
+  //   },
+  //   {
+  //     productID: 11,
+  //     productName: "진미채볶음",
+  //     price: 8.500,
+  //     review: 180,
+  //     popular: true,
+  //     img: [ { src: 진미채볶음 }],
+  //   }
+  // ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [showButton, setShowButton] = useState(true);
@@ -121,7 +121,7 @@ const ProductHome = () => {
 
   // Handle product
   const handleProduct = (sendProductID) => {
-    navigate("/product_search/productdetails", {
+    navigate("/productdetails", {
       state: { sendProductID: sendProductID },
     });
   };
@@ -132,46 +132,46 @@ const ProductHome = () => {
       <section id="product">
         <div className="productHead_content">
           <h1 className="htxthead">
-            <span className="spennofStyle"></span>Popular side dishes
+            <span className="spennofStyle"></span>POPULAR MENU
           </h1>
         </div>
         <div className="contentImageProducts">
-          {populars.map((popular, i) => (
-            <div key={i}>
-              <div className="group_itemBox">
-                <div className="img">
-                  <img src={popular.img[0].src} alt="img" />
+          {products.map(
+            (product, index) => (
+              product.popular &&(
+                <div key={index}>
+                  <div className="group_itemBox" onClick={() => handleProduct(product.productID)}>
+                    <div className="img">
+                      <img src={product.images[0].src} alt="img" />
+                    </div>
+                    <div className="box_cart_search">
+                      <FaCartShopping className="box_icon_search" />
+                    </div> 
+                    <div className="txtOFproduct">
+                      <h4>
+                      {product.productName}
+                      </h4>
+                      <p>
+                        $ ${product.price}
+                      </p>
+                      <p>Review: {product.review}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="box_cart_search">
-                  <FaCartShopping className="box_icon_search" />
-                </div> 
-                <div className="txtOFproduct">
-                  <h4>
-                  {popular.productName}
-                  </h4>
-                  <p>
-                    $ ${popular.price}
-                  </p>
-                  <p>Review: {popular.review}</p>
-                </div>
-              </div>
-            </div>
+              )
           ))}
         </div>
 
         <div className="content_itemBox">
           <div className="container_product">
             <h3 className="htxthead">
-              <span className="spennofStyle"></span>All Product
+              <span className="spennofStyle"></span>ALL MENU
             </h3>
           </div>
           <div className="contentImageProducts">
             {products.map((product, index) => (
               <div key={index}>
-                <div
-                  className="group_itemBox"
-                  onClick={() => handleProduct(product.productID)}
-                >
+                <div className="group_itemBox" onClick={() => handleProduct(product.productID)} >
                   <div className="img">
                     <img src={product.images[0].src} alt="img" />
                   </div>

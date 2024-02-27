@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../header/Banner";
-import Category from "./Category";
 import ProductHome from "../products/ProductHome";
 import Menu from "../menu/Menu";
 import "./home.css";

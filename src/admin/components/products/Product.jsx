@@ -120,15 +120,15 @@ const Product = () => {
     setConfirmationPopupOpen(false);
   };
 
-  const updateProduct = () => {
-    if (updateProductId !== null) {
-      const updatedProducts = products.filter(
-        (product) => product.productID !== updateProductId
-      );
-      setProducts(updatedProducts);
-      closeConfirmationPopup();
-    }
-  };
+  // const updateProduct = () => {
+  //   if (updateProductId !== null) {
+  //     const updatedProducts = products.filter(
+  //       (product) => product.productID !== updateProductId
+  //     );
+  //     setProducts(updatedProducts);
+  //     closeConfirmationPopup();
+  //   }
+  // };
 
 
   ///// onClick icon edit product price
@@ -142,15 +142,15 @@ const Product = () => {
     setConfirmationPopupOpenPrice(false);
   };
 
-  const updatePrice = () => {
-    if (updateProductId !== null) {
-      const updatedProducts = products.filter(
-        (product) => product.productID !== updateProductId
-      );
-      setProducts(updatedProducts);
-      closeConfirmationPopupPrice();
-    }
-  };
+  // const updatePrice = () => {
+  //   if (updateProductId !== null) {
+  //     const updatedProducts = products.filter(
+  //       (product) => product.productID !== updateProductId
+  //     );
+  //     setProducts(updatedProducts);
+  //     closeConfirmationPopupPrice();
+  //   }
+  // };
 
   
 
@@ -324,38 +324,41 @@ const Product = () => {
               ))}
             </div>
           </div>
+
           {isConfirmationPopupOpen && (
-            <div className="confirmation-popup">
-              <p>Please enter the product name?</p>
-              <input 
-                type="text" 
-                placeholder="Product name..."
-              />
-              <div className="btn_ok_on">
-                <button onClick={closeConfirmationPopup} className="btn_on">
-                  Cancle
-                </button>
-                <button onClick={updateProduct} className="btn_yes">
-                  Update
-                </button>
+            <div className="background_addproductpopup_box">
+              <div className="hover_addproductpopup_box">
+                  <div className="box_input">
+                      <p>Edit product name</p>
+                      <input 
+                        type="text" 
+                        placeholder="Product name..."  
+                        className='input_of_txtAddproduct' 
+                      />
+                  </div>
+                  <div className="btn_foasdf">
+                      <button className='btn_cancel btn_addproducttxt_popup' onClick={closeConfirmationPopup}>Cancel</button>
+                      <button className='btn_confirm btn_addproducttxt_popup'>Update</button>
+                  </div>
               </div>
             </div>
           )}
 
           {isConfirmationPopupOpenPrice && (
-            <div className="confirmation-popup">
-              <p>Please enter the product price?</p>
-              <input 
-                type="text" 
-                placeholder="Product price..."
-              />
-              <div className="btn_ok_on">
-                <button onClick={closeConfirmationPopupPrice} className="btn_on">
-                  Cancle
-                </button>
-                <button onClick={updatePrice} className="btn_yes">
-                  Update
-                </button>
+            <div className="background_addproductpopup_box">
+              <div className="hover_addproductpopup_box">
+                  <div className="box_input">
+                      <p>Edit product price</p>
+                      <input 
+                        type="text" 
+                        placeholder="Product price..."  
+                        className='input_of_txtAddproduct' 
+                      />
+                  </div>
+                  <div className="btn_foasdf">
+                      <button className='btn_cancel btn_addproducttxt_popup' onClick={closeConfirmationPopupPrice}>Cancel</button>
+                      <button className='btn_confirm btn_addproducttxt_popup'>Update</button>
+                  </div>
               </div>
             </div>
           )}

@@ -15,11 +15,8 @@ import Post from "../admin/components/post/Post";
 
 /* ============================== */
 import Login from '../user/components/login_register/Login';
-import AlertLogin from '../user/components/login_register/AlertLogin';
-import AlertSignup from '../user/components/login_register/AlertSignup';
 import Register from "../user/components/login_register/Register";
 import Order from "../user/components/order/Order";
-import Product_search from "../user/components/products/Product_search";
 import ProductDetails from "../user/components/products/ProductDetails";
 import OrderPage from "../admin/components/orderPage/OrderPage";
 import OrderBill from "../admin/components/orderPage/OrderBill";
@@ -34,7 +31,6 @@ import User from "../admin/components/menagerUser/User";
 import Admin from "../admin/components/menagerAdmin/admin";
 import AddAdmin from "../admin/components/menagerAdmin/AddAdmin";
 import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
-import AddProduct from "../admin/components/products/Addproduct";
 
 
 const Links = () => {
@@ -56,13 +52,10 @@ const Links = () => {
                 <Route exact path="/text" Component={Text}/>
 
                 {/*====================== */}
-                <Route exact path="/product_search" Component={Product_search}/>
-                <Route exact path="/product_search/productdetails" Component={ProductDetails}/>
+                <Route exact path="/productdetails" Component={ProductDetails}/>
                 <Route exact path="/login" Component={Login}/>
                 <Route exact path="/register" Component={Register}/>
                 <Route exact path="/cart" Component={Cart}/>
-                <Route exact path="/alertLogin" Component={AlertLogin}/>
-                <Route exact path="/alertSignup" Component={AlertSignup}/>
                 <Route exact path="/forgotpassword" Component={ForgotPassword}/>
 
                 {/* Admin routes */}
@@ -77,8 +70,6 @@ const Links = () => {
                 <Route exact path="/admins/admin" Component={Admin}/>
                 <Route exact path="/addadmin" Component={AddAdmin}/>
                 <Route exact path="/adminacount" Component={Admin_acount}/>
-                <Route exact path="/addproduct" Component={AddProduct}/>
-
             </Routes>
         </Router>
     );
