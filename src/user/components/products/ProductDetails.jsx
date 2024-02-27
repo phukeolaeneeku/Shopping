@@ -20,7 +20,7 @@ function ProductDetails() {
       productName: "깻잎",
       price: 8.500,
       review: 50,
-      popular: true,
+      popular: false,
       images: [ { src: 깻잎 }],
     },
     {
@@ -28,7 +28,7 @@ function ProductDetails() {
       productName: "더덕무침",
       price: 7.520,
       review: 45,
-      popular: true,
+      popular: false,
       images: [ { src: 더덕무침 }],
     },
     {
@@ -36,7 +36,7 @@ function ProductDetails() {
       productName: "멸치볶음",
       price: 9.250,
       review: 30,
-      popular: true,
+      popular: false,
       images: [ { src: 멸치볶음 }],
     },
     {
@@ -165,8 +165,8 @@ function ProductDetails() {
 
             <form onSubmit={handleSubmit}>
               <div className="txtContentproduct">
-                <h1 className="txt_nameP">{product.productName}</h1>
-                <p className="money_txt">${product.price}</p>
+                <h1 className="txt_nameP">Name: {product.productName}</h1>
+                <p className="money_txt">Price: ${product.price}</p>
                 
                 <p className="txt_description">Review: {product.review}</p>
 

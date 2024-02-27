@@ -16,6 +16,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineEdit } from "react-icons/md";
 import { CiCamera } from "react-icons/ci";
 import banner1 from "../../../img/banner1.png";
+import imageicon from "../../../img/imageicon.jpg";
 
 const Product = () => {
   const [products, setProducts] = useState([
@@ -82,8 +83,8 @@ const Product = () => {
   );
   const [updateProductId, setUpdateProductId] = useState(null);
   const [isConfirmationPopupOpen, setConfirmationPopupOpen] = useState(false);
-  const [isConfirmationPopupOpenPrice, setConfirmationPopupOpenPrice] =
-    useState(false);
+  const [isConfirmationPopupOpenPrice, setConfirmationPopupOpenPrice] = useState(false);
+  const [isConfirmationPopupOpenImage, setConfirmationPopupOpenImage] = useState(false);
   const [mainImageBanner, setMainImageBanner] = useState(null);
 
   const handleImage = (event, index) => {
@@ -120,6 +121,30 @@ const Product = () => {
     setConfirmationPopupOpen(false);
   };
 
+
+
+  //// onClick icon camera product image
+  const openConfirmationPopupImage = (productID) => {
+    setUpdateProductId(productID.images);
+    setConfirmationPopupOpenImage(true);
+  };
+  
+  const closeConfirmationPopupImage = () => {
+    setUpdateProductId(null);
+    setConfirmationPopupOpenImage(false);
+  };
+
+  //// onClick icon camera banner image
+  const openConfirmationPopupBanner = (e) => {
+    setUpdateProductId(e.images);
+    setConfirmationPopupOpenBanner(true);
+  };
+  
+  const closeConfirmationPopupBanner = () => {
+    setUpdateProductId(null);
+    setConfirmationPopupOpenBanner(false);
+  };
+
   // const updateProduct = () => {
   //   if (updateProductId !== null) {
   //     const updatedProducts = products.filter(
@@ -133,7 +158,7 @@ const Product = () => {
 
   ///// onClick icon edit product price
   const openConfirmationPopupPrice = (productID) => {
-    setUpdateProductId(productID);
+    setUpdateProductId(productID.price);
     setConfirmationPopupOpenPrice(true);
   };
 
@@ -199,12 +224,13 @@ const Product = () => {
                 </div>
               </div>
             </div>
-            <div className="edit_image_banner">
+            <div className="edit_image_banner" >
               <label htmlFor="img" className="trigger_popup_fricc">
                 <CiCamera id="box_icon_camera" />
               </label>
             </div>
           </div>
+          
 
           <div id="container_product_admin">
             <div className="productHead_content">
@@ -212,6 +238,7 @@ const Product = () => {
                 <span className="spennofStyle"></span>POPULAR MENU
               </h1>
             </div>
+            
             <div className="contentImageProducts">
               {products.map(
                 (product, index) =>
@@ -227,24 +254,45 @@ const Product = () => {
                           ) : (
                             <img src={product.images[0].src} alt="Product" />
                           )}
-                          <input
-                            type="file"
-                            id={`image-${index}`}
-                            onChange={(e) => handleImage(e, index)}
-                            required
-                          />
                         </div>
 
-                        <div className="edit_image_product">
-                          <label htmlFor={`image-${index}`}>
-                            <CiCamera id="box_icon_camera_product" />
-                          </label>
+                        <div className="edit_image_product" onClick={() => openConfirmationPopupImage(product.productID) }>
+                          <CiCamera id="box_icon_camera_product" />
                         </div>
                       </div>
 
+                      {isConfirmationPopupOpenImage && (
+                        <div className="background_addproductpopup_box">
+                          <div className="hover_addproductpopup_box_image">
+                              <div className="box_input_image">
+                                <p>Edit product image</p>
+                                  <label htmlFor={`image-${index}`}>
+                                    {selectedImages[index] ? (
+                                      <img
+                                        src={URL.createObjectURL(selectedImages[index])}
+                                        alt="product"
+                                      />
+                                    ) : (
+                                      <img src={imageicon} alt="product" />
+                                    )}
+                                    <input 
+                                      type="file"
+                                      id={`image-${index}`}
+                                      onChange={(e) => handleImage(e, index)}
+                                      required 
+                                    />
+                                  </label>
+                              </div>
+                              <div className="btn_foasdf">
+                                <button className='btn_cancel btn_addproducttxt_popup' onClick={closeConfirmationPopupImage}>Cancel</button>
+                                <button className='btn_confirm btn_addproducttxt_popup'>Update</button>
+                              </div>
+                          </div>
+                        </div>
+                      )}
+
                       <div className="txtOFproduct">
-                        <div
-                          className="box_icon_MdOutlineEdit"
+                        <div className="box_icon_MdOutlineEdit"
                           onClick={() =>
                             openConfirmationPopup(product.productID)
                           }
@@ -252,8 +300,7 @@ const Product = () => {
                           <li>ProductName: {product.productName}</li>
                           <MdOutlineEdit id="icon_edit" />
                         </div>
-                        <div
-                          className="box_icon_MdOutlineEdit"
+                        <div className="box_icon_MdOutlineEdit"
                           onClick={() =>
                             openConfirmationPopupPrice(product.productID)
                           }
@@ -295,10 +342,10 @@ const Product = () => {
                       />
                     </div>
 
-                    <div className="edit_image_product">
-                      <label htmlFor={`image-${index}`}>
+                    <div className="edit_image_product" onClick={() => openConfirmationPopupImage(product.productID) }>
+                      {/* <label htmlFor={`image-${index}`}> */}
                         <CiCamera id="box_icon_camera_product" />
-                      </label>
+                      {/* </label> */}
                     </div>
                   </div>
 

@@ -23,8 +23,6 @@ a {
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-
-
 .box_add_product{
     display: flex;
     gap: 0.5rem;
@@ -639,6 +637,41 @@ input:focus {
     border-radius: 10px;
 }
 
+.hover_addproductpopup_box_image {
+    width: 35%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box_input_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 45vh;
+    background-color: #FFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.box_input_image input{
+    width: 80%;
+    padding: 16px 0;
+    display: none;
+}
+.box_input_image img{
+    width: 50%;
+    height: 58px;
+    padding: 16px 0;
+    /* border: solid 1px red; */
+}
+.box_input_image p{
+    font-size: 18px;
+}
 
 .btn_cancel {
     background-color: #F2F3F7;

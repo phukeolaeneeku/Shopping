@@ -60,7 +60,7 @@ const Header = ({ handleSearch }) => {
                 {/* Here is search bar */}
                 <input
                   type="text"
-                  placeholder="Search products ..........."
+                  placeholder="Search products ..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -72,6 +72,7 @@ const Header = ({ handleSearch }) => {
                     <FaCartShopping className="head_colorr" />
                   </Link>
               </div>
+              <div className="icon_account_login">
                 <div>
                   <Link to="/account">
                     <FaRegUser className="head_colorr" />
@@ -79,11 +80,12 @@ const Header = ({ handleSearch }) => {
                 </div>
                 <div>
                   <Link to="/login" className="head_colorr">
-                    Login
+                    <p>Login</p>
+                    
                     <BiLogIn className="login" />
                   </Link>
                 </div>
-
+              </div>
             </div>
           </div>
         </div>

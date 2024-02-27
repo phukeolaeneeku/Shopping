@@ -64,47 +64,13 @@ const ProductHome = () => {
     }, 
     {
       productID: 7,
-      productName: "파김치.jgp",
+      productName: "파김치",
       price: 11.500,
       review: 25,
       popular: true,
       images: [ { src: 파김치 }],
     },
   ]);
-  // const [populars, setPopular] = useState([
-  //   {
-  //     productID: 8,
-  //     productName: "깻잎",
-  //     price: 8.500,
-  //     review: 100,
-  //     popular: true,
-  //     img: [ { src: 깻잎 }],
-  //   },
-  //   {
-  //     productID: 9,
-  //     productName: "더덕무침",
-  //     price: 7.520,
-  //     review: 150,
-  //     popular: true,
-  //     img: [ { src: 더덕무침 }],
-  //   },
-  //   {
-  //     productID: 10,
-  //     productName: "멸치볶음",
-  //     price: 9.250,
-  //     review: 190,
-  //     popular: true,
-  //     img: [ { src: 멸치볶음 }],
-  //   },
-  //   {
-  //     productID: 11,
-  //     productName: "진미채볶음",
-  //     price: 8.500,
-  //     review: 180,
-  //     popular: true,
-  //     img: [ { src: 진미채볶음 }],
-  //   }
-  // ]);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [showButton, setShowButton] = useState(true);
@@ -129,13 +95,13 @@ const ProductHome = () => {
   return (
     <div>
       <Header handleSearch={handleSearch}/>
-      <section id="product">
+      <section id="product1">
         <div className="productHead_content">
           <h1 className="htxthead">
             <span className="spennofStyle"></span>POPULAR MENU
           </h1>
         </div>
-        <div className="contentImageProducts">
+        <div className="contentImageProducts1">
           {products.map(
             (product, index) => (
               product.popular &&(
@@ -144,15 +110,15 @@ const ProductHome = () => {
                     <div className="img">
                       <img src={product.images[0].src} alt="img" />
                     </div>
-                    <div className="box_cart_search">
+                    <div className="box_cart_searchs">
                       <FaCartShopping className="box_icon_search" />
                     </div> 
                     <div className="txtOFproduct">
                       <h4>
-                      {product.productName}
+                       {product.productName}
                       </h4>
                       <p>
-                        $ ${product.price}
+                         ${product.price}
                       </p>
                       <p>Review: {product.review}</p>
                     </div>
@@ -168,14 +134,14 @@ const ProductHome = () => {
               <span className="spennofStyle"></span>ALL MENU
             </h3>
           </div>
-          <div className="contentImageProducts">
+          <div className="contentImageProducts2">
             {products.map((product, index) => (
               <div key={index}>
                 <div className="group_itemBox" onClick={() => handleProduct(product.productID)} >
                   <div className="img">
                     <img src={product.images[0].src} alt="img" />
                   </div>
-                  <div className="box_cart_search">
+                  <div className="box_cart_searchs">
                     <FaCartShopping className="box_icon_search" />
                   </div> 
                   <div className="txtOFproduct">
@@ -183,7 +149,7 @@ const ProductHome = () => {
                       {product.productName}
                     </h4>
                     <p>
-                      $ {product.price} 
+                       ${product.price} 
                     </p>
                     <p>Review: {product.review}</p>
                   </div>

@@ -29,6 +29,11 @@
     height: 40px;
 }
 
+.icon_account_login{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
 
 .headMenu {
     gap: 1rem;
@@ -251,6 +256,12 @@
 
     .headMenu .logo1 img {
         width: 80%;
+    }
+    .head_colorr p{
+        display: none;
+    }
+    .icon_account_login{
+        gap: 5px;
     }
 
 }

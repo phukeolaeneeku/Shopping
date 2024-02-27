@@ -6,6 +6,7 @@ import { MdArrowBack } from "react-icons/md";
 const LoginUser = () => {
   const login_en = "Login";
   
+  
   return (
     <>
       <section>
@@ -22,12 +23,14 @@ const LoginUser = () => {
                 className="input_form"
                 type="email"
                 placeholder="Enter Your Email"
+                required
               />
               <label>Password</label>
               <input
                 className="input_form"
                 type="password"
                 placeholder="Enter Your Password"
+                required
               />
             </div>
 
@@ -39,7 +42,7 @@ const LoginUser = () => {
             </div>
 
             <div className="loginbtn_login">
-              <Link type="submit" className="login_btn" >
+              <Link type="submit" className="login_btn">
                 Login
               </Link>
             </div>
