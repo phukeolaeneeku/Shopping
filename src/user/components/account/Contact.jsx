@@ -5,6 +5,8 @@ import user from "../../../img/user.png";
 import Menu from "../menu/Menu";
 import Header from "../header/Header";
 import { Link } from "react-router-dom";
+import { CiCamera } from "react-icons/ci";
+
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -102,7 +104,10 @@ const Contact = () => {
                 </span>
               )}
               <input id="choose-image" type="file" onChange={handleImage} />
-              <label htmlFor="choose-image">Edit</label>
+              <label htmlFor="choose-image" className="trigger_popup_account">
+                <CiCamera id="box_icon_camera_account" />
+              </label>
+
             </div>
             <div className="contact">
               <label htmlFor="name">Change name:</label>
@@ -110,7 +115,7 @@ const Contact = () => {
                 type="text"
                 id="name"
                 value={name}
-                placeholder="Your name here"
+                placeholder="Change your name"
                 onChange={handleName}
               />
             </div>
@@ -119,7 +124,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                placeholder="...@example.com"
+                placeholder="Change your email"
                 value={email}
                 onChange={handleEmail}
               />
@@ -129,7 +134,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="phone"
-                placeholder=".....9972"
+                placeholder="Change your phone"
                 value={phone}
                 onChange={handlePhone}
               />
@@ -146,7 +151,7 @@ const Contact = () => {
                   (!profile || profile.length === 0)
                 }
               >
-                Done
+                Changes
               </button>
               {/* {(email || phone) && (<button type="submit">Done</button>)} The button will show when user input information */}
             </div>

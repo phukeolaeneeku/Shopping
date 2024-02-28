@@ -107,7 +107,7 @@ const Bill = () => {
         </Link>
         {filteredOrders.map((order) => (
           <div className="bill-detial newspanBox" key={order.orderID}>
-            <div className="logo_image">
+            <div className="logo_image_bill">
               <div className="name_store"><div><img src={storename} alt="Logo" /></div></div>
               <div className="logo_store"><Link to="/"><img src={Logo} alt="Logo" /></Link></div>
             </div>
@@ -130,7 +130,6 @@ const Bill = () => {
                     <th>Name</th>
                     <th>Price</th>
                     <th>Amount</th>
-                    {/* <th>Discount</th> */}
                     <th>delivery</th>
                   </tr>
                 </thead>
@@ -147,7 +146,6 @@ const Bill = () => {
                       <td>{product.productName}</td>
                       <td>${product.price}</td>
                       <td>{product.amount}</td>
-                      {/* <td>..</td> */}
                       <td>${product.delivery}</td>
                     </tr>
                   </tbody>

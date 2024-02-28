@@ -4,10 +4,12 @@
 }
 .header_boxBack {
     margin-left: 10rem;
+    font-size: 18px;
 }
 
 .headerTiele {
     text-align: center;
+    margin-top: -0.5rem;
 }
 
 /* Account infofation */
@@ -30,6 +32,28 @@
     border: 2px solid #0009;
     border-radius: 50%;
     overflow: hidden;
+    position: relative;
+    
+}
+
+.trigger_popup_account {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    margin-left: 2rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: solid 1px #f46738;
+    border-radius: 10px;
+    padding: 1px 6px 0 6px;
+    font-size: 20px;
+}
+#box_icon_camera_account{
+    color: #444;
 }
 
 #account .personal-info .profile .box-image img {
@@ -79,8 +103,11 @@
 #account .personal-info .about-account a {
     /* This incloud logout and delete button */
     text-decoration: none;
-    color: #fc0000;
     font-size: 1.3rem;
+}
+#account .personal-info .about-account a:hover {
+    color: #fc0000;
+    transition: 0.5s;
 }
 
 /* Down here is logout button */
@@ -89,8 +116,8 @@
     width: 13%;
     padding: 0.3em 1.2rem;
     border: none !important;
-    border-radius: 7px;
-    background-color: #4395F7;
+    border-radius: 5px;
+    background-color: #FF5733;
 }
 
 #account .personal-info .about-account .logout .icon-logout {
@@ -111,15 +138,21 @@
 }
 
 #account .personal-info .contact-info .contact {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    gap: 0.5rem;
+    justify-content: center;
     font-size: 1.3rem;
+}
+#account .personal-info .contact-info .contact label {
+    width: 150px;
 }
 
 #account .personal-info .contact-info .contact input {
-    /*====================*/
     width: 90%;
-    border: none;
+    padding: 0 15px;
+    text-align: end;
+    font-size: 17px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -153,6 +186,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 
 #account .personal-info .contact-info .box-image #choose-image {
@@ -175,12 +209,16 @@
     cursor: pointer;
     border: none;
     background: none;
-    border-radius: 10px;
-    background: #2E86C1;
-    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    background: #FF5733;
+    padding: 0.5rem 2.5rem;
     color: #ffffff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
+
+
+
+
 
 
 @media (max-width: 820px) {
@@ -207,7 +245,7 @@
     }
 
     #account .personal-info .contact-info .contact {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     #account .personal-info .contact-info .contact input {
@@ -232,8 +270,27 @@
     #account .personal-info .contact-info {
         padding: 0 20px;
     }
-    #account .personal-info .contact-info .contact {
-        justify-content: left;
-        gap: 1rem;
+    #account .personal-info .contact-info .contact input {
+        width: 100%;
+        display: flex;
+        padding: 0 1px;
+    }
+    #account .personal-info .contact-info .contact label {
+        width: 70%;
+    }
+
+    .trigger_popup_account {
+       margin-top: 2rem
+    }
+
+    #account .personal-info .about-account .logout {
+        width: 38%;
+        padding: 0.2em 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .headerTiele{
+        margin-top: -1.5rem;
     }
 }

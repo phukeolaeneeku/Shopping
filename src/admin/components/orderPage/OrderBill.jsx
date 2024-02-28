@@ -14,21 +14,17 @@ const OrderBill = () => {
       products: [
         {
           productID: 1,
-          productName: "pro1",
-          productType: "clothes",
+          productName: "Sesame",
           amount: 2,
-          color: "colW",
-          price: 10,
-          size: "m",
+          price: 15,
+          delivery: 2.300
         },
         {
           productID: 2,
-          productName: "pro1",
-          productType: "clothes",
+          productName: "Seasoned",
           amount: 2,
-          color: "colB",
           price: 10,
-          size: "m",
+          delivery: 3.500
         },
       ],
       orderDate: "10/12/2023",
@@ -42,31 +38,25 @@ const OrderBill = () => {
       products: [
         {
           productID: 1,
-          productName: "pro1",
-          productType: "clothes",
+          productName: "Nike",
           amount: 2,
           price: 10,
-          color: "colB",
-          size: "m",
+          delivery: 3.00
         },
         {
           productID: 2,
-          productName: "pro2",
-          productType: "clothes",
+          productName: "Food",
           amount: 2,
-          price: 10,
-          color: "colW",
-          size: "l",
+          price: 100,
+          delivery: 3.100
         },
 
         {
           productID: 3,
-          productName: "pro3",
-          productType: "clothes",
+          productName: "Food2",
           amount: 2,
           price: 10,
-          color: "colBlue",
-          size: "xl",
+          delivery: 1.200
         },
       ],
       orderDate: "10/12/2023",
@@ -80,21 +70,17 @@ const OrderBill = () => {
       products: [
         {
           productID: 1,
-          productName: "pro1",
-          productType: "clothes",
+          productName: "Food3",
           amount: 2,
           price: 10,
-          color: "colB",
-          size: "m",
+          delivery: 2.100
         },
         {
-          productID: 2,
-          productName: "pro1",
-          productType: "clothes",
+          productID: 1,
+          productName: "Food4",
           amount: 2,
-          price: 10,
-          color: "colBlue",
-          size: "m",
+          price: 120,
+          delivery: 4.100
         },
       ],
       orderDate: "10/12/2023",
@@ -108,21 +94,17 @@ const OrderBill = () => {
       products: [
         {
           productID: 1,
-          productName: "pro1",
-          productType: "clothes",
+          productName: "Food5",
           amount: 2,
-          price: 10,
-          color: "colB",
-          size: "m",
+          price: 150,
+          delivery: 2.800
         },
         {
-          productID: 2,
-          productName: "pro1",
-          productType: "clothes",
+          productID: 1,
+          productName: "Food6",
           amount: 2,
           price: 10,
-          color: "colBlue",
-          size: "m",
+          delivery: 2.900
         },
       ],
       orderDate: "10/12/2023",
@@ -130,7 +112,56 @@ const OrderBill = () => {
       payment: "Bcel One",
       delivery: "Anousit",
     },
-  ]);
+    {
+      orderID: 5,
+      userID: 4,
+      products: [
+        {
+          productID: 1,
+          productName: "Food7",
+          amount: 2,
+          price: 170,
+          delivery: 3.100
+        },
+        {
+          productID: 1,
+          productName: "Food8",
+          amount: 2,
+          price: 10,
+          delivery: 2.100
+        },
+      ],
+      orderDate: "10/12/2023",
+      status: "pending",
+      payment: "Bcel One",
+      delivery: "Anousit",
+    },
+    {
+      orderID: 6,
+      userID: 5,
+      products: [
+        {
+          productID: 1,
+          productName: "Food9",
+          amount: 2,
+          price: 190,
+          delivery: 4.100
+        },
+        {
+          productID: 1,
+          productName: "Food10",
+          amount: 2,
+          price: 10,
+          delivery: 5.100
+        },
+      ],
+      orderDate: "10/12/2023",
+      status: "pending",
+      payment: "Bcel One",
+      delivery: "Anousit",
+    },
+    
+]);
 
   // users
   const [users, setUsers] = useState([
@@ -147,13 +178,12 @@ const OrderBill = () => {
 
       // Calculate total price
       const totalPrice = order.products.reduce((total, product) => {
-        return total + product.price * product.amount;
+        return total + product.price * product.amount + product.delivery;
       }, 0);
 
       return {
         orderID: order.orderID,
         userID: order.userID,
-        userName: user.name,
         products: order.products,
         orderDate: order.orderDate,
         status: order.status,
@@ -193,8 +223,8 @@ const OrderBill = () => {
 
         {filteredOrders.map((order) => (
           <div className="abill-detial" key={order.orderID}>
-            <div className='container_add_admin'>
-              <Link to="/orderpage" className='box_guopIconbAck'>
+            <div className='box_icon_backOrderbill'>
+              <Link to="/orderpage" className='box_link_orderpage'>
                 <FaAngleLeft id='box_icon_Back' />
                 <p>Back</p>
               </Link>
@@ -204,8 +234,6 @@ const OrderBill = () => {
             <div className="aguopoidHead">
               <div className="aidf">
                 <p>OrderID: {order.orderID}</p>
-                <p>UserID: {order.userID}</p>
-                <p>Name: {order.userName}</p>
               </div>
             </div>
             <hr />
@@ -216,8 +244,7 @@ const OrderBill = () => {
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Amount</th>
-                    <th>Color</th>
-                    <th>Size</th>
+                    <th>Delivery</th>
                   </tr>
                 </thead>
                 {order.products.map((product) => (
@@ -226,8 +253,7 @@ const OrderBill = () => {
                       <td>{product.productName}</td>
                       <td>${product.price}</td>
                       <td>{product.amount}</td>
-                      <td>{product.color}</td>
-                      <td>{product.size}</td>
+                      <td>${product.delivery}</td>
                     </tr>
                   </tbody>
                 ))}
@@ -235,7 +261,7 @@ const OrderBill = () => {
             </div>
             <hr />
             <div className="atitlePrice">
-              <p>Total:</p>
+              <h3>Total:</h3>
               <p>${order.totalPrice}</p>
             </div>
             <div className="aplace-on">

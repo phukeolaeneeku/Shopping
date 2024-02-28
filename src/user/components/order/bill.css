@@ -15,7 +15,7 @@
     font-size: 45px;
     color: #347FFF;
 }
-.logo_image{
+.logo_image_bill{
     display: none;
 }
 
@@ -132,6 +132,24 @@
     cursor: pointer;
 }
 
+.box_icon_backOrderbill{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box_link_orderpage{
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    font-size: 18px;
+    margin: 1.5rem 0;
+}
+#box_icon_Back{
+    width: 20px;
+    height: 20px;
+}
+
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
@@ -156,43 +174,15 @@
     #bill .bill-detial .place-on span p:last-child {
         padding-left: 0.2rem;
     }
-    .logo_image{
+    .logo_image_bill{
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
-    /* .billGopBox{
-        display: flex;
-    }
-    .billGopBox table{
-        display: block;
-    }
-    .billGopBox table tr {
-        display: block;
-    }
-    .billGopBox table tr th {
-        display: block;
-    }
-    .billGopBox table tr td {
-        display: block;
-    }
-    .hr{
-        display: none;
-    }
-    .box_btn_product{
-        gap: 0.5rem;
-        margin-left: -0.5rem;
-    }
-    .btn_delete_save{
-        gap: 0.5rem;
-    }
-    .btn_select_all{
-        gap: 0.5rem;
-    } */
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 431px) {
     #bill {
         width: 100%;
         padding: 10px;
@@ -211,25 +201,6 @@
     .billGopBox{
         margin-top: -0.5rem;
     }
-    /* .billGopBox{
-        display: flex;
-    }
-    .billGopBox table{
-        display: flex;
-    }
-    .billGopBox table tr {
-        width: 100%;
-        padding: 0 20px;
-        display: block;
-    }
-    .billGopBox table tr th {
-        display: block;
-        padding: 5px 5px;
-    }
-    .billGopBox table tr td {
-        display: block;
-        padding: 5px 5px;
-    } */
     .hr{
         display: none;
     }

@@ -15,19 +15,17 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Sesame",
               amount: 2,
               price: 10,
-              size: "m",
+              delivery: 2.300
             },
             {
               productID: 2,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Seasoned",
               amount: 2,
               price: 10,
-              size: "m",
+              delivery: 3.500
             },
           ],
           orderDate: "10/12/2023",
@@ -41,31 +39,25 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Nike",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
+              delivery: 3.00
             },
             {
               productID: 2,
-              productName: "pro2",
-              productType: "clothes",
+              productName: "Food",
               amount: 2,
               price: 10,
-              color: "colW",
-              size: "l",
+              delivery: 3.100
             },
     
             {
               productID: 3,
-              productName: "pro3",
-              productType: "clothes",
+              productName: "Food2",
               amount: 2,
               price: 10,
-              color: "colBlue",
-              size: "xl",
+              delivery: 1.200
             },
           ],
           orderDate: "10/12/2023",
@@ -79,21 +71,17 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Food3",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
+              delivery: 2.100
             },
             {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
+              productID: 1,
+              productName: "Food4",
               amount: 2,
               price: 10,
-              color: "colBlue",
-              size: "m",
+              delivery: 4.100
             },
           ],
           orderDate: "10/12/2023",
@@ -107,21 +95,17 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Food5",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
+              delivery: 2.800
             },
             {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
+              productID: 1,
+              productName: "Food6",
               amount: 2,
               price: 10,
-              color: "colBlue",
-              size: "m",
+              delivery: 2.900
             },
           ],
           orderDate: "10/12/2023",
@@ -135,21 +119,17 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Food7",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
+              delivery: 3.100
             },
             {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
+              productID: 1,
+              productName: "Food8",
               amount: 2,
               price: 10,
-              color: "colBlue",
-              size: "m",
+              delivery: 2.100
             },
           ],
           orderDate: "10/12/2023",
@@ -163,49 +143,17 @@ const OrderPage = () => {
           products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Food9",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
+              delivery: 4.100
             },
-            {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colBlue",
-              size: "m",
-            },
-          ],
-          orderDate: "10/12/2023",
-          status: "pending",
-          payment: "Bcel One",
-          delivery: "Anousit",
-        },
-        {
-          orderID: 7,
-          userID: 6,
-          products: [
             {
               productID: 1,
-              productName: "pro1",
-              productType: "clothes",
+              productName: "Food10",
               amount: 2,
               price: 10,
-              color: "colB",
-              size: "m",
-            },
-            {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colBlue",
-              size: "m",
+              delivery: 5.100
             },
           ],
           orderDate: "10/12/2023",
@@ -213,73 +161,19 @@ const OrderPage = () => {
           payment: "Bcel One",
           delivery: "Anousit",
         },
-        {
-          orderID: 8,
-          userID: 7,
-          products: [
-            {
-              productID: 1,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colB",
-              size: "m",
-            },
-            {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colBlue",
-              size: "m",
-            },
-          ],
-          orderDate: "10/12/2023",
-          status: "pending",
-          payment: "Bcel One",
-          delivery: "Anousit",
-        },
-        {
-          orderID: 9,
-          userID: 5,
-          products: [
-            {
-              productID: 1,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colB",
-              size: "m",
-            },
-            {
-              productID: 2,
-              productName: "pro1",
-              productType: "clothes",
-              amount: 2,
-              price: 10,
-              color: "colBlue",
-              size: "m",
-            },
-          ],
-          orderDate: "10/12/2023",
-          status: "pending",
-          payment: "Bcel One",
-          delivery: "Anousit",
-        },
+        
     ]);
 
     const [searchTerm, setSearchTerm] = useState('');
 
     // send order ID
-    const [id, setId] = useState();
+    // const [id, setId] = useState();
     const navigate = useNavigate();
 
-    const handleOrder = (id) => {
-        setId(id);
-        navigate("/orderbill/", { state: { id: id } });
+    const handleOrder = (sendOrderID) => {
+        navigate("/orderbill/", { 
+          state: { sendOrderID: sendOrderID } ,
+        });
     };
 
 

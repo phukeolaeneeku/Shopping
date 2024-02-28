@@ -53,6 +53,7 @@ const Password = () => {
                             <input
                                 type="password"
                                 id="password"
+                                placeholder="New password"
                                 value={password}
                                 onChange={handlePassword}
                             />
@@ -62,6 +63,7 @@ const Password = () => {
                             <input
                                 type="password"
                                 id="oldPassword"
+                                placeholder="Old password"
                                 value={oldPassword}
                                 required
                                 onChange={handleOldPassword}
@@ -70,7 +72,7 @@ const Password = () => {
                     </div>
                     <div className="submit">
                         <div className="save">
-                            <button type="submit" disabled={!password}>Done</button> {/* The button will show when user input information */}
+                            <button type="submit" disabled={!password}>Changes</button> {/* The button will show when user input information */}
                         </div>
                     </div>
                 </form>

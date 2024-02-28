@@ -54,7 +54,7 @@ const Account = () => {
               Back
             </Link>
           </div>
-          <div className="headerTiele">Account</div>
+          <h2 className="headerTiele">Account</h2>
           <div className="header-box"></div>
         </div>
 
