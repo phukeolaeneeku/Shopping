@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 import { MdArrowBack } from "react-icons/md";
 
 const LoginUser = () => {
   const login_en = "Login";
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (email.trim() === "" || password.trim() === "") {
+      alert("Please enter email and password.");
+      return;
+    }
+    // Assuming login is successful, set loginSuccess to true
+    setLoginSuccess(true);
+    // Proceed with login logic
+    console.log("Email:", email);
+    console.log("Password:", password);
+  };
   
   
   return (
     <>
       <section>
-        <form className="box_container_login2">
+        <form className="box_container_login2" onSubmit={handleLogin}>
           <div className="cover">
-          <Link to="/" className="box_iconBack_login">
-            <MdArrowBack id="iconBack" />
-          </Link>
+            <Link to="/" className="box_iconBack_login">
+              <MdArrowBack id="iconBack" />
+            </Link>
             <h2 className="box_container_login_text">{login_en}</h2>
             <p className="box_pleaselogin">Please Log in to use the service!</p>
             <div className="input">
@@ -23,6 +40,8 @@ const LoginUser = () => {
                 className="input_form"
                 type="email"
                 placeholder="Enter Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <label>Password</label>
@@ -30,6 +49,8 @@ const LoginUser = () => {
                 className="input_form"
                 type="password"
                 placeholder="Enter Your Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -42,9 +63,9 @@ const LoginUser = () => {
             </div>
 
             <div className="loginbtn_login">
-              <Link type="submit" className="login_btn">
+              <button type="submit" className="login_btn">
                 Login
-              </Link>
+              </button>
             </div>
             <div className="googlebtn_btn">
               <p className="box_dont">
@@ -56,9 +77,7 @@ const LoginUser = () => {
               <div className="google_account">
                 Sign up with your social media account
               </div>
-              <Link
-                className="google-login"
-              >
+              <Link className="google-login">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
@@ -89,6 +108,11 @@ const LoginUser = () => {
           </div>
         </form>
       </section>
+      {loginSuccess && (
+        <div className="alert_success">
+          Login successful!
+        </div>
+      )}
     </>
   );
 };
