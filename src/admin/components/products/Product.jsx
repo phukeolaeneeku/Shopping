@@ -27,6 +27,7 @@ const Product = () => {
       review: 50,
       popular: false,
       images: [{ src: 깻잎 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 2,
@@ -35,6 +36,7 @@ const Product = () => {
       review: 45,
       popular: false,
       images: [{ src: 더덕무침 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 3,
@@ -43,6 +45,7 @@ const Product = () => {
       review: 30,
       popular: false,
       images: [{ src: 멸치볶음 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 4,
@@ -51,6 +54,7 @@ const Product = () => {
       review: 29,
       popular: true,
       images: [{ src: 진미채볶음 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 5,
@@ -59,6 +63,7 @@ const Product = () => {
       review: 39,
       popular: true,
       images: [{ src: 물김치 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 6,
@@ -67,6 +72,7 @@ const Product = () => {
       review: 35,
       popular: true,
       images: [{ src: 참외장아찌 }],
+      bannerImage: [{src: banner1}]
     },
     {
       productID: 7,
@@ -75,6 +81,7 @@ const Product = () => {
       review: 25,
       popular: true,
       images: [{ src: 파김치 }],
+      bannerImage: [{src: banner1}]
     },
   ]);
 
@@ -202,32 +209,33 @@ const Product = () => {
               </Link>
             </div>
           </div>
-
-          <div className="banner_no_box">
-            <div className="banner_no_box_image">
+          <div>
+            <div className="banner_no_box">
               <div className="banner_no_box_image">
-                <div className="img">
-                  {mainImageBanner && mainImageBanner.length > 0 ? (
-                    <img
-                      src={URL.createObjectURL(mainImageBanner[0])}
-                      alt="Banner"
+                <div className="banner_no_box_image">
+                  <div className="img">
+                    {mainImageBanner && mainImageBanner.length > 0 ? (
+                      <img
+                        src={URL.createObjectURL(mainImageBanner[0])}
+                        alt="Banner"
+                      />
+                    ) : (
+                      <img src={banner1} alt="Banner" />
+                    )}
+                    <input
+                      type="file"
+                      id="img"
+                      onChange={handleImageBanner}
+                      required
                     />
-                  ) : (
-                    <img src={banner1} alt="Banner" />
-                  )}
-                  <input
-                    type="file"
-                    id="img"
-                    onChange={handleImageBanner}
-                    required
-                  />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="edit_image_banner" >
-              <label htmlFor="img" className="trigger_popup_fricc">
-                <CiCamera id="box_icon_camera" />
-              </label>
+              <div className="edit_image_banner" >
+                <label htmlFor="img" className="trigger_popup_fricc">
+                  <CiCamera id="box_icon_camera" />
+                </label>
+              </div>
             </div>
           </div>
           

@@ -2,32 +2,76 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 import { MdArrowBack } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginUser = () => {
   const login_en = "Login";
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pass, setPass] = useState("");
+  const [errorText, set_errorText] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email.trim() === "" || password.trim() === "") {
-      alert("Please enter email and password.");
-      return;
-    }
-    // Assuming login is successful, set loginSuccess to true
-    setLoginSuccess(true);
-    // Proceed with login logic
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const handleEmail = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+  };
+
+  const handlePass = (e) => {
+    const value = e.target.value;
+    setPass(value);
+  };
+
+  const Login = (e) => {
+    e.preventDefault(); // Prevent the default form submission behavsior
+    let data = JSON.stringify({
+      email: email,
+      password: pass,
+    });
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+
+      url: import.meta.env.VITE_API + "/user/signin",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios
+      .request(config)
+      .then((res) => {
+        const result = res.data;
+        // console.log(JSON.stringify(res.data));
+        const user = {
+          email: result.email,
+          image: result.image,
+          is_staff: result.is_staff,
+          user_id: result.user_id,
+          user_name: result.user_name,
+        };
+        const token = result.token.access;
+        if (token) {
+          window.localStorage.setItem("token", token);
+        }
+        window.localStorage.setItem("user", JSON.stringify(user));
+        navigate("/", { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        set_errorText("The username or password do not match.");
+      });
   };
   
   
   return (
     <>
       <section>
-        <form className="box_container_login2" onSubmit={handleLogin}>
+        <form className="box_container_login2">
           <div className="cover">
             <Link to="/" className="box_iconBack_login">
               <MdArrowBack id="iconBack" />
@@ -41,7 +85,7 @@ const LoginUser = () => {
                 type="email"
                 placeholder="Enter Your Email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmail}
                 required
               />
               <label>Password</label>
@@ -49,11 +93,17 @@ const LoginUser = () => {
                 className="input_form"
                 type="password"
                 placeholder="Enter Your Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={pass}
+                onChange={handlePass}
                 required
               />
             </div>
+
+            {errorText.length > 0 && (
+              <div id="error_msg" className="error mt20">
+                {errorText}
+              </div>
+            )}
 
             <div className="forgot_password">
               Forgot your password?{" "}
@@ -63,7 +113,7 @@ const LoginUser = () => {
             </div>
 
             <div className="loginbtn_login">
-              <button type="submit" className="login_btn">
+              <button type="submit" className="login_btn" onClick={Login}>
                 Login
               </button>
             </div>

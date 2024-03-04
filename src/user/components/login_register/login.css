@@ -99,7 +99,11 @@
     border: 1px solid var(--blue);
   }
   
-  
+  .error{
+    text-align: start;
+    margin-top: 5px;
+    color: #FF4F16;
+  }
   
   .box_container_login_text {
     color: rgba(0, 0, 0, 0.80);
@@ -224,7 +228,7 @@
   .login_btn {
     width: 600px;
     height: 58px;
-    margin-top: -2rem;
+    margin-top: -1.5rem;
     background: #FF4F16;
     color: #ffffff;
     border-radius: 15px;
