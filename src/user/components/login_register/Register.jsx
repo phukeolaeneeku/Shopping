@@ -184,7 +184,7 @@ const Register = () => {
               required
             />
             <input
-              type="password2"
+              type="password"
               name="password2"
               placeholder="Confirm Password"
               value={data.password2}
