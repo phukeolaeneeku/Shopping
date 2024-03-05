@@ -4,6 +4,10 @@
     margin-bottom:5rem;
     width: 100%;
 }
+#addres {
+    width: 100%;
+    margin-top: 10rem;
+}
 
 .guopBoxPayment {
     width: 70%;
@@ -13,8 +17,13 @@
 }
 
 .header_box{
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     text-align: center;
+}
+.head_text{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 0 0 330px;
 }
 #payment .adress-payment {
     display: grid;
@@ -43,22 +52,10 @@
     border-radius: 0 0 5px 5px;
 }
 
-#payment .adress-payment .box .address {
-    background-color: #FA442C;
-    font-size: 1.3rem;
-    width: 80%;
-    margin: 0 auto;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px 4px 0 0;
-    padding: 5px 0;
-    cursor: pointer;
-}
 .detailsProductInPayMentBox h3{
     text-align: center;
-    padding-bottom: 10px;
+    margin-top: -3rem;
+    padding-bottom: 15px;
 }
 .detailsProductInPayMentBox ul{
     list-style: none;
@@ -184,8 +181,8 @@
 /* Address shipping */
 #address form {
     font-size: 1.3rem;
-    margin: 2rem 30rem 5rem 30rem;
-    border-radius: 12px;
+    margin: 1rem 20rem 5rem 20.5rem;
+    border-radius: 5px;
     border: 1px solid #ccc;
 }
 
@@ -208,15 +205,52 @@
     outline: none;
 }
 
+
+.gobackaddress {
+    width: 70%;
+    margin: 7rem auto 0 auto;
+}
+
+
+
+
 /* Responsive */
 @media screen and (max-width: 820px) {
+    
+    .gobackaddress {
+        width: 100%;
+    }
+    #address form {
+        width: 80%;
+        font-size: 1.3rem;
+        margin: 0.5rem 0 3rem 2.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .head_text{
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0 0 40px;
+    }
+    .header_box h2{
+        font-size: 18;
+    }
+
+    #addres form {
+        font-size: 1.3rem;
+        margin: 2rem 5rem 5rem 5rem;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+    }
+
+
     #payment {
-        margin-top: 6rem;
+        margin-top: 5rem;
         width: 100%;
     }
 
     .guopBoxPayment {
-        width: 90%;
+        width: 100%;
         height: auto;
         padding-bottom: 2rem;
     }
@@ -262,8 +296,15 @@
 }
 
 @media screen and (max-width: 420px) {
+   
     #payment .adress-payment .box .qr {
         width: 70%;
+    }
+    #addres form {
+        font-size: 1.3rem;
+        margin: 2rem 10px 5rem 10px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
     }
     
   

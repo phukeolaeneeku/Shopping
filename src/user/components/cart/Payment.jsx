@@ -5,6 +5,7 @@ import wechat from "../../../img/WeChat.png";
 import Menu from "../menu/Menu";
 import React, { useState } from "react";
 import { useLocation, useNavigate  } from "react-router-dom";
+import { FaAngleLeft } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 import Header from "../header/Header";
@@ -57,22 +58,6 @@ const Payment = () => {
     setSelectedOption(event.target.value);
   };
 
-  const handleAddAddress = () => {
-    if (products.length > 0) {
-      navigate("/cart/address", {
-        state: {
-          products,
-        },
-      });
-    }else if (productsCart.length > 0) {
-      navigate("/cart/address", {
-        state: {
-          productsCart,
-        },
-      });
-    }
-  };
-
   const totalProductPrice = () => {
     let  total = 0;
     productsCart.forEach((product) => {
@@ -94,28 +79,56 @@ const Payment = () => {
       setMainImage(URL.createObjectURL(file)); // Use createObjectURL directly
     }
   };
-
-
+  
 
 
   return (
     <>
       <Header />
       <section id="payment">
+        <section id="address">
+          <div className="header_box"><h2>Payment</h2></div>
+            <div className="head_text">Add address</div>
+              <form>
+                <div className="box">
+                  <label htmlFor="prov">Province:</label>
+                  <input
+                    type="text"
+                    id="prov"
+                    required
+                  />
+                </div>
+                <div className="box">
+                  <label htmlFor="city">City:</label>
+                  <input
+                    type="text"
+                    id="city"
+                    required
+                  />
+                </div>
+                <div className="box">
+                  <label htmlFor="companny">Companny:</label>
+                  <input
+                    type="text"
+                    id="companny"
+                    required
+                  />
+                </div>
+                <div className="box">
+                  <label htmlFor="branch">Branch:</label>
+                  <input
+                    type="text"
+                    id="branch"
+                    required
+                  />
+                </div>
+
+              </form>
+        </section>
+
         <div className="guopBoxPayment">
-          <div className="header_box"><h3>Payment</h3></div>
           <form onSubmit={handleSubmit}>
             <div className="adress-payment">
-              <div className="box">
-                <div className="address" onClick={handleAddAddress}>
-                  <FiPlus /> Update address
-                </div>
-                <p>
-                  {address.province} {address.city} {address.companny}{" "}
-                  {address.branch}
-                </p>{" "}
-                {/* Get from address */}
-              </div>
               {/* procuts */}
               {products.length > 0 ? (
                 <div className="detailsProductInPayMentBox">
@@ -159,6 +172,7 @@ const Payment = () => {
               ) : (
                 <div></div>
               )}
+              
 
               <div className="box">
                 <div className="transfer">
@@ -202,7 +216,7 @@ const Payment = () => {
                 </div>
               </div>
 
-              <div className="box_description">
+              {/* <div className="box_description">
                 <h3>Confirm transfer</h3>
                 <div className="image_confirm_transfer">
                   <label htmlFor="img">
@@ -215,7 +229,7 @@ const Payment = () => {
                   </label>
                   
                 </div>
-              </div>
+              </div> */}
 
               <div className="save">
 
@@ -235,6 +249,8 @@ const Payment = () => {
           </form>
         </div>
       </section>
+
+      
       <Menu />
     </>
   );

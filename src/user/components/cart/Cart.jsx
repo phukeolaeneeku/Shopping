@@ -136,7 +136,7 @@ const Cart = () => {
             <p><input type="text" value={"$ " + grandTotal} onChange={() => { }} /></p>
           </div>
           <div className='btn'>
-            <Link to="/product_search" className="Continues_btn">Continues Shopping</Link>
+            <Link to="/product_search" className="Continues_btn">Continues Shop</Link>
             <button type='submit' className="checkout_btn">Checkout</button>
           </div>
         </div>: <p className='cart'>Your cart is empty</p> }

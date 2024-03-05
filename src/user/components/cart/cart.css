@@ -178,6 +178,11 @@ a {
     align-items: center;
     margin-top: 1rem;
 }
+.Continues_btn:hover{
+    background: #FA442C;
+    color: #FFF;
+    transition: 0.5s;
+}
 
 /* cart empty */
 .cart {
@@ -254,8 +259,16 @@ a {
     }
 
     .btn {
-        flex-direction: column;
-        gap: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .checkout_btn {
+        padding: 10px 20px;
+    }
+    
+    .Continues_btn {
+        padding: 10px 25px;
     }
 
     .cart {
