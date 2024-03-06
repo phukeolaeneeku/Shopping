@@ -1,6 +1,6 @@
 
 import Routes from "./routes/Routes"
-import "./app.css";
+import "./App.css";
 
 function App() {
   return (
