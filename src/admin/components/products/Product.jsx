@@ -139,17 +139,6 @@ const Product = () => {
     setConfirmationPopupOpenImage(false);
   };
 
-  //// onClick icon camera banner image
-  const openConfirmationPopupBanner = (e) => {
-    setUpdateProductId(e.images);
-    setConfirmationPopupOpenBanner(true);
-  };
-
-  const closeConfirmationPopupBanner = () => {
-    setUpdateProductId(null);
-    setConfirmationPopupOpenBanner(false);
-  };
-
   // const updateProduct = () => {
   //   if (updateProductId !== null) {
   //     const updatedProducts = products.filter(
@@ -181,7 +170,7 @@ const Product = () => {
   //   }
   // };
 
-  //PopUp box add image
+  // Choose banner image
   const [isPopupimage, setPopupimage] = useState(false);
 
   const togglePopupimage = () => {
@@ -227,22 +216,18 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <div className="edit_image_banner">
-                <label
-                  htmlFor="img"
-                  className="trigger_popup_fricc"
-                  onClick={togglePopupimage}
-                >
-                  <CiCamera id="box_icon_camera" />
-                </label>
+              <div className="edit_image_banner" onClick={togglePopupimage}>
+                {/* <label htmlFor="img" className="trigger_popup_fricc"> */}
+                <CiCamera id="box_icon_camera" />
+                {/* </label> */}
               </div>
 
               {/* PopUp box add image food */}
               {isPopupimage && (
                 <form className="background_addproductpopup_box">
-                  <div className="hover_addproductpopup_box">
-                    <div className="divsdfsdsf">
-                      <p>Image</p>
+                  <div className="hover_addproductpopup_box_image">
+                    <div className="box_input_image">
+                      <p>Edit banner image</p>
 
                       <label className="popup_Border_Boximagae">
                         {mainImageBanner && mainImageBanner.length > 0 ? (
@@ -260,7 +245,6 @@ const Product = () => {
                           required
                         />
                       </label>
-
                     </div>
                     <div className="btn_foasdf">
                       <button
@@ -269,17 +253,17 @@ const Product = () => {
                       >
                         Cancel
                       </button>
-                      <Link
-                        to="#"
+                      <button
                         className="btn_confirm btn_addproducttxt_popup"
                         onClick={togglePopupimage}
                       >
-                        OK
-                      </Link>
+                        Update
+                      </button>
                     </div>
                   </div>
                 </form>
               )}
+              
             </div>
           </div>
 

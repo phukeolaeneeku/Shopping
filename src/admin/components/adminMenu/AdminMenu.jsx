@@ -15,6 +15,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiCamera } from "react-icons/ci";
+import imageicon from "../../../img/imageicon.jpg";
 
 const AdminMenu = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -23,7 +24,7 @@ const AdminMenu = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userID");
-    console.log("Logged out")
+    console.log("Logged out");
     navigate("/");
   };
 
@@ -36,38 +37,45 @@ const AdminMenu = () => {
     setShowConfirmation(false);
   };
 
-   // image handle logo store nmae
-   const [mainImageStore, setMainImageStore] = useState(null);
+  // image handle logo store nmae
+  const [mainImageStore, setMainImageStore] = useState(null);
 
-   const handleImageStoreName = (e) => {
+  const handleImageStoreName = (e) => {
     const file = e.target.files[0];
 
     if (file) {
-        const reader = new FileReader();
+      const reader = new FileReader();
 
-        reader.onloadend = () => {
-          setMainImageStore([file]);
-        };
+      reader.onloadend = () => {
+        setMainImageStore([file]);
+      };
 
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
-};
-   // image handle logo store logo
-   const [mainImages, setMainImages] = useState(null);
+  };
+  // image handle logo store logo
+  const [mainImages, setMainImages] = useState(null);
 
-   const handleImageStoreLogo = (e) => {
+  const handleImageStoreLogo = (e) => {
     const file = e.target.files[0];
 
     if (file) {
-        const reader = new FileReader();
+      const reader = new FileReader();
 
-        reader.onloadend = () => {
-            setMainImages([file]);
-        };
+      reader.onloadend = () => {
+        setMainImages([file]);
+      };
 
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
-};
+  };
+
+  // Choose logo image
+  const [isPopupimage, setPopupimage] = useState(false);
+
+  const togglePopupimage = () => {
+    setPopupimage(!isPopupimage);
+  };
 
   return (
     <>
@@ -105,19 +113,33 @@ const AdminMenu = () => {
                     <p>Are you sure you want to logout?</p>
                   </div>
                   <div className="btn_foasdf">
-                    <button className='btn_cancel btn_addproducttxt_popup' onClick={handleCancelLogout}>Cancel</button>
-                    <button className='btn_confirm btn_addproducttxt_popup' onClick={handleConfirmLogout}>Yes</button>
+                    <button
+                      className="btn_cancel btn_addproducttxt_popup"
+                      onClick={handleCancelLogout}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="btn_confirm btn_addproducttxt_popup"
+                      onClick={handleConfirmLogout}
+                    >
+                      Yes
+                    </button>
                   </div>
                 </div>
               </div>
             )}
           </div>
-          
+
           <div className="right">
-            <div className="logo" >
+            <div className="logo">
               <span className="logo_store">
                 <div className="image_logo_store_name">
-                  {(mainImageStore && mainImageStore.length > 0) ? <img src={URL.createObjectURL(mainImageStore[0])} /> : <img src={storename} className="box_logo_storename"></img>}
+                  {mainImageStore && mainImageStore.length > 0 ? (
+                    <img src={URL.createObjectURL(mainImageStore[0])} />
+                  ) : (
+                    <img src={storename} className="box_logo_storename"></img>
+                  )}
                   <input
                     type="file"
                     id="img_store"
@@ -126,14 +148,16 @@ const AdminMenu = () => {
                   />
 
                   <div className="edit_image_logo_store">
-                    <label htmlFor="img_store">
-                      <CiCamera id="box_icon_camera_product" />
-                    </label>
+                    <CiCamera id="box_icon_camera_product" onClick={togglePopupimage}/>
                   </div>
                 </div>
 
                 <div className="image_logo">
-                  {(mainImages && mainImages.length > 0) ? <img src={URL.createObjectURL(mainImages[0])} /> : <img src={Logo} className="box_store_logo"></img>}
+                  {mainImages && mainImages.length > 0 ? (
+                    <img src={URL.createObjectURL(mainImages[0])} />
+                  ) : (
+                    <img src={Logo} className="box_store_logo"></img>
+                  )}
                   <input
                     type="file"
                     id="image"
@@ -141,12 +165,51 @@ const AdminMenu = () => {
                     required
                   />
                   <div className="edit_image_logo">
-                    <label htmlFor="image">
-                      <CiCamera id="box_icon_camera_product" />
-                    </label>
+                    <CiCamera id="box_icon_camera_product" onClick={togglePopupimage}/>
                   </div>
                 </div>
 
+                {isPopupimage && (
+                  <form className="background_addproductpopup_box">
+                    <div className="hover_addproductpopup_box_image">
+                      <div className="box_input_image">
+                        <p>Edit banner image</p>
+
+                        <label className="popup_Border_Boximagae">
+                          {mainImages && mainImages.length > 0 ? (
+                            <img
+                              src={URL.createObjectURL(mainImages[0])}
+                              alt="logo"
+                            />
+                          ) : (
+                            <img src={imageicon} alt="logo"/>
+                          )}
+                          <input
+                            type="file"
+                            id="img"
+                            onChange={handleImageStoreLogo}
+                            required
+                          />
+                        </label>
+                      </div>
+                      <div className="btn_foasdf">
+                        <button
+                          className="btn_cancel btn_addproducttxt_popup"
+                          onClick={togglePopupimage}
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          to="#"
+                          className="btn_confirm btn_addproducttxt_popup"
+                          onClick={togglePopupimage}
+                        >
+                          Update
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                )}
               </span>
             </div>
 
