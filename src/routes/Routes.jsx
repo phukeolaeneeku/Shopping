@@ -20,15 +20,17 @@ import Order from "../user/components/order/Order";
 import ProductDetails from "../user/components/products/ProductDetails";
 import OrderPage from "../admin/components/orderPage/OrderPage";
 import OrderBill from "../admin/components/orderPage/OrderBill";
-import Admins from "../admin/components/menagerAdmin/Admins";
 import Product from "../admin/components/products/Product";
 import Text from "../user/components/order/Text";
 import ForgotPassword from "../user/components/login_register/ForgotPassword";
+import AlertLogin from "../user/components/login_register/AlertLogin"
+import AlertRegister from "../user/components/login_register/AlertRegister"
 
 // ===============================
-import Users from "../admin/components/menagerUser/users";
 import User from "../admin/components/menagerUser/User";
-import Admin from "../admin/components/menagerAdmin/admin";
+import Users from "../admin/components/menagerUser/Users"
+import Admin from "../admin/components/menagerAdmin/Admin"
+import Admins from "../admin/components/menagerAdmin/Admins";
 import AddAdmin from "../admin/components/menagerAdmin/AddAdmin";
 import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
 
@@ -57,15 +59,17 @@ const Links = () => {
                 <Route exact path="/register" Component={Register}/>
                 <Route exact path="/cart" Component={Cart}/>
                 <Route exact path="/forgotpassword" Component={ForgotPassword}/>
+                <Route exact path="/alertlogin" Component={AlertLogin}/>
+                <Route exact path="/alertregister" Component={AlertRegister}/>
 
                 {/* Admin routes */}
                 <Route exact path="/dashboard" Component={Dashboard}/>
                 <Route exact path="/post" Component={Post}/>
-                <Route exact path="/users" Component={Users}/>
                 <Route exact path="/orderpage" Component={OrderPage}/>
                 <Route exact path="/orderbill" Component={OrderBill}/>
                 <Route exact path="/product" Component={Product}/>
                 <Route exact path="/users/user" Component={User}/>
+                <Route exact path="/users" Component={Users}/>
                 <Route exact path="/admins" Component={Admins}/>
                 <Route exact path="/admins/admin" Component={Admin}/>
                 <Route exact path="/addadmin" Component={AddAdmin}/>

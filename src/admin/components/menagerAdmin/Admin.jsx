@@ -30,7 +30,7 @@ const Admin = () => {
                             <div className='del' >
                                 <AiOutlineDelete/>
                             </div>
-                            <div className='update upd' >
+                            <div className='update upd'>
                                 <MdOutlineEdit/>
                             </div>
                         </div>

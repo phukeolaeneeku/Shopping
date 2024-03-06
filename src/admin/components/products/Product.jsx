@@ -255,7 +255,7 @@ const Product = () => {
                       </button>
                       <button
                         className="btn_confirm btn_addproducttxt_popup"
-                        onClick={togglePopupimage}
+                        
                       >
                         Update
                       </button>

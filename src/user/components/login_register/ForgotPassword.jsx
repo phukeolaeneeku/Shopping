@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./forgotPassword.css"
+import "./forgotpassword.css"
 import { Link } from 'react-router-dom';
 import { MdArrowBack } from "react-icons/md";
   

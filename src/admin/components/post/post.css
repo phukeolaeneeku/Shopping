@@ -17,6 +17,7 @@
 }
 .group_container_product {
     display: grid;
+    gap: 1rem;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }

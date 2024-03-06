@@ -4,9 +4,10 @@ import "./login.css";
 import { MdArrowBack } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { IoMdAlert } from "react-icons/io";
+import { MdOutlineCancel } from "react-icons/md";
 
-
-const Login = () => {
+const LoginUser = () => {
   const login_en = "Login";
 
   const [email, setEmail] = useState("");
@@ -66,7 +67,9 @@ const Login = () => {
         console.log(error);
         set_errorText("The username or password do not match.");
       });
-  };
+    };
+
+    /// Cancel icon
 
   return (
     <>
@@ -79,6 +82,13 @@ const Login = () => {
             <h2 className="box_container_login_text">{login_en}</h2>
             <p className="box_pleaselogin">Please Log in to use the service!</p>
             <div className="input">
+
+                <div className="box_AlartLogin">
+                    <IoMdAlert className="icon_Alert" />
+                    <p className="txt_alert">Email and password is wrong</p>
+                    <MdOutlineCancel className="icon_Alert_canCel"/>
+                </div>
+
               <label>Email</label>
               <input
                 className="input_form"
@@ -163,4 +173,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginUser;

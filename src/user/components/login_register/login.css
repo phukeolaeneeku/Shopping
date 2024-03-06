@@ -183,11 +183,8 @@
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.40);
   }
-  
-  
-  
-  
-  
+
+
   
   /* =============== Button Login with Google ============== */
   .google-login{
@@ -242,30 +239,30 @@
   .login_btn:hover {
     color: #FFF;
   }
+
+  /* ===== Alert login page =====*/
   
-  .boxAlartLogin{
+  .box_AlartLogin{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    background-color: rgb(240, 91, 46);
+    border: solid 2px var(--orange);
     width: 100%;
-    height: auto;
+    height: 56px;
     padding: 0 20px;
-    border-radius: 7px;
+    border-radius: 15px;
   }
   
-  .iconAlert{
+  .icon_Alert{
     font-size: 35px;
-    color: #fff;
   }
   
-  .txtalert_p{
-    color: #fff;
+  .txt_alert{
+    font-size: 16px;
   }
-  .iconAlert_canCel{
-    color: #fff;
-    font-size: 35px;
+  .icon_Alert_canCel{
+    font-size: 25px;
     cursor: pointer;
   }
   
