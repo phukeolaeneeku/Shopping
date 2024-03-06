@@ -1,0 +1,38 @@
+/* Calendar container */
+.calendar {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  /* Calendar title */
+  .calendar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Calendar grid */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Calendar day */
+  .calendar-day {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  /* Selected day */
+  .calendar-day.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Hover effect */
+  .calendar-day:hover {
+    background-color: #f0f0f0;
+  }

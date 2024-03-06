@@ -11,6 +11,7 @@ import Contacts from "../user/components/contact/Contact";
 import Bill from "../user/components/order/Bill";
 import Dashboard from "../admin/Dashboard";
 import Post from "../admin/components/post/Post";
+import Calendar from "../user/components/calenndar/Calendar";
 
 /* ============================== */
 import Login from '../user/components/login_register/Login';
@@ -48,6 +49,7 @@ const Links = () => {
                 <Route exact path="/order/bill" Component={Bill}/>
                 <Route exact path="/cart/successfulBuy" Component={SuccessfulBuy}/>
                 <Route exact path="/text" Component={Text}/>
+                <Route exact path="/calendar" Component={Calendar}/>
 
                 {/*====================== */}
                 <Route exact path="/productdetails" Component={ProductDetails}/>

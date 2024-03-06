@@ -11,6 +11,8 @@
     "preview": "vite preview --port=80"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "axios": "^1.5.1",
     "boxicons": "^2.1.4",
     "cors": "^2.8.5",
