@@ -180,7 +180,8 @@
 
 /* Address shipping */
 #address form {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    padding: 1rem 1rem;
     margin: 1rem 20rem 5rem 20.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -188,15 +189,15 @@
 
 #address form .box {
     display: flex;
-    padding: 1.25rem 1.3rem;
+    padding: 8px 0;
     width: 100%;
     justify-content: space-between;
 }
 
 #address form .box input {
-    width: 100%;
+    width: 90%;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0 0.3rem;
     border: none;
     border-bottom: 1px solid #ccc;
 }
@@ -222,22 +223,19 @@
     }
     #address form {
         width: 80%;
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin: 0.5rem 0 3rem 2.5rem;
         border-radius: 5px;
         border: 1px solid #ccc;
     }
     .head_text{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
         padding: 15px 0 0 40px;
     }
-    .header_box h2{
-        font-size: 18;
-    }
 
     #addres form {
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin: 2rem 5rem 5rem 5rem;
         border-radius: 12px;
         border: 1px solid #ccc;
@@ -301,10 +299,11 @@
         width: 70%;
     }
     #addres form {
-        font-size: 1.3rem;
-        margin: 2rem 10px 5rem 10px;
-        border-radius: 12px;
-        border: 1px solid #ccc;
+        font-size: 18px;
+    }
+    
+    #address form .box input {
+        font-size: 16px;
     }
     
   

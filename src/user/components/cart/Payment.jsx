@@ -87,7 +87,7 @@ const Payment = () => {
       <Header />
       <section id="payment">
         <section id="address">
-          <div className="header_box"><h2>Payment</h2></div>
+          <div className="header_box"><h3>Payment</h3></div>
             <div className="head_text">Add address</div>
               <form>
                 <div className="box">
