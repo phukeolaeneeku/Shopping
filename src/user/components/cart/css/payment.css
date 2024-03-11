@@ -94,6 +94,10 @@
     padding-left: 0.5rem;
 }
 
+.box label{
+    width: 250px;
+}
+
 /* transfer method */
 #payment .adress-payment .box .qr {
     width: 30%;
@@ -139,7 +143,6 @@
 /* ========= box_confirm_transfer ======== */
 
 .box_description h3{
-    /* margin-left: 12rem; */
     padding: 20px 0;
     text-align: center;
 }

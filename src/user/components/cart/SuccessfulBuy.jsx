@@ -1,5 +1,5 @@
 import React from 'react'
-import './SuccessfulBuy.css'
+import './css/SuccessfulBuy.css'
 import { FaAngleLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ImCheckmark } from 'react-icons/im';

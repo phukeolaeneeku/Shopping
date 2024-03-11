@@ -14,8 +14,6 @@ import Post from "../admin/components/post/Post";
 import Calendar from "../user/components/calenndar/Calendar";
 
 /* ============================== */
-import Login from '../user/components/login_register/Login';
-import Register from "../user/components/login_register/Register";
 import Order from "../user/components/order/Order";
 import ProductDetails from "../user/components/products/ProductDetails";
 import OrderPage from "../admin/components/orderPage/OrderPage";
@@ -25,6 +23,15 @@ import Text from "../user/components/order/Text";
 import ForgotPassword from "../user/components/login_register/ForgotPassword";
 import AlertLogin from "../user/components/login_register/AlertLogin"
 import AlertRegister from "../user/components/login_register/AlertRegister"
+
+import Login from "../user/components/login_register/Login"
+import Register from "../user/components/login_register/Register"
+
+import LoginUser from "../user/components/loginAndSignup/LoginUser";
+import RegisterUser from "../user/components/loginAndSignup/RegisterUser";
+
+import Signup1 from "../user/components/loginAndSignup/Signup1"
+import Signup2 from "../user/components/loginAndSignup/Signup2"
 
 // ===============================
 import User from "../admin/components/menagerUser/User";
@@ -55,12 +62,17 @@ const Links = () => {
 
                 {/*====================== */}
                 <Route exact path="/productdetails" Component={ProductDetails}/>
-                <Route exact path="/login" Component={Login}/>
-                <Route exact path="/register" Component={Register}/>
                 <Route exact path="/cart" Component={Cart}/>
                 <Route exact path="/forgotpassword" Component={ForgotPassword}/>
                 <Route exact path="/alertlogin" Component={AlertLogin}/>
                 <Route exact path="/alertregister" Component={AlertRegister}/>
+                <Route exact path="/signup1" Component={Signup1}/>
+                <Route exact path="/signup2" Component={Signup2}/>
+                <Route exact path="/loginuser" Component={LoginUser}/>
+                <Route exact path="/login" Component={Login}/>
+                <Route exact path="/register" Component={Register}/>
+                <Route exact path="/registeruser" Component={RegisterUser}/>
+
 
                 {/* Admin routes */}
                 <Route exact path="/dashboard" Component={Dashboard}/>

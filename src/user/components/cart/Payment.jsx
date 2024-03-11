@@ -1,5 +1,5 @@
 import { FiPlus } from "react-icons/fi";
-import "./payment.css";
+import "./css/payment.css";
 import qrcode from "../../../img/QRCODE.png";
 import wechat from "../../../img/WeChat.png";
 import Menu from "../menu/Menu";
@@ -91,6 +91,14 @@ const Payment = () => {
             <div className="head_text">Add address</div>
               <form>
                 <div className="box">
+                  <label htmlFor="contact">Contact number:</label>
+                  <input
+                    type="text"
+                    id="contact"
+                    required
+                  />
+                </div>
+                <div className="box">
                   <label htmlFor="prov">Province:</label>
                   <input
                     type="text"
@@ -99,7 +107,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="city">City:</label>
+                  <label htmlFor="city">District:</label>
                   <input
                     type="text"
                     id="city"
@@ -107,7 +115,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="companny">Companny:</label>
+                  <label htmlFor="companny">Shipping Companny name:</label>
                   <input
                     type="text"
                     id="companny"
@@ -122,7 +130,14 @@ const Payment = () => {
                     required
                   />
                 </div>
-
+                <div className="box">
+                  <label htmlFor="account">Account name:</label>
+                  <input
+                    type="text"
+                    id="prov"
+                    required
+                  />
+                </div>                
               </form>
         </section>
 

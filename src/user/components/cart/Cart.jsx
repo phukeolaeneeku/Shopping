@@ -8,7 +8,7 @@ import Header from '../header/Header';
 import Menu from '../menu/Menu'
 import { AiOutlineDelete } from "react-icons/ai";
 
-import './cart.css';
+import './css/cart.css';
 
 const Cart = () => {
   const [products, setProducts] = useState([
@@ -136,7 +136,7 @@ const Cart = () => {
             <p><input type="text" value={"$ " + grandTotal} onChange={() => { }} /></p>
           </div>
           <div className='btn'>
-            <Link to="/product_search" className="Continues_btn">Continues Shop</Link>
+            <Link to="/" className="Continues_btn">Continues Shop</Link>
             <button type='submit' className="checkout_btn">Checkout</button>
           </div>
         </div>: <p className='cart'>Your cart is empty</p> }
