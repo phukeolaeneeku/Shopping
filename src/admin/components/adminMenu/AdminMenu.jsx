@@ -94,14 +94,6 @@ const AdminMenu = () => {
               <MdOutlineSell />
               <p>Orders</p>
             </NavLink>
-            <NavLink to="/users" className="link">
-              <BiUser />
-              <p>Users</p>
-            </NavLink>
-            <NavLink to="/admins" className="link">
-              <LiaUserCogSolid />
-              <p>Admins</p>
-            </NavLink>
             <div onClick={() => setShowConfirmation(true)} className="link">
               <IoLogOutOutline />
               <p>Log Out</p>
