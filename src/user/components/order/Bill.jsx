@@ -157,16 +157,6 @@ const Bill = () => {
               <p>Total:</p>
               <p>${order.totalPrice}</p>
             </div>
-            <div className="box_btn_product">
-              <div className="btn_delete_save">
-                <button className="btn_delete_order">Delete selected</button>
-                <button className="btn_save">Save selected</button>
-              </div>
-              <div className="btn_select_all">
-                <button className="btn_order_select">Order selected</button>
-                <button className="btn_order_all">Order all</button>
-              </div>
-            </div>
             <div className="place-on">
               <p>Place on: {order.orderDate}</p>
               <p>Payment method: {order.payment}</p>
