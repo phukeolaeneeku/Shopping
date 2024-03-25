@@ -83,18 +83,34 @@ body {
 .logo .logo_store .image_logo img {
     cursor: pointer;
 }
+
+
 .box_store_logo{
     width: 60px;
     height: auto;
 }
+.box_logo_storename{
+    width: 60px;
+    height: auto;
+}
+
 /* form */
 .logo {
     width: 20%;
     margin-left: 1cm;
 }
-.logo input{
+
+.logo {
+    width: 20%;
+    margin-left: 1cm;
+}
+.image_logo_storename input{
     display: none;
 }
+.image_logo input{
+    display: none;
+}
+
 
 
 .userAdminImage {
@@ -202,6 +218,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
 }
+
 .edit_image_logo {
     position: absolute;
     top: 28px;
@@ -215,20 +232,21 @@ body {
 }
 
 
-.image_logo_store_name{
+.image_logo_storename{
     position: relative;
     cursor: pointer;
     width: 350px;
     height: 10vh;
     overflow: hidden;
 }
-.image_logo_store_name img{
+.image_logo_storename img{
     position: relative;
     cursor: pointer;
     width: 100%;
     height: 80%;
     border-radius: 5px;
 }
+
 
 .edit_image_logo_store {
     position: absolute;

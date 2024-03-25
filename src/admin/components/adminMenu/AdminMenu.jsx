@@ -16,6 +16,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiCamera } from "react-icons/ci";
 import imageicon from "../../../img/imageicon.jpg";
+import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 
 const AdminMenu = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -94,6 +95,18 @@ const AdminMenu = () => {
               <MdOutlineSell />
               <p>Orders</p>
             </NavLink>
+            <NavLink to="/store" className="link">
+              <HiOutlineBuildingStorefront />
+              <p>Stores</p>
+            </NavLink>
+            <NavLink to="/users" className="link">
+              <BiUser />
+              <p>Users</p>
+            </NavLink>
+            <NavLink to="/admins" className="link">
+              <LiaUserCogSolid />
+              <p>Admins</p>
+            </NavLink>
             <div onClick={() => setShowConfirmation(true)} className="link">
               <IoLogOutOutline />
               <p>Log Out</p>
@@ -126,7 +139,7 @@ const AdminMenu = () => {
           <div className="right">
             <div className="logo">
               <span className="logo_store">
-                <div className="image_logo_store_name">
+                <div className="image_logo_storename">
                   {mainImageStore && mainImageStore.length > 0 ? (
                     <img src={URL.createObjectURL(mainImageStore[0])} />
                   ) : (

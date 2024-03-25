@@ -23,15 +23,10 @@ import Text from "../user/components/order/Text";
 import ForgotPassword from "../user/components/login_register/ForgotPassword";
 import AlertLogin from "../user/components/login_register/AlertLogin"
 import AlertRegister from "../user/components/login_register/AlertRegister"
-
 import Login from "../user/components/login_register/Login"
 import Register from "../user/components/login_register/Register"
 
-import LoginUser from "../user/components/loginAndSignup/LoginUser";
-import RegisterUser from "../user/components/loginAndSignup/RegisterUser";
 
-import Signup1 from "../user/components/loginAndSignup/Signup1"
-import Signup2 from "../user/components/loginAndSignup/Signup2"
 
 // ===============================
 import User from "../admin/components/menagerUser/User";
@@ -40,6 +35,7 @@ import Admin from "../admin/components/menagerAdmin/Admin"
 import Admins from "../admin/components/menagerAdmin/Admins";
 import AddAdmin from "../admin/components/menagerAdmin/AddAdmin";
 import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
+import Store from "../admin/components/stores/Store";
 
 
 const Links = () => {
@@ -66,12 +62,8 @@ const Links = () => {
                 <Route exact path="/forgotpassword" Component={ForgotPassword}/>
                 <Route exact path="/alertlogin" Component={AlertLogin}/>
                 <Route exact path="/alertregister" Component={AlertRegister}/>
-                <Route exact path="/signup1" Component={Signup1}/>
-                <Route exact path="/signup2" Component={Signup2}/>
-                <Route exact path="/loginuser" Component={LoginUser}/>
                 <Route exact path="/login" Component={Login}/>
                 <Route exact path="/register" Component={Register}/>
-                <Route exact path="/registeruser" Component={RegisterUser}/>
 
 
                 {/* Admin routes */}
@@ -80,12 +72,13 @@ const Links = () => {
                 <Route exact path="/orderpage" Component={OrderPage}/>
                 <Route exact path="/orderbill" Component={OrderBill}/>
                 <Route exact path="/product" Component={Product}/>
-                <Route exact path="/users/user" Component={User}/>
+                <Route exact path="/user" Component={User}/>
                 <Route exact path="/users" Component={Users}/>
                 <Route exact path="/admins" Component={Admins}/>
                 <Route exact path="/admins/admin" Component={Admin}/>
                 <Route exact path="/addadmin" Component={AddAdmin}/>
                 <Route exact path="/adminacount" Component={Admin_acount}/>
+                <Route exact path="/store" Component={Store}/>
             </Routes>
         </Router>
     );

@@ -664,8 +664,8 @@ input:focus {
     display: none;
 }
 .box_input_image img{
-    width: 50%;
-    height: 58px;
+    width: 210px;
+    height: 220px;
     padding: 16px 0;
 }
 .box_input_image p{

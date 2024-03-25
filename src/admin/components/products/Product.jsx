@@ -217,12 +217,9 @@ const Product = () => {
                 </div>
               </div>
               <div className="edit_image_banner" onClick={togglePopupimage}>
-                {/* <label htmlFor="img" className="trigger_popup_fricc"> */}
                 <CiCamera id="box_icon_camera" />
-                {/* </label> */}
               </div>
 
-              {/* PopUp box add image food */}
               {isPopupimage && (
                 <form className="background_addproductpopup_box">
                   <div className="hover_addproductpopup_box_image">

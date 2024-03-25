@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* ============ container_body_adminuser =========== */
 .container_body_adminuser {
     width: 100%;
@@ -18,7 +12,8 @@
     margin-top: 1rem;
     padding: 30px 20px 20px 20px;
     background: #FFF;
-    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px 0 rgba(67, 89, 113, 0.15);
+    border-radius: 10px;
 }
 
 .box_search_user {
@@ -61,9 +56,9 @@
 }
 
 .search-box_menageruser button {
-    background: #FA442C;
+    background: #ff7446;
     color: #FFF;
-    width: 65px;
+    width: 75px;
     height: 45px;
     border: 1px solid #ccc;
     font-size: 1.7rem;
@@ -75,31 +70,35 @@
 /* ============ box_users_user =========== */
 
 .box_users_user {
-    width: 94%;
+    width: 95%;
     height: 90px;
+    margin: 1rem auto;
     display: flex;
-    margin: auto;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1rem;
-    border-radius: 5px;
-    padding: 20px 30px 20px 30px;
-    cursor: pointer;
+    border-radius: 10px;
+    padding: 30px;
     background: #FFF;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
-.box_user_text {
+.box_dp_txtandiamge {
     display: flex;
-    gap: 1.5rem;
     align-items: center;
+    gap: 2rem;
+
 }
-.container_chat_name{
+
+.box_user_text p {
+    padding: 3px;
+}
+
+.container_chat_name {
     display: grid;
     gap: 0.5rem;
 }
 
-.box_user_text img {
+.box_user_img img {
     width: 70px;
     height: 70px;
 }
