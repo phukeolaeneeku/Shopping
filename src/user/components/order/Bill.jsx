@@ -97,6 +97,35 @@ const Bill = () => {
       setPopular(event.target.checked);
     };
 
+
+
+
+    ////////////////commend
+    const [note, setNote] = useState({
+      commend: "",
+      rating: 0,
+    });
+  
+  
+    const handleChange = (e) => {
+      if (note.rating < 1) {
+        e.preventDefault();
+        return;
+      }
+      setNote({ ...note, [e.target.name]: e.target.value });
+      adjustTextareaHeight(e.target);
+    };
+  
+    const handleRatingChange = (newRating) => {
+      setNote({ ...note, rating: newRating });
+    };
+  
+    const adjustTextareaHeight = (element) => {
+      element.style.height = "auto";
+      element.style.height = element.scrollHeight + "px";
+    };
+  
+
   return (
     <>
       <Header></Header>
@@ -121,13 +150,7 @@ const Bill = () => {
               <table>
                 <thead>
                   <tr>
-                    <div className="popular">
-                      <input
-                        type="checkbox"
-                        id="popular"
-                      />
-                    </div>
-                    <th>Name</th>
+                    <th>Food Name </th>
                     <th>Price</th>
                     <th>Amount</th>
                     <th>delivery</th>
@@ -137,12 +160,6 @@ const Bill = () => {
                 {order.products.map((product) => (
                   <tbody key={product.productID}>
                     <tr>
-                      <div className="popular">
-                        <input
-                          type="checkbox"
-                          id="popular"
-                        />
-                      </div>
                       <td>{product.productName}</td>
                       <td>${product.price}</td>
                       <td>{product.amount}</td>
@@ -165,6 +182,40 @@ const Bill = () => {
             </div>
           </div>
         ))}
+
+      </section>
+      <section>
+      <form className="box_containner_commend">
+        <p>Review</p>
+        <div className="star">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <span
+              key={star}
+              style={{ cursor: "pointer" }}
+              onClick={() => handleRatingChange(star)}
+            >
+              {star <= note.rating ? "★" : "☆"}
+            </span>
+          ))}
+        </div>
+        <div className="box_commend">
+          <textarea
+            name="commend"
+            className="multiline-input"
+            id="multiline-input"
+            value={note.commend}
+            onChange={handleChange}
+            placeholder="Your opinion..."
+            maxLength="300"
+            required
+          />
+          <button
+            type="submit" className="btn_commend"
+          >
+            Commend
+          </button>
+        </div>
+      </form>
       </section>
       <Menu />
     </>
