@@ -89,6 +89,7 @@ const Product = () => {
   );
   const [updateProductId, setUpdateProductId] = useState(null);
   const [isConfirmationPopupOpen, setConfirmationPopupOpen] = useState(false);
+  const [isConfirmationPopular, setConfirmationPopular] = useState(false);
   const [isConfirmationPopupOpenPrice, setConfirmationPopupOpenPrice] =
     useState(false);
   const [isConfirmationPopupOpenImage, setConfirmationPopupOpenImage] =
@@ -139,17 +140,16 @@ const Product = () => {
     setConfirmationPopupOpenImage(false);
   };
 
-  // const updateProduct = () => {
-  //   if (updateProductId !== null) {
-  //     const updatedProducts = products.filter(
-  //       (product) => product.productID !== updateProductId
-  //     );
-  //     setProducts(updatedProducts);
-  //     closeConfirmationPopup();
-  //   }
-  // };
-
   ///// onClick icon edit product price
+  const openConfirmationPopular = (productID) => {
+    setUpdateProductId(productID.price);
+    setConfirmationPopular(true);
+  };
+  const closeConfirmationPopular = () => {
+    setUpdateProductId(null);
+    setConfirmationPopular(false);
+  };
+
   const openConfirmationPopupPrice = (productID) => {
     setUpdateProductId(productID.price);
     setConfirmationPopupOpenPrice(true);
@@ -160,21 +160,18 @@ const Product = () => {
     setConfirmationPopupOpenPrice(false);
   };
 
-  // const updatePrice = () => {
-  //   if (updateProductId !== null) {
-  //     const updatedProducts = products.filter(
-  //       (product) => product.productID !== updateProductId
-  //     );
-  //     setProducts(updatedProducts);
-  //     closeConfirmationPopupPrice();
-  //   }
-  // };
-
   // Choose banner image
   const [isPopupimage, setPopupimage] = useState(false);
 
   const togglePopupimage = () => {
     setPopupimage(!isPopupimage);
+  };
+
+  const handlePopularChange = (event, index) => {
+    const checked = event.target.checked;
+    const updatedProducts = [...products];
+    updatedProducts[index].popular = checked;
+    setProducts(updatedProducts);
   };
 
   return (
@@ -250,17 +247,13 @@ const Product = () => {
                       >
                         Cancel
                       </button>
-                      <button
-                        className="btn_confirm btn_addproducttxt_popup"
-                        
-                      >
+                      <button className="btn_confirm btn_addproducttxt_popup">
                         Update
                       </button>
                     </div>
                   </div>
                 </form>
               )}
-              
             </div>
           </div>
 
@@ -354,6 +347,16 @@ const Product = () => {
                           }
                         >
                           <li>Price: ${product.price}</li>
+                          <MdOutlineEdit id="icon_edit" />
+                        </div>
+
+                        <div
+                          className="box_icon_MdOutlineEdit"
+                          onClick={() =>
+                            openConfirmationPopular(product.productID)
+                          }
+                        >
+                          <li>Popolar</li>
                           <MdOutlineEdit id="icon_edit" />
                         </div>
                       </div>
@@ -466,6 +469,33 @@ const Product = () => {
                   <button
                     className="btn_cancel btn_addproducttxt_popup"
                     onClick={closeConfirmationPopupPrice}
+                  >
+                    Cancel
+                  </button>
+                  <button className="btn_confirm btn_addproducttxt_popup">
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          {isConfirmationPopular && (
+            <div className="background_addproductpopup_box">
+              <div className="hover_addproductpopup_box">
+                <div className="box_popular">
+                  <label htmlFor={`popular-${index}`}>Popular</label>
+                  <input
+                    type="checkbox"
+                    // id={`popular-${index}`}
+                    // checked={product.popular}
+                    // onChange={(e) => handlePopularChange(e, index)}
+                  />
+                </div>
+
+                <div className="btn_foasdf">
+                  <button
+                    className="btn_cancel btn_addproducttxt_popup"
+                    onClick={() => closeConfirmationPopular()} // No need to pass index here
                   >
                     Cancel
                   </button>

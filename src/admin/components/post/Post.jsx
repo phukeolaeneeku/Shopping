@@ -158,7 +158,7 @@ const Post = () => {
                             onChange={(e) => handlePopularChange(e, index)}
                           />
                         </div>
-                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}

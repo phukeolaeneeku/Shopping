@@ -1,9 +1,5 @@
 import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
 import Home from "../user/components/homepage/Home";
-import Account from "../user/components/account/Account";
-import General from "../user/components/account/General";
-import Contact from "../user/components/account/Contact";
-import Password from "../user/components/account/Password";
 import Payment from "../user/components/cart/Payment";
 import SuccessfulBuy from "../user/components/cart/SuccessfulBuy";
 import Cart from "../user/components/cart/Cart";
@@ -36,6 +32,12 @@ import Admins from "../admin/components/menagerAdmin/Admins";
 import AddAdmin from "../admin/components/menagerAdmin/AddAdmin";
 import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
 import Store from "../admin/components/stores/Store";
+import Bank from "../admin/components/bank_account/Bank";
+import Addaccount from "../admin/components/bank_account/Addaccount";
+import More from "../user/components/account/More";
+import Profile from "../user/components/account/Profile";
+import Terms from "../user/components/account/Terms";
+import Privacy from "../user/components/account/Privacy"
 
 
 const Links = () => {
@@ -44,10 +46,6 @@ const Links = () => {
             <Routes>
                 {/*====================== */}
                 <Route exact path="/" Component={Home}/>
-                <Route exact path="/account" Component={Account}/>
-                <Route exact path="/account/general" Component={General}/>
-                <Route exact path="/account/contact" Component={Contact}/>
-                <Route exact path="/account/password" Component={Password}/>
                 <Route exact path="/cart/payment" Component={Payment}/>
                 <Route exact path="/contacts" Component={Contacts}/>
                 <Route exact path="/order" Component={Order}/>
@@ -79,6 +77,12 @@ const Links = () => {
                 <Route exact path="/addadmin" Component={AddAdmin}/>
                 <Route exact path="/adminacount" Component={Admin_acount}/>
                 <Route exact path="/store" Component={Store}/>
+                <Route exact path="/bank" Component={Bank}/>
+                <Route exact path="/addaccount" Component={Addaccount}/>
+                <Route exact path="/more" Component={More}/>
+                <Route exact path="/profile" Component={Profile}/>
+                <Route exact path="/terms" Component={Terms}/>
+                <Route exact path="/privacy" Component={Privacy}/>
             </Routes>
         </Router>
     );

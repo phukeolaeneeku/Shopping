@@ -74,7 +74,7 @@ const Header = ({ handleSearch }) => {
               </div>
               <div className="icon_account_login">
                 <div>
-                  <Link to="/account">
+                  <Link to="/more">
                     <FaRegUser className="head_colorr" />
                   </Link>
                 </div>

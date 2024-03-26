@@ -95,6 +95,10 @@ const AdminMenu = () => {
               <MdOutlineSell />
               <p>Orders</p>
             </NavLink>
+            <NavLink to="/bank" className="link">
+              <MdOutlineSell />
+              <p>Bank</p>
+            </NavLink>
             <NavLink to="/store" className="link">
               <HiOutlineBuildingStorefront />
               <p>Stores</p>
@@ -178,7 +182,7 @@ const AdminMenu = () => {
                   <form className="background_addproductpopup_box">
                     <div className="hover_addproductpopup_box_image">
                       <div className="box_input_image">
-                        <p>Edit banner image</p>
+                        <p>Edit logo image</p>
 
                         <label className="popup_Border_Boximagae">
                           {mainImages && mainImages.length > 0 ? (
