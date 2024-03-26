@@ -85,6 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    padding: 0 10px;
 }
 
 .btn_save_product{

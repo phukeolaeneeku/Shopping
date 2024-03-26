@@ -18,7 +18,7 @@ function ProductDetails() {
     {
       productID: 1,
       productName: "깻잎",
-      price: 8.500,
+      price: 18.500,
       review: 50,
       popular: false,
       images: [ { src: 깻잎 }],
@@ -26,7 +26,7 @@ function ProductDetails() {
     {
       productID: 2,
       productName: "더덕무침",
-      price: 7.520,
+      price: 17.520,
       review: 45,
       popular: false,
       images: [ { src: 더덕무침 }],
@@ -34,7 +34,7 @@ function ProductDetails() {
     {
       productID: 3,
       productName: "멸치볶음",
-      price: 9.250,
+      price: 19.250,
       review: 30,
       popular: false,
       images: [ { src: 멸치볶음 }],
@@ -42,7 +42,7 @@ function ProductDetails() {
     {
       productID: 4,
       productName: "진미채볶음",
-      price: 8.500,
+      price: 18.500,
       review: 29,
       popular: true,
       images: [ { src: 진미채볶음 }],
@@ -50,7 +50,7 @@ function ProductDetails() {
     {
       productID: 5,
       productName: "물김치",
-      price: 9.500,
+      price: 19.500,
       review: 39,
       popular: true,
       images: [ { src: 물김치 }],
@@ -166,7 +166,7 @@ function ProductDetails() {
             <form onSubmit={handleSubmit}>
               <div className="txtContentproduct">
                 <h1 className="txt_nameP">Name: {product.productName}</h1>
-                <p className="money_txt">Price: ${product.price}</p>
+                <p className="money_txt">Price: ￦{product.price}</p>
                 
                 <p className="txt_description">Review: {product.review}</p>
 
