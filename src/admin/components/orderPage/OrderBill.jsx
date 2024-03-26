@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./orderBill.css";
+import "./css/orderBill.css";
 import AdminMenu from '../adminMenu/AdminMenu';
 import { useLocation } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa";

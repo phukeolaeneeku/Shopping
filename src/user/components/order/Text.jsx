@@ -3,7 +3,7 @@ import Menu from "../menu/Menu";
 import Header from "../header/Header";
 import { IoIosArrowBack } from "react-icons/io";
 
-import "./text.css";
+import "./css/text.css";
 const Text = () => {
   return (
     <>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AdminMenu from "../adminMenu/AdminMenu";
-import "./post.css";
+import "./css/post.css";
 import imageicon from "../../../img/imageicon.jpg";
 import { AiOutlineDelete } from "react-icons/ai";
 import { CiCamera } from "react-icons/ci";
@@ -93,7 +93,7 @@ const Post = () => {
       <section id="post">
         <div className="boxcontainerSpan_Box"></div>
         <div className="box_container_product">
-            <div className="box_text">
+            <div className="box_text_post">
               <h2>Post Product</h2>
             </div>
 

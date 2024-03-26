@@ -1,4 +1,4 @@
-import "./addAmin.css";
+import "./css/addAmin.css";
 import AdminMenu from "../adminMenu/AdminMenu";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuUser } from "react-icons/lu";

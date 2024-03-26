@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
-import "./bank.css";
+import "./css/bank.css";
 import { CiImageOn } from "react-icons/ci";
 import QRCODE from "../../../img/QRCODE.png";
 import { useState, useEffect } from "react";
@@ -89,7 +89,7 @@ function Bank() {
   return (
     <>
       <div className="header_box_management">
-        <Link to="/bank" className="box_management_iconnback">
+        <Link to="/dashboard" className="box_management_iconnback">
           <IoIosArrowBack id="icons_back" />
           <p>Back</p>
         </Link>

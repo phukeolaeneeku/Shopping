@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./users.css";
+import "./css/users.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { IoSearchOutline } from "react-icons/io5";
 import AdminMenu from "../adminMenu/AdminMenu";

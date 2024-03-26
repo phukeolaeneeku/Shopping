@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./header.css";
+import "./css/header.css";
 import { FaMagnifyingGlass, FaCartShopping, FaRegUser } from "react-icons/fa6";
 import { BiLogIn } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";

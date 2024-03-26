@@ -1,5 +1,5 @@
 import React from "react";
-import "./order.css";
+import "./css/order.css";
 import Menu from "../menu/Menu";
 import Header from "../header/Header";
 import { useState } from "react";

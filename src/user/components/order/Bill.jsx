@@ -7,7 +7,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Logo from "../../../img/Logo.png";
 import storename from "../../../img/storename.png";
 
-import "./bill.css";
+import "./css/bill.css";
 const Bill = () => {
   // Orders
   const [orders, setOrders] = useState([

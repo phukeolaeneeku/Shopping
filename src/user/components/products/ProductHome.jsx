@@ -1,4 +1,4 @@
-import "./productHome.css";
+import "./css/productHome.css";
 import 깻잎 from "../../../img/깻잎.jpg";
 import 더덕무침 from "../../../img/더덕무침.jpg";
 import 멸치볶음 from "../../../img/멸치볶음.jpg";

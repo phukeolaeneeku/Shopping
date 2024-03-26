@@ -1,4 +1,4 @@
-import "./user.css";
+import "./css/user.css";
 import AdminMenu from "../adminMenu/AdminMenu";
 import { FaAngleLeft } from "react-icons/fa";
 import { AiOutlineDelete } from "react-icons/ai";

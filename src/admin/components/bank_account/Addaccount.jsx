@@ -1,4 +1,4 @@
-import "./addaccount.css";
+import "./css/addaccount.css";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { useState, useEffect } from "react";

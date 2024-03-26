@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./register.css";
+import "./css/register.css";
 import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import axios from "axios";
