@@ -1,4 +1,5 @@
 import "./css/addaccount.css";
+import AdminMenu from "../adminMenu/AdminMenu";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { useState, useEffect } from "react";
@@ -135,79 +136,76 @@ const Addaccount = () => {
     }
 
     alert("The Back account has been managed.");
-
-
-    // if (is_has_bank_account === true) {
-    //   alert("Bank account has been updated");
-    // } else {
-    //   alert("Bank account has been added");
-    // }
   };
 
   return (
     <>
-      <div className="header_box_management">
-        <Link to="/bank" className="box_management_iconnback">
-          <IoIosArrowBack id="icons_back" />
-          <p>Back</p>
-        </Link>
-        <div>
-          <h3>Store management</h3>
-        </div>
-        <div></div>
-      </div>
-      <form className="box_container_review1">
-        <div className="add_payment_box">
-          <h3>Add payment</h3>
-          <div className="inputproduct_box">
-            <p>Bank name:</p>
-            <input
-              className="inputproduct"
-              type="text"
-              name="name"
-              placeholder="name..."
-              onChange={handleInputChange}
-            />
+      <AdminMenu />
+      <section id="box_container_bank">
+        <div className="container_bank_account">
+          <div className="header_box_management">
+            <Link to="/bank" className="box_management_iconnback">
+              <IoIosArrowBack id="icons_backs" />
+              <p>Back</p>
+            </Link>
+            <div>
+              <h3>Store management</h3>
+            </div>
+            <div></div>
           </div>
-          <div className="inputproduct_box">
-            <p>Account name:</p>
-            <input
-              className="inputproduct"
-              type="text"
-              name="account_name"
-              placeholder="Account name..."
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="inputproduct_box">
-            <p>Account number:</p>
-            <input
-              className="inputproduct"
-              type="text"
-              name="account_number"
-              placeholder="account number..."
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="add_img_product_box">
-            <p>QR Code:</p>
-            <div className="boxicon_img_input">
-              <CiImageOn className="boxicon_img_iconn" />
+          <form className="box_container_review">
+            <h3>Add payment</h3>
+            <div className="input_product_box">
+              <label>Bank name:</label>
               <input
-                type="file"
-                name="image"
-                className="input"
-                id="fileInput"
+                className="inputproduct"
+                type="text"
+                name="name"
+                placeholder="Name..."
                 onChange={handleInputChange}
               />
             </div>
-          </div>
-
-          <button className="btn_save_productUser" onClick={handleSubmit}>
-            Save
-          </button>
+            <div className="input_product_box">
+              <label>Account name:</label>
+              <input
+                className="inputproduct"
+                type="text"
+                name="account_name"
+                placeholder="Account name..."
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="input_product_box">
+              <label>Account number:</label>
+              <input
+                className="inputproduct"
+                type="text"
+                name="account_number"
+                placeholder="Account number..."
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="add_img_product_box">
+              <label>QR Code:</label>
+              <div className="boxicon_image_input">
+                <CiImageOn className="boxicon_img_iconn" />
+                <input
+                  type="file"
+                  name="image"
+                  className="input"
+                  id="fileInput"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="btn_Save">
+              <button className="btn_save_product" onClick={handleSubmit}>
+                SAVE
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </section>
     </>
   );
 };

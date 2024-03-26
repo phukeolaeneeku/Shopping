@@ -8,6 +8,11 @@ import Bill from "../user/components/order/Bill";
 import Dashboard from "../admin/Dashboard";
 import Post from "../admin/components/products/Post";
 
+import Profile from "../user/components/account/Profile";
+import Terms from "../user/components/account/Terms";
+import Privacy from "../user/components/account/Privacy"
+import More from "../user/components/account/More";
+
 /* ============================== */
 import Order from "../user/components/order/Order";
 import ProductDetails from "../user/components/products/ProductDetails";
@@ -33,10 +38,8 @@ import Admin_acount from "../admin/components/menagerAdmin/Admin_acount";
 import Store from "../admin/components/stores/Store";
 import Bank from "../admin/components/bank_account/Bank";
 import Addaccount from "../admin/components/bank_account/Addaccount";
-import More from "../user/components/account/More";
-import Profile from "../user/components/account/Profile";
-import Terms from "../user/components/account/Terms";
-import Privacy from "../user/components/account/Privacy"
+
+
 
 
 const Links = () => {
