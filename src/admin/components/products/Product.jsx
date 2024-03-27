@@ -500,7 +500,6 @@ const Product = () => {
                     />
                   </div>
                 </div>
-
                 <div className="btn_foasdf">
                   <button
                     className="btn_cancel btn_addproducttxt_popup"
