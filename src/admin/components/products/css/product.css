@@ -540,6 +540,9 @@ input:focus {
     position: relative;
     cursor: pointer;
 }
+.box_input-img .img input{
+    display: none;
+}
 .edit_image_product {
     position: absolute;
     top: 10px;
@@ -576,9 +579,7 @@ input:focus {
     color: #f46738;
 }
 
-.box_input-img .img input{
-    display: none;
-} 
+ 
 
 .txtOFproduct {
     width: 100%;

@@ -8,6 +8,7 @@ import { BiUser } from "react-icons/bi";
 import { LiaUserCogSolid } from "react-icons/lia";
 import { RxDashboard } from "react-icons/rx";
 import { MdOutlineSell } from "react-icons/md";
+import { RiAccountBoxLine } from "react-icons/ri";
 import user from "../../../img/user.png";
 import Logo from "../../../img/Logo.png";
 import storename from "../../../img/storename.png";
@@ -96,7 +97,7 @@ const AdminMenu = () => {
               <p>Orders</p>
             </NavLink>
             <NavLink to="/bank" className="link">
-              <MdOutlineSell />
+              <RiAccountBoxLine />
               <p>Bank</p>
             </NavLink>
             <NavLink to="/store" className="link">
