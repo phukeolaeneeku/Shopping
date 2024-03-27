@@ -16,13 +16,13 @@ function Store() {
                             <div className="box_add_admin">
                                 <Link to="#" className="btn_addadmin">
                                     <BiPlus id="icon_add_admin" />
-                                    Add Store
+                                    매장 추가
                                 </Link>
                             </div>
 
                             <form className="search">
                                 <div className="search-box_menageruser">
-                                    <input type="text" placeholder="Search ..." />
+                                    <input type="text" placeholder="찾다 ..." />
                                     <button type="submit">
                                         <IoSearchOutline />
                                     </button>
@@ -31,17 +31,17 @@ function Store() {
                         </div>
                         <div className="box_contanier_stoerNumonevb">
                             <div className="box_contanier_stoer">
-                                <p>Store name</p>
+                                <p>가게 이름</p>
                                 <div className='btn_box_Cont'>
-                                    <button className='delete_storeDetails'>Delete</button>
-                                    <button className='viewMore_storeDetails'>View</button>
+                                    <button className='delete_storeDetails'>삭제</button>
+                                    <button className='viewMore_storeDetails'>보다</button>
                                 </div>
                             </div>
                             <div className="box_contanier_stoer">
-                                <p>Store name</p>
+                                <p>가게 이름</p>
                                 <div className='btn_box_Cont'>
-                                    <button className='delete_storeDetails'>Delete</button>
-                                    <button className='viewMore_storeDetails'>View</button>
+                                    <button className='delete_storeDetails'>삭제</button>
+                                    <button className='viewMore_storeDetails'>보다</button>
                                 </div>
                             </div>
                         </div>

@@ -226,14 +226,14 @@ const OrderBill = () => {
             <div className='box_icon_backOrderbill'>
               <Link to="/orderpage" className='box_link_orderpage'>
                 <FaAngleLeft id='box_icon_Back' />
-                <p>Back</p>
+                <p>뒤쪽에</p>
               </Link>
-              <h2>Order</h2>
+              <h2>명령</h2>
               <div></div>
             </div>
             <div className="aguopoidHead">
               <div className="aidf">
-                <p>OrderID: {order.orderID}</p>
+                <p>주문 아이디: {order.orderID}</p>
               </div>
             </div>
             <hr />
@@ -241,19 +241,19 @@ const OrderBill = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Amount</th>
-                    <th>Delivery</th>
+                    <th>음식 이름</th>
+                    <th>가격</th>
+                    <th>양</th>
+                    <th>배달</th>
                   </tr>
                 </thead>
                 {order.products.map((product) => (
                   <tbody key={product.productID}>
                     <tr>
                       <td>{product.productName}</td>
-                      <td>${product.price}</td>
+                      <td>￦{product.price}</td>
                       <td>{product.amount}</td>
-                      <td>${product.delivery}</td>
+                      <td>￦{product.delivery}</td>
                     </tr>
                   </tbody>
                 ))}
@@ -261,20 +261,20 @@ const OrderBill = () => {
             </div>
             <hr />
             <div className="atitlePrice">
-              <h3>Total:</h3>
-              <p>${order.totalPrice}</p>
+              <h3>총:</h3>
+              <p>￦{order.totalPrice}</p>
             </div>
             <div className="aplace-on">
-              <p>Place on: {order.orderDate}</p>
-              <p>Payment method: {order.payment}</p>
+              <p>에 놓다: {order.orderDate}</p>
+              <p>결제수단: {order.payment}</p>
               <form onSubmit={handleSubmit}>
                 <select value={status} onChange={handleStatus}>
-                  <option value="pending">Pending</option>
-                  <option value="completed">Completed</option>
+                  <option value="pending">보류 중</option>
+                  <option value="completed">완전한</option>
                 </select>
-                <button type='submit' >Confirm</button>
+                <button type='submit' >확인하다</button>
               </form>
-              <p>Delivery: {order.delivery}</p>
+              <p>배달: {order.delivery}</p>
             </div>
           </div>
         ))}

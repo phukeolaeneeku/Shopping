@@ -18,13 +18,13 @@ const Admins = () => {
               <div className="box_add_admin">
                 <Link to="/addadmin" className="btn_addadmin">
                   <BiPlus id="icon_add_admin" />
-                  Add Admin
+                  관리자 추가
                 </Link>
               </div>
 
               <form className="search">
                 <div className="search-box_menageruser">
-                  <input type="text" placeholder="Search ..." />
+                  <input type="text" placeholder="찾다 ..." />
                   <button type="submit">
                     <IoSearchOutline />
                   </button>
@@ -38,20 +38,20 @@ const Admins = () => {
                   <img src={user} alt="" />
                 </div>
                 <div className="box_user_text">
-                  <p>name</p>
-                  <p>Email</p>
+                  <p>이름</p>
+                  <p>이메일</p>
                 </div>
               </div>
               <div className='btn_box_Cont'>
-                <button className='delete_storeDetails'>Delete</button>
-                <Link to="#" className='viewMore_storeDetails'>Edit</Link>
+                <button className='delete_storeDetails'>삭제</button>
+                <Link to="admin" className='viewMore_storeDetails'>편집하다</Link>
               </div>
             </div>
 
             <div className="box_container_next_product">
               <button className="box_prev_left_product" >
                 <AiOutlineLeft id="box_icon_left_right_product" />
-                <p>Prev</p>
+                <p>이전</p>
               </button>
 
               <div className="box_num_product">
@@ -63,7 +63,7 @@ const Admins = () => {
               </div>
 
               <button className="box_prev_right_product">
-                <p>Next</p>
+                <p>다음</p>
                 <AiOutlineRight id="box_icon_left_right_product" />
               </button>
             </div>

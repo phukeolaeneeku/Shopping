@@ -5,53 +5,52 @@ import { IoIosArrowBack } from "react-icons/io";
 import { CiImageOn } from "react-icons/ci";
 
 const Addaccount = () => {
-  
   return (
     <>
       <AdminMenu />
       <section id="box_container_bank">
         <div className="container_bank_account">
-          <div className="header_box_management">
-            <Link to="/bank" className="box_management_iconnback">
-              <IoIosArrowBack id="icons_backs" />
-              <p>Back</p>
-            </Link>
-            <div>
-              <h3>Store management</h3>
-            </div>
-            <div></div>
-          </div>
           <form className="box_container_review">
-            <h3>Add payment</h3>
+            <div className="header_box_management">
+              <Link to="/bank" className="box_management_iconnback">
+                <IoIosArrowBack id="icons_backs" />
+                <p>뒤쪽에</p>
+              </Link>
+              <div>
+                <h3>매장관리</h3>
+              </div>
+              <div></div>
+            </div>
+            <h3>결제 추가</h3>
             <div className="input_product_box">
-              <label>Bank name:</label>
+              <label>은행 이름:</label>
               <input
                 className="inputproduct"
                 type="text"
                 name="name"
-                placeholder="Name..."
+                placeholder="은행 이름..."
               />
             </div>
             <div className="input_product_box">
-              <label>Account name:</label>
+              <label>계정 이름:</label>
               <input
                 className="inputproduct"
                 type="text"
                 name="account_name"
-                placeholder="Account name..."
+                placeholder="계정 이름..."
               />
             </div>
             <div className="input_product_box">
-              <label>Account number:</label>
+              <label>계좌 번호:</label>
               <input
                 className="inputproduct"
                 type="text"
                 name="account_number"
-                placeholder="Account number..."
+                placeholder="계좌 번호..."
               />
             </div>
             <div className="add_img_product_box">
-              <label>QR Code:</label>
+              <label>QR 코드:</label>
               <div className="boxicon_image_input">
                 <CiImageOn className="boxicon_img_iconn" />
                 <input
@@ -63,9 +62,7 @@ const Addaccount = () => {
               </div>
             </div>
             <div className="btn_Save">
-              <button className="btn_save_product" >
-                SAVE
-              </button>
+              <button className="btn_save_product">구하다</button>
             </div>
           </form>
         </div>

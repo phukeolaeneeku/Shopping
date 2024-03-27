@@ -199,12 +199,12 @@ const OrderPage = () => {
             <section id='menager'>
               <div className='container_box_orderpage'>
                 <div className='box_head_search'>
-                  <h2>Order</h2>
+                  <h2>명령</h2>
                   <form className="search">
                     <div className="search-box_menageruser">
                         <input 
                           type="text" 
-                          placeholder="Search ..." 
+                          placeholder="찾다 ..." 
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
                           />
@@ -235,10 +235,10 @@ const OrderPage = () => {
                           </div>
                           <div className='container_order_icon'>
                               <div className='btn_pending'>
-                                  Pending
+                              보류 중
                               </div>
                               <button className='btn_view' onClick={() => handleOrder(order.orderID)}>
-                                  View
+                              보다
                               </button>
                           </div>
                         </form>
@@ -248,7 +248,7 @@ const OrderPage = () => {
                 <div className='box_next_order'>
                   <button className='box_prev_next_order' onClick={prePage}>
                     <AiOutlineLeft id="box_prev_next_icon" />
-                    <p>Prev</p>
+                    <p>이전</p>
                   </button>
                   <div className='box_num_order'>
                     {
@@ -263,7 +263,7 @@ const OrderPage = () => {
                   </div>
                   
                   <button className='box_prev_nexts_order' onClick={nextPage}>
-                    <p>Next</p>
+                    <p>다음</p>
                     <AiOutlineRight id="box_prev_next_icon" />
                   </button>
                 </div>

@@ -94,7 +94,7 @@ const Post = () => {
         <div className="boxcontainerSpan_Box"></div>
         <div className="box_container_product">
           <div className="box_text_post">
-            <h2>Post Product</h2>
+            <h2>제품 게시</h2>
           </div>
 
           <div className="group_container_product">
@@ -136,7 +136,7 @@ const Post = () => {
                       <div className="box">
                         <input
                           type="text"
-                          placeholder="Product Name"
+                          placeholder="음식 이름"
                           value={product.productName}
                           onChange={(e) => handleProductName(e, index)}
                           required
@@ -145,21 +145,21 @@ const Post = () => {
                       <div className="box">
                         <input
                           type="text"
-                          placeholder="Product Price"
+                          placeholder="제품 가격"
                           value={product.price}
                           onChange={(e) => handleProductPrice(e, index)}
                           required
                         />
                       </div>
-                    </div>
-                    <div className="box_popular">
-                      <label htmlFor={`popular-${index}`}>Popular</label>
-                      <input
-                        type="checkbox"
-                        id={`popular-${index}`}
-                        checked={product.popular}
-                        onChange={(e) => handlePopularChange(e, index)}
-                      />
+                      <div className="box_popular">
+                        <label htmlFor={`popular-${index}`}>인기 있는</label>
+                        <input
+                          type="checkbox"
+                          id={`popular-${index}`}
+                          checked={product.popular}
+                          onChange={(e) => handlePopularChange(e, index)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ const Post = () => {
           </div>
           <div className="btn_submit">
             <button type="submit" onClick={handleSubmit}>
-              Post Product
+              제품 게시
             </button>
           </div>
         </div>

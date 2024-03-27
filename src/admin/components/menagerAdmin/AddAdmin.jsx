@@ -16,7 +16,7 @@ const AddAdmin = () => {
         <div className="goback">
           <Link to="/admins" className="box_guopIconbAck">
             <FaAngleLeft id="box_icon_Back" />
-            <p>Back</p>
+            <p>뒤쪽에</p>
           </Link>
         </div>
         <div className="box_addAdmin">
@@ -24,64 +24,64 @@ const AddAdmin = () => {
           <form >
             <div className="addAdminForm">
               <div className="boxhead_subminandtitle">
-                <h2 className="titleaddmin">Add Admin</h2>
+                <h2 className="titleaddmin">관리자 추가</h2>
                 <div>
-                  <button type="submit" className="submit">Add</button>
+                  <button type="submit" className="submit">추가하다</button>
                 </div>
               </div>
 
               <div className="add-box">
-                <label htmlFor="fname" className="titlelabel">First name:</label>
+                <label htmlFor="fname" className="titlelabel">이름:</label>
                 <div className="boxiconnandinput">
                   <LuUser className="iconinput" />
                   <input
                     type="text"
                     id="fname"
                     className="input"
-                    placeholder="Fist name..."
+                    placeholder="이름..."
                   />
                 </div>
               </div>
               <div className="add-box">
-                <label htmlFor="lname" className="titlelabel">Last name:</label>
+                <label htmlFor="lname" className="titlelabel">성:</label>
                 <div className="boxiconnandinput">
                   <LuUser className="iconinput" />
                   <input
                     type="text"
                     id="lname"
                     className="input"
-                    placeholder="Last name..."
+                    placeholder="성..."
                   />
                 </div>
               </div>
 
               <div className="add-box">
-                <label htmlFor="email" className="titlelabel">Email:</label>
+                <label htmlFor="email" className="titlelabel">이메일:</label>
                 <div className="boxiconnandinput">
                   <MdOutlineEmail className="iconinput" />
                   <input
                     type="email"
                     id="email"
                     className="input"
-                    placeholder="Email address..."
+                    placeholder="이메일 주소..."
                   />
                 </div>
               </div>
               <div className="add-box">
-                <label htmlFor="phone" className="titlelabel">Phone number:</label>
+                <label htmlFor="phone" className="titlelabel">전화 번호:</label>
                 <div className="boxiconnandinput">
                   <FiPhone className="iconinput" />
                   <input
                     type="text"
                     id="phone"
                     className="input"
-                    placeholder="Phone number..."
+                    placeholder="전화 번호..."
                   />
                 </div>
 
               </div>
               <div className="add-box">
-                <label htmlFor="adminImage" className="titlelabel">Profile image:</label>
+                <label htmlFor="adminImage" className="titlelabel">프로필 이미지:</label>
                 <div className="boxiconnandinput">
                   <CiImageOn className="iconinput" />
                   <input type="file" className="input"/>

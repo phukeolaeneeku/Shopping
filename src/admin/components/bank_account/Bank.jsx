@@ -6,37 +6,36 @@ import "./css/bank.css";
 import imageicon from "../../../img/imageicon.jpg";
 
 function Bank() {
-  
   return (
     <>
       <AdminMenu />
       <section id="box_container_bank">
         <div className="container_bank_account">
-          <div className="header_box_management">
-            <Link to="/dashboard" className="box_management_iconnback">
-              <IoIosArrowBack id="icons_back" />
-              <p>Back</p>
-            </Link>
-            <div>
-              <h3>Store: Name</h3>
-            </div>
-            <div></div>
-          </div>
           <form className="box_container_review">
+            <div className="header_box_management">
+              <Link to="/dashboard" className="box_management_iconnback">
+                <IoIosArrowBack id="icons_back" />
+                <p>뒤쪽에</p>
+              </Link>
+              <div>
+                <h3>가게: Name</h3>
+              </div>
+              <div></div>
+            </div>
             <div className="add_payment_box">
-              <h3>Payment</h3>
+              {/* <h3>지불</h3> */}
               <div className="container_box_input">
                 <div className="inputproduct_box_dplay">
-                  <p>Bank: </p>
+                  <p>은행: </p>
                 </div>
                 <div className="inputproduct_box_dplay">
-                  <p>Account name: </p>
+                  <p>계정 이름: </p>
                 </div>
                 <div className="inputproduct_box_dplay">
-                  <p>Account number: </p>
+                  <p>계좌 번호: </p>
                 </div>
                 <div className="add_img_product_box">
-                  <p>QR Code:</p>
+                  <p>QR 코드:</p>
                   <div className="imag_qrcode_store">
                     <img src={imageicon} alt="" />
                   </div>
@@ -47,7 +46,7 @@ function Bank() {
                 type="submit"
                 className="btn_save_productUser"
               >
-                Add/Edit
+                추가/수정
               </Link>
             </div>
           </form>

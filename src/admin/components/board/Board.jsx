@@ -70,53 +70,53 @@ const Board = () => {
           <div className="manage-target">
             <div className="manage">
               <div className="containerBox_db">
-                <h3>Dashboard</h3>
+                <h3>계기반</h3>
                 <div className="contentBox_db">
                   <div className="menu-box one">
                     <div>
                       <IoDocumentText className="iconGad gone1" />
-                      <p>Porducts</p>
+                      <p>명령</p>
                     </div>
                     <h2>{productCount}</h2>
                     <Link to="/product" className="txtcol">
-                      View More
+                    더보기
                     </Link>
                   </div>
                   <div className="menu-box two">
                     <div>
                       <IoDocumentText className="iconGad gone2" />
-                      <p>Orders</p>
+                      <p>명령</p>
                     </div>
                     <h2>{orderCount}</h2>
                     <Link to="/orderpage" className="txtcol">
-                      <p>View More</p>
+                      <p>더보기</p>
                     </Link>
                   </div>
                   <div className="menu-box three">
                     <div>
                       <IoDocumentText className="iconGad gone3" />
-                      <p>Users</p>
+                      <p>명령</p>
                     </div>
                     <h2>{userAccount}</h2>
                     <Link to="/users" className="txtcol">
-                      <p>View More</p>
+                      <p>더보기</p>
                     </Link>
                   </div>
                   <div className="menu-box four">
                     <div>
                       <IoDocumentText className="iconGad gone4" />
-                      <p>Admins</p>
+                      <p>명령</p>
                     </div>
                     <h2>{adminCount}</h2>
                     <Link to="/admins" className="txtcol">
-                      <p>View More</p>
+                      <p>더보기</p>
                     </Link>
                   </div>
                 </div>
               </div>
 
               <div className="target">
-                <h2>Target vs Reality</h2>
+                <h2>목표 대 현실</h2>
                 <div className="target-graph">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -304,7 +304,7 @@ const Board = () => {
           </div>
           <div className="products-visit">
             <div className="products">
-              <h3>Top products</h3>
+              <h3>인기상품</h3>
               <div className="item_guopBox">
                 <div className="items">
                   <h4>#</h4>
@@ -383,7 +383,7 @@ const Board = () => {
               </div>
             </div>
             <div className="visit">
-              <h3>Visitor insights</h3>
+              <h3>방문자 통계</h3>
               <div className="visitor-graph">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

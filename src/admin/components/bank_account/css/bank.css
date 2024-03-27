@@ -1,12 +1,11 @@
 #box_container_bank{
     width: 80%;
     margin: auto;
-    padding: 5rem 0;
+    padding-bottom: 5rem;
 }
 .container_bank_account{
     width: 100%;
     margin: auto;
-    margin-left: 7.3rem;
 }
 .header_box_management{
     width: 100%;
@@ -44,7 +43,7 @@
     border-radius: 5px;
 }
 .box_container_review1{
-    margin-top: 1rem;
+    margin-top: 5rem;
 }
 .inputproduct_box_dplay{
     width: 100%;

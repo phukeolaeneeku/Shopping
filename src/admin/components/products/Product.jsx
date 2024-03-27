@@ -188,7 +188,7 @@ const Product = () => {
       <section id="product_admin">
         <div className="container_body_admin_product">
           <div className="search-box_product">
-            <input type="text" placeholder="Search ..." />
+            <input type="text" placeholder="찾다..." />
             <button>
               <IoSearchOutline />
             </button>
@@ -196,12 +196,12 @@ const Product = () => {
 
           <div className="productHead_content">
             <h1 className="htxthead">
-              <span className="spennofStyleadmin"></span>Product
+              <span className="spennofStyleadmin"></span>제품
             </h1>
             <div className="categoryBoxfiler">
               <Link to="/post" className="box_add_product">
                 <BiPlus id="icon_add_product" />
-                <p>Add Product</p>
+                <p>제품 추가</p>
               </Link>
             </div>
           </div>
@@ -229,7 +229,7 @@ const Product = () => {
                 <form className="background_addproductpopup_box">
                   <div className="hover_addproductpopup_box_image">
                     <div className="box_input_image">
-                      <p>Edit banner image</p>
+                      <p>배너 이미지 수정</p>
 
                       <label className="popup_Border_Boximagae">
                         {mainImageBanner && mainImageBanner.length > 0 ? (
@@ -253,10 +253,10 @@ const Product = () => {
                         className="btn_cancel btn_addproducttxt_popup"
                         onClick={togglePopupimage}
                       >
-                        Cancel
+                        아니요
                       </button>
                       <button className="btn_confirm btn_addproducttxt_popup">
-                        Update
+                      업데이트
                       </button>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ const Product = () => {
           <div id="container_product_admin">
             <div className="productHead_content">
               <h1 className="htxthead">
-                <span className="spennofStyle"></span>POPULAR MENU
+                <span className="spennofStyle"></span>인기 메뉴
               </h1>
             </div>
 
@@ -309,7 +309,7 @@ const Product = () => {
                         <div className="background_addproductpopup_box">
                           <div className="hover_addproductpopup_box_image">
                             <div className="box_input_image">
-                              <p>Edit product image</p>
+                              <p>제품 이미지 수정</p>
                               <label htmlFor={`image-${index}`}>
                                 {selectedImages[index] ? (
                                   <img
@@ -334,10 +334,10 @@ const Product = () => {
                                 className="btn_cancel btn_addproducttxt_popup"
                                 onClick={closeConfirmationPopupImage}
                               >
-                                Cancel
+                                아니요
                               </button>
                               <button className="btn_confirm btn_addproducttxt_popup">
-                                Update
+                              업데이트
                               </button>
                             </div>
                           </div>
@@ -351,7 +351,7 @@ const Product = () => {
                             openConfirmationPopup(product.productID)
                           }
                         >
-                          <li>ProductName: {product.productName}</li>
+                          <li>음식 이름: {product.productName}</li>
                           <MdOutlineEdit id="icon_edit" />
                         </div>
                         <div
@@ -360,7 +360,7 @@ const Product = () => {
                             openConfirmationPopupPrice(product.productID)
                           }
                         >
-                          <li>Price: ${product.price}</li>
+                          <li>가격: ￦{product.price}</li>
                           <MdOutlineEdit id="icon_edit" />
                         </div>
 
@@ -370,7 +370,7 @@ const Product = () => {
                             openConfirmationPopular(product.productID)
                           }
                         >
-                          <li>Popolar</li>
+                          <li>인기 있는</li>
                           <MdOutlineEdit id="icon_edit" />
                         </div>
                       </div>
@@ -383,7 +383,7 @@ const Product = () => {
           <div id="container_product_admin">
             <div className="productHead_content">
               <h1 className="htxthead">
-                <span className="spennofStyle"></span>ALL MENU
+                <span className="spennofStyle"></span>모든 메뉴
               </h1>
             </div>
             <div className="contentImageProducts">
@@ -429,7 +429,7 @@ const Product = () => {
                       className="box_icon_MdOutlineEdit"
                       onClick={() => openConfirmationPopup(product.productID)}
                     >
-                      <li>ProductName: {product.productName}</li>
+                      <li>음식 이름: {product.productName}</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
                     <div
@@ -438,14 +438,14 @@ const Product = () => {
                         openConfirmationPopupPrice(product.productID)
                       }
                     >
-                      <li>Price: ${product.price}</li>
+                      <li>가격: ￦{product.price}</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
                     <div
                       className="box_icon_MdOutlineEdit"
                       onClick={() => openConfirmationPopular(product.productID)}
                     >
-                      <li>Popolar</li>
+                      <li>인기 있는</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
                   </div>
@@ -458,7 +458,7 @@ const Product = () => {
             <div className="background_addproductpopup_box">
               <div className="hover_addproductpopup_box">
                 <div className="box_input">
-                  <p>Edit product name</p>
+                  <p>제품 이름 수정</p>
                   <input
                     type="text"
                     placeholder="Product name..."
@@ -470,10 +470,10 @@ const Product = () => {
                     className="btn_cancel btn_addproducttxt_popup"
                     onClick={closeConfirmationPopup}
                   >
-                    Cancel
+                    아니요
                   </button>
                   <button className="btn_confirm btn_addproducttxt_popup">
-                    Update
+                  업데이트
                   </button>
                 </div>
               </div>
@@ -484,7 +484,7 @@ const Product = () => {
             <div className="background_addproductpopup_box">
               <div className="hover_addproductpopup_box">
                 <div className="box_input">
-                  <p>Edit product price</p>
+                  <p>제품 가격 수정</p>
                   <input
                     type="text"
                     placeholder="Product price..."
@@ -496,10 +496,10 @@ const Product = () => {
                     className="btn_cancel btn_addproducttxt_popup"
                     onClick={closeConfirmationPopupPrice}
                   >
-                    Cancel
+                    아니요
                   </button>
                   <button className="btn_confirm btn_addproducttxt_popup">
-                    Update
+                  업데이트
                   </button>
                 </div>
               </div>
@@ -509,7 +509,7 @@ const Product = () => {
             <div className="background_addproductpopup_box">
               <div className="hover_addproductpopup_box">
                 <div className="box_input">
-                  <p>Edit popular</p>
+                  <p>인기 편집</p>
                   <div className="container_popular">
                     <label htmlFor="popular">Popular</label>
                     <input
@@ -524,10 +524,10 @@ const Product = () => {
                     className="btn_cancel btn_addproducttxt_popup"
                     onClick={() => closeConfirmationPopular()} // No need to pass index here
                   >
-                    Cancel
+                    아니요
                   </button>
                   <button className="btn_confirm btn_addproducttxt_popup">
-                    Update
+                  업데이트
                   </button>
                 </div>
               </div>

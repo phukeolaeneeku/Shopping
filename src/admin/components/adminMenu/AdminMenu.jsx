@@ -86,54 +86,54 @@ const AdminMenu = () => {
           <div className="menu">
             <NavLink to="/dashboard" className="link">
               <RxDashboard />
-              <p>Dashboard</p>
+              <p>계기반</p>
             </NavLink>
             <NavLink to="/product" className="link">
               <IoDocumentText />
-              <p>Products</p>
+              <p>제품</p>
             </NavLink>
             <NavLink to="/orderpage" className="link">
               <MdOutlineSell />
-              <p>Orders</p>
+              <p>명령</p>
             </NavLink>
             <NavLink to="/bank" className="link">
               <RiAccountBoxLine />
-              <p>Bank</p>
+              <p>은행 계좌</p>
             </NavLink>
             <NavLink to="/store" className="link">
               <HiOutlineBuildingStorefront />
-              <p>Stores</p>
+              <p>백화점</p>
             </NavLink>
             <NavLink to="/users" className="link">
               <BiUser />
-              <p>Users</p>
+              <p>사용자</p>
             </NavLink>
             <NavLink to="/admins" className="link">
               <LiaUserCogSolid />
-              <p>Admins</p>
+              <p>관리자</p>
             </NavLink>
             <div onClick={() => setShowConfirmation(true)} className="link">
               <IoLogOutOutline />
-              <p>Log Out</p>
+              <p>로그 아웃</p>
             </div>
             {showConfirmation && (
               <div className="background_addproductpopup_box">
                 <div className="hover_addproductpopup_box">
                   <div className="box_logout">
-                    <p>Are you sure you want to logout?</p>
+                    <p>정말로 로그아웃하시겠습니까?</p>
                   </div>
                   <div className="btn_foasdf">
                     <button
                       className="btn_cancel btn_addproducttxt_popup"
                       onClick={handleCancelLogout}
                     >
-                      Cancel
+                      아니요
                     </button>
                     <button
                       className="btn_confirm btn_addproducttxt_popup"
                       onClick={handleConfirmLogout}
                     >
-                      Yes
+                      예
                     </button>
                   </div>
                 </div>
@@ -183,7 +183,7 @@ const AdminMenu = () => {
                   <form className="background_addproductpopup_box">
                     <div className="hover_addproductpopup_box_image">
                       <div className="box_input_image">
-                        <p>Edit logo image</p>
+                        <p>로고 이미지 편집</p>
 
                         <label className="popup_Border_Boximagae">
                           {mainImages && mainImages.length > 0 ? (
@@ -207,14 +207,14 @@ const AdminMenu = () => {
                           className="btn_cancel btn_addproducttxt_popup"
                           onClick={togglePopupimage}
                         >
-                          Cancel
+                          아니요
                         </button>
                         <button
                           to="#"
                           className="btn_confirm btn_addproducttxt_popup"
                           onClick={togglePopupimage}
                         >
-                          Update
+                          업데이트
                         </button>
                       </div>
                     </div>

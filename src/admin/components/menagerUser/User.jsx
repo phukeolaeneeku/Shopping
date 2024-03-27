@@ -15,13 +15,13 @@ const User = () => {
         <div className="goback">
           <Link to="/users" className="box_guopIconbAck">
             <FaAngleLeft id="box_icon_Back" />
-            <p>Back</p>
+            <p>뒤쪽에</p>
           </Link>
         </div>
         <div className="box_addAdmin">
           <form>
             <div className="addAdminForm">
-              <h3>User Details</h3>
+              <h3>사용자 세부정보</h3>
               <div className="del-update">
                 <div
                   className="del"
@@ -30,7 +30,7 @@ const User = () => {
                 </div>
               </div>
               <div className="add-box">
-                <label htmlFor="fname" className="titlelabel">User ID:</label>
+                <label htmlFor="fname" className="titlelabel">사용자 ID:</label>
                 <div className="boxiconnandinput">
                   <LuUser className="iconinput" />
                   <div className="input">
@@ -39,7 +39,7 @@ const User = () => {
                 </div>
               </div>
               <div className="add-box">
-                <label htmlFor="fname" className="titlelabel">User Name:</label>
+                <label htmlFor="fname" className="titlelabel">사용자 이름:</label>
                 <div className="boxiconnandinput">
                   <LuUser className="iconinput" />
                   <div className="input">
@@ -49,7 +49,7 @@ const User = () => {
               </div>
 
               <div className="add-box">
-                <label htmlFor="email" className="titlelabel">Email:</label>
+                <label htmlFor="email" className="titlelabel">이메일:</label>
                 <div className="boxiconnandinput">
                   <MdOutlineEmail className="iconinput" />
                   <div className="input">
@@ -58,7 +58,7 @@ const User = () => {
                 </div>
               </div>
               <div className="add-box">
-                <label htmlFor="phone" className="titlelabel">Phone number:</label>
+                <label htmlFor="phone" className="titlelabel">전화 번호:</label>
                 <div className="boxiconnandinput">
                   <FiPhone className="iconinput" />
                   <div className="input">
@@ -68,7 +68,7 @@ const User = () => {
 
               </div>
               <div className="add-box">
-                <label htmlFor="adminImage" className="titlelabel">Profile image:</label>
+                <label htmlFor="adminImage" className="titlelabel">프로필 이미지:</label>
                 <div className="BorderinputThenImage">
                   <div className="input">
                     <img
