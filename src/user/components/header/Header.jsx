@@ -5,6 +5,7 @@ import { BiLogIn } from "react-icons/bi";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
 import storename from "../../../img/storename.png";
+import { AiFillDashboard } from "react-icons/ai";
 
 const Header = ({ handleSearch }) => {
   // For authenticate user
@@ -76,6 +77,11 @@ const Header = ({ handleSearch }) => {
                 <div>
                   <Link to="/more">
                     <FaRegUser className="head_colorr" />
+                  </Link>
+                </div>
+                <div>
+                  <Link to="/dashboard">
+                    <AiFillDashboard className="head_colorr" />
                   </Link>
                 </div>
                 <div>

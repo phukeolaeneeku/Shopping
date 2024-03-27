@@ -124,7 +124,28 @@ const Bill = () => {
       element.style.height = "auto";
       element.style.height = element.scrollHeight + "px";
     };
-  
+
+
+  // Completion
+  let statusDelivery = ''
+  if (filteredOrders) {
+    filteredOrders.forEach((order) => (
+      statusDelivery = order.status
+    ))
+  }
+  const [status, setStatus] = useState(statusDelivery)
+
+  // Handle status
+  const handleStatus = (e) => {
+    setStatus(e.target.value);
+  };
+
+  // Handle submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(status)
+  }
 
   return (
     <>
@@ -156,7 +177,7 @@ const Bill = () => {
                     <th>delivery</th>
                   </tr>
                 </thead>
-                <hr className="hr"/>
+                {/* <hr className="hr"/> */}
                 {order.products.map((product) => (
                   <tbody key={product.productID}>
                     <tr>
@@ -177,7 +198,13 @@ const Bill = () => {
             <div className="place-on">
               <p>Place on: {order.orderDate}</p>
               <p>Payment method: {order.payment}</p>
-              <p>Status: {order.status}</p>
+              <form onSubmit={handleSubmit}>
+                <select value={status} onChange={handleStatus}>
+                  <option value="pending">Pending</option>
+                  <option value="completed">Completed</option>
+                </select>
+                <button type='submit' className="btn_completed">Confirm</button>
+              </form>
               <p>Delivery: {order.delivery}</p>
             </div>
           </div>

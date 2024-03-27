@@ -97,6 +97,30 @@
     height: 20px;
 }
 
+/* update status */
+.place-on form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.place-on form select {
+    width: 15%;
+    border-radius: 4px;
+}
+.place-on form select:focus{
+    outline: none !important;
+}
+.btn_completed{
+    background-color: #FF4F16;
+    padding: 0.5rem 2rem;
+    border-radius: 4px;
+    font-size: 17px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 /* ===== Commend =====*/
 
 .box_containner_commend{
@@ -163,6 +187,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .place-on form select {
+        width: 40%;
+    }
+    .btn_completed{
+        padding: 0.5rem 2rem;
+        font-size: 14px;
+    }
+    .box_containner_commend{
+        margin-top: -3rem;
+    }
+    .place-on {
+        padding: 0 0;
+    }
+    .titlePrice{
+        padding: 25px 0;
     }
     
 }
