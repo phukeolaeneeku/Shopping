@@ -44,7 +44,7 @@ const Admins = () => {
               </div>
               <div className='btn_box_Cont'>
                 <button className='delete_storeDetails'>삭제</button>
-                <Link to="admin" className='viewMore_storeDetails'>편집하다</Link>
+                <Link to="#" className='viewMore_storeDetails'>편집하다</Link>
               </div>
             </div>
 
