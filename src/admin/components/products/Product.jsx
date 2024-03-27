@@ -422,6 +422,13 @@ const Product = () => {
                       <li>Price: ${product.price}</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
+                    <div
+                      className="box_icon_MdOutlineEdit"
+                      onClick={() => openConfirmationPopular(product.productID)}
+                    >
+                      <li>Popolar</li>
+                      <MdOutlineEdit id="icon_edit" />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -482,14 +489,16 @@ const Product = () => {
           {isConfirmationPopular && (
             <div className="background_addproductpopup_box">
               <div className="hover_addproductpopup_box">
-                <div className="box_popular">
-                  <label htmlFor={`popular-${index}`}>Popular</label>
-                  <input
-                    type="checkbox"
-                    // id={`popular-${index}`}
-                    // checked={product.popular}
-                    // onChange={(e) => handlePopularChange(e, index)}
-                  />
+                <div className="box_input">
+                  <p>Edit popular</p>
+                  <div className="container_popular">
+                    <label htmlFor="popular">Popular</label>
+                    <input
+                      type="checkbox"
+                      id="popular"
+                      onChange={(e) => handlePopularChange(e, index)}
+                    />
+                  </div>
                 </div>
 
                 <div className="btn_foasdf">
