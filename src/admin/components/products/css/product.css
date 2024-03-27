@@ -135,13 +135,6 @@ a {
     background-color: #FF4F16;
     border-radius: 4px;
 }
-
-#container_product_admin .product-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-}
-
 #product .box-product {
     width: 100%;
     height: auto;
@@ -252,6 +245,7 @@ a {
     width: 90%;
     margin: auto;
     margin-top: 5rem;
+    position: relative;
 }
 .container_home {
     width: 65%;
@@ -542,6 +536,21 @@ input:focus {
 }
 .box_input-img .img input{
     display: none;
+}
+.Box_delete_product {
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    text-align: start;
+    background-color: red;
+    font-size: 20px;
+    color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    margin: 7px;
+    cursor: pointer;
 }
 .edit_image_product {
     position: absolute;

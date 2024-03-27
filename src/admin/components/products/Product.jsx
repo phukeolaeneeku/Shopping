@@ -16,6 +16,7 @@ import { MdOutlineEdit } from "react-icons/md";
 import { CiCamera } from "react-icons/ci";
 import banner1 from "../../../img/banner1.png";
 import imageicon from "../../../img/imageicon.jpg";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Product = () => {
   const [products, setProducts] = useState([
@@ -174,6 +175,13 @@ const Product = () => {
     setProducts(updatedProducts);
   };
 
+  /////////////////////handleDelete
+  const handleDelete = (index) => {
+    const updatedProducts = [...products];
+    updatedProducts.splice(index, 1);
+    setProducts(updatedProducts);
+  };
+
   return (
     <>
       <AdminMenu />
@@ -279,6 +287,12 @@ const Product = () => {
                           ) : (
                             <img src={product.images[0].src} alt="Product" />
                           )}
+                        </div>
+                        <div
+                          className="Box_delete_product"
+                          onClick={() => handleDelete(index)}
+                        >
+                          <AiOutlineDelete />
                         </div>
 
                         <div
@@ -392,6 +406,13 @@ const Product = () => {
                         required
                       />
                     </div>
+                    
+                    <div
+                      className="Box_delete_product"
+                      onClick={() => handleDelete(index)}
+                    >
+                      <AiOutlineDelete />
+                    </div>
 
                     <div
                       className="edit_image_product"
@@ -399,9 +420,7 @@ const Product = () => {
                         openConfirmationPopupImage(product.productID)
                       }
                     >
-                      {/* <label htmlFor={`image-${index}`}> */}
                       <CiCamera id="box_icon_camera_product" />
-                      {/* </label> */}
                     </div>
                   </div>
 

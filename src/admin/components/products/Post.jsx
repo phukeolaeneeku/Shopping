@@ -93,87 +93,90 @@ const Post = () => {
       <section id="post">
         <div className="boxcontainerSpan_Box"></div>
         <div className="box_container_product">
-            <div className="box_text_post">
-              <h2>Post Product</h2>
-            </div>
+          <div className="box_text_post">
+            <h2>Post Product</h2>
+          </div>
 
-            <div className="group_container_product">
-                {products.map((product, index) => (
-                  <div key={index}>
-                    <div className="addProduct_box_content_afterThat">
-                        <div className="deleteBox_productconotent"
-                          onClick={() => handleDelete(index)} >
-                          <AiOutlineDelete />
-                        </div>
+          <div className="group_container_product">
+            {products.map((product, index) => (
+              <div key={index}>
+                <div className="addProduct_box_content_afterThat">
+                  <div
+                    className="deleteBox_productconotent"
+                    onClick={() => handleDelete(index)}
+                  >
+                    <AiOutlineDelete />
+                  </div>
 
-                        <div className="box_input-img">
-                          {product.mainImage ? (
-                            <img src={product.mainImage} alt="product" />
-                          ) : (
-                            <img src={imageicon} alt="default" />
-                          )}
-                          <input
-                            type="file"
-                            id={`img-${index}`}
-                            onChange={(e) => handleImage(e, index)}
-                            required
-                          />
-                        </div>
+                  <div className="box_input-img">
+                    {product.mainImage ? (
+                      <img src={product.mainImage} alt="product" />
+                    ) : (
+                      <img src={imageicon} alt="default" />
+                    )}
+                    <input
+                      type="file"
+                      id={`img-${index}`}
+                      onChange={(e) => handleImage(e, index)}
+                      required
+                    />
+                  </div>
 
-                        <div className="edit_images">
-                          <label
-                            htmlFor={`img-${index}`}
-                            className="trigger_popup_fricc"
-                          >
-                            <CiCamera id="icon_ci_camera" />
-                          </label>
-                        </div>
-                        <div className="box_container_image">
-                        <div className="input-box">
-                          <div className="box">
-                              <input
-                                type="text"
-                                placeholder="Product Name"
-                                value={product.productName}
-                                onChange={(e) => handleProductName(e, index)}
-                                required
-                              />
-                          </div>
-                          <div className="box">
-                              <input
-                                type="text"
-                                placeholder="Product Price"
-                                value={product.price}
-                                onChange={(e) => handleProductPrice(e, index)}
-                                required
-                              />
-                          </div>
-                        </div>
-                        <div className="box_popular">
-                          <label htmlFor={`popular-${index}`}>Popular</label>
-                          <input
-                            type="checkbox"
-                            id={`popular-${index}`}
-                            checked={product.popular}
-                            onChange={(e) => handlePopularChange(e, index)}
-                          />
-                        </div>
+                  <div className="edit_images">
+                    <label
+                      htmlFor={`img-${index}`}
+                      className="trigger_popup_fricc"
+                    >
+                      <CiCamera id="icon_ci_camera" />
+                    </label>
+                  </div>
+
+                  <div className="box_container_image">
+                    <div className="input-box">
+                      <div className="box">
+                        <input
+                          type="text"
+                          placeholder="Product Name"
+                          value={product.productName}
+                          onChange={(e) => handleProductName(e, index)}
+                          required
+                        />
+                      </div>
+                      <div className="box">
+                        <input
+                          type="text"
+                          placeholder="Product Price"
+                          value={product.price}
+                          onChange={(e) => handleProductPrice(e, index)}
+                          required
+                        />
                       </div>
                     </div>
-                  </div>
-                ))}
-                <div onClick={handleAdd}>
-                    <div className="iconimage">
-                      <HiMiniShoppingBag id="icon_shoppingbag" />
-                      <HiPlus id="icon_goplus" />
+                    <div className="box_popular">
+                      <label htmlFor={`popular-${index}`}>Popular</label>
+                      <input
+                        type="checkbox"
+                        id={`popular-${index}`}
+                        checked={product.popular}
+                        onChange={(e) => handlePopularChange(e, index)}
+                      />
                     </div>
+                  </div>
                 </div>
+              </div>
+            ))}
+            <div onClick={handleAdd}>
+              <div className="iconimage">
+                <HiMiniShoppingBag id="icon_shoppingbag" />
+                <HiPlus id="icon_goplus" />
+              </div>
             </div>
-            <div className="btn_submit">
-              <button type="submit" onClick={handleSubmit}>
-                Post Product
-              </button>
-            </div>
+          </div>
+          <div className="btn_submit">
+            <button type="submit" onClick={handleSubmit}>
+              Post Product
+            </button>
+          </div>
         </div>
       </section>
     </>
