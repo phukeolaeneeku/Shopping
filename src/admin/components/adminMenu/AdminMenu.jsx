@@ -12,7 +12,7 @@ import { RiAccountBoxLine } from "react-icons/ri";
 import user from "../../../img/user.png";
 import Logo from "../../../img/Logo.png";
 import storename from "../../../img/storename.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiCamera } from "react-icons/ci";
@@ -144,7 +144,7 @@ const AdminMenu = () => {
           <div className="right">
             <div className="logo">
               <span className="logo_store">
-                <div className="image_logo_storename">
+                <Link to="/dashboard" className="image_logo_storename">
                   {mainImageStore && mainImageStore.length > 0 ? (
                     <img src={URL.createObjectURL(mainImageStore[0])} />
                   ) : (
@@ -160,7 +160,7 @@ const AdminMenu = () => {
                   <div className="edit_image_logo_store">
                     <CiCamera id="box_icon_camera_product" onClick={togglePopupimage}/>
                   </div>
-                </div>
+                </Link>
 
                 <div className="image_logo">
                   {mainImages && mainImages.length > 0 ? (

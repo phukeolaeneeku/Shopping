@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes , Route } from "react-router-dom";
 import Home from "../user/components/homepage/Home";
 import Payment from "../user/components/cart/Payment";
-import SuccessfulBuy from "../user/components/cart/SuccessfulBuy";
 import Cart from "../user/components/cart/Cart";
 import Contacts from "../user/components/contact/Contact";
 import Bill from "../user/components/order/Bill";
@@ -52,7 +51,6 @@ const Links = () => {
                 <Route exact path="/contacts" Component={Contacts}/>
                 <Route exact path="/order" Component={Order}/>
                 <Route exact path="/order/bill" Component={Bill}/>
-                <Route exact path="/cart/successfulBuy" Component={SuccessfulBuy}/>
                 <Route exact path="/text" Component={Text}/>
 
                 {/*====================== */}

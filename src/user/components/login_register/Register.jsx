@@ -102,17 +102,17 @@ const Register = () => {
           <Link to="/login" className="box_iconBack">
             <MdArrowBack id="iconBack" />
           </Link>
-          <h2>Register</h2>
+          <h2>등록하다</h2>
           <div className="title">
-            You are in the process of signing up as a user!
+          사용자 등록을 진행 중입니다!
           </div>
           <form className="container_form_user">
-            <div className="box_title">Enter basic information</div>
+            <div className="box_title">기본정보를 입력하세요</div>
             <div className="container_form_user2">
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="이메일"
                 value={data.email}
                 onChange={onChange}
                 required
@@ -152,7 +152,7 @@ const Register = () => {
                   id="email_send_btn"
                   className="verification"
                 >
-                  Verify
+                  확인하다
                 </div>
               )}
             </div>
@@ -160,7 +160,7 @@ const Register = () => {
             <input
               type="text"
               name="code"
-              placeholder="Certification Number"
+              placeholder="인증번호"
               value={data.code}
               onChange={onChange}
               required
@@ -169,7 +169,7 @@ const Register = () => {
               <input
                 type="text"
                 name="nickname"
-                placeholder="Nickname (maximum 10 characters)"
+                placeholder="닉네임(최대 10자)"
                 value={data.nickname}
                 onChange={onChange}
                 required
@@ -178,29 +178,29 @@ const Register = () => {
             <input
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="비밀번호"
               value={data.password}
               onChange={onChange}
               required
             />
             <input
               type="password"
-              name="password2"
-              placeholder="Confirm Password"
+              name="비밀번호2"
+              placeholder="비밀번호 확인"
               value={data.password2}
               onChange={onChange}
               required
             />
             
             <button type="submit" onClick={SignUp}>
-              Register
+            등록하다
             </button>
           </form>
           {errorText.length > 0 && <div>{errorText}</div>}
         </div>
         {registrationSuccess && (
           <div className="alert_success_sigup">
-            Registration successful!
+            등록이 완료되었습니다!
           </div>
         )}
       </section>

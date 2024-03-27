@@ -50,10 +50,10 @@ const ProfileEdit = () => {
                         onChange={handleImageChange}
                     />
                 </div>
-                <p>Name: Sompong</p>
+                <p>이름: Sompong</p>
             </div>
             <div className='box_user_profile'>
-                <p>User</p><FaRegUserCircle id='iconUser'/>
+                <p>사용자</p><FaRegUserCircle id='iconUser'/>
             </div>
             <form className='container_form_profileedit'>
                 <input 
@@ -63,21 +63,21 @@ const ProfileEdit = () => {
                 />
                 <input 
                     type="password" 
-                    placeholder=" Please enter your current password " 
+                    placeholder=" 현재 비밀번호를 입력해주세요 " 
                     required 
                 />
                 <input 
                     type="password" 
-                    placeholder=" Please enter a new password " 
+                    placeholder=" 새로운 비밀번호를 입력해주세요 " 
                     required 
                 />
                 <input 
                     type="password" 
-                    placeholder=" Please confirm your new password " 
+                    placeholder=" 새 비밀번호를 확인해 주세요. " 
                     required 
                 />
 
-                <button type="submit" >Confirmation</button>
+                <button type="submit" >확인</button>
             </form>
           
         </div>

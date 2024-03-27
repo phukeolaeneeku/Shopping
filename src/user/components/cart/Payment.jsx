@@ -87,11 +87,11 @@ const Payment = () => {
       <Header />
       <section id="payment">
         <section id="address">
-          <div className="header_box"><h3>Payment</h3></div>
-            <div className="head_text">Add address</div>
+          <div className="header_box"><h3>지불</h3></div>
+            <div className="head_text">주소 추가</div>
               <form>
                 <div className="box">
-                  <label htmlFor="contact">Contact number:</label>
+                  <label htmlFor="contact">연락처:</label>
                   <input
                     type="text"
                     id="contact"
@@ -99,7 +99,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="prov">Province:</label>
+                  <label htmlFor="prov">주:</label>
                   <input
                     type="text"
                     id="prov"
@@ -107,7 +107,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="city">District:</label>
+                  <label htmlFor="city">구역:</label>
                   <input
                     type="text"
                     id="city"
@@ -115,7 +115,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="companny">Shipping Companny name:</label>
+                  <label htmlFor="companny">배송회사명:</label>
                   <input
                     type="text"
                     id="companny"
@@ -123,7 +123,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="branch">Branch:</label>
+                  <label htmlFor="branch">나뭇가지:</label>
                   <input
                     type="text"
                     id="branch"
@@ -131,7 +131,7 @@ const Payment = () => {
                   />
                 </div>
                 <div className="box">
-                  <label htmlFor="account">Account name:</label>
+                  <label htmlFor="account">계정 이름:</label>
                   <input
                     type="text"
                     id="prov"
@@ -147,17 +147,17 @@ const Payment = () => {
               {/* procuts */}
               {products.length > 0 ? (
                 <div className="detailsProductInPayMentBox">
-                  <h3>Details</h3>
+                  <h3>세부</h3>
                   <ul>
                     {products.map((product) => (
                       <li className="detailsProduct_li" key={product.productID}>
-                        <div>Product ID: {product.productID}</div>
-                        <div>Product Name: {product.productName}</div>
+                        <div>제품 ID: {product.productID}</div>
+                        <div>상품명: {product.productName}</div>
                         
-                        <div>Price: {product.price}</div>
-                        <div>Product Counts: {product.productCounts}</div>
+                        <div>가격: {product.price}</div>
+                        <div>제품 수: {product.productCounts}</div>
                         <div>
-                          Have to pay: {product.productCounts * product.price}
+                        지불해야 함: {product.productCounts * product.price}
                         </div>
                       </li>
                     ))}
@@ -172,15 +172,15 @@ const Payment = () => {
                   <ul>
                     {productsCart.map((product) => (
                       <li key={product.productID}>
-                        <div>Product ID: {product.productID}</div>
-                        <div>Product Name: {product.productName}</div>
+                        <div>제품 ID: {product.productID}</div>
+                        <div>상품명: {product.productName}</div>
                         
-                        <div>Price: {product.price}</div>
-                        <div>Product Counts: {product.productCounts}</div>
+                        <div>가격: {product.price}</div>
+                        <div>제품 수: {product.productCounts}</div>
                       </li>
                     ))}
                     <div>
-                          Have to pay: {totalPrice}
+                    지불해야 함: {totalPrice}
                     </div>
                   </ul>
                 </div>
@@ -199,7 +199,7 @@ const Payment = () => {
                       checked={selectedOption === "onePay"}
                       onChange={handleRadioChange}
                     />
-                    <label htmlFor="onePay">Bcel One</label>
+                    <label htmlFor="onePay">비셀원</label>
                   </div>
                   <div className="select-option">
                     <input
@@ -231,21 +231,6 @@ const Payment = () => {
                 </div>
               </div>
 
-              {/* <div className="box_description">
-                <h3>Confirm transfer</h3>
-                <div className="image_confirm_transfer">
-                  <label htmlFor="img">
-                    {mainImage ? (
-                      <img src={mainImage} alt="Main Product" />
-                    ) : (
-                      <p>Choose image</p>
-                    )}
-                    <input type="file" id="img" onChange={handleImage}/>
-                  </label>
-                  
-                </div>
-              </div> */}
-
               <div className="save">
 
                 <button 
@@ -256,7 +241,7 @@ const Payment = () => {
                     (products == 0 && productsCart == 0)
                   }
                 >
-                  Confirm
+                  확인하다
                 </button>
                 
               </div>

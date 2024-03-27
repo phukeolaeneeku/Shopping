@@ -153,7 +153,7 @@ const Bill = () => {
       <section id="bill">
         <Link to="/order" className="box_container_back_icons_back">
           <IoIosArrowBack id="icons_back" />
-          <p>Back</p>
+          <p>뒤쪽에</p>
         </Link>
         {filteredOrders.map((order) => (
           <div className="bill-detial newspanBox" key={order.orderID}>
@@ -163,7 +163,7 @@ const Bill = () => {
             </div>
             <div className="guopoidHead">
               <div className="idf">
-                <p>OrderID: {order.orderID}</p>
+                <p>주문 아이디: {order.orderID}</p>
               </div>
             </div>
             <hr />
@@ -171,10 +171,10 @@ const Bill = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Food Name </th>
-                    <th>Price</th>
-                    <th>Amount</th>
-                    <th>delivery</th>
+                    <th>음식 이름 </th>
+                    <th>가격</th>
+                    <th>양</th>
+                    <th>배달</th>
                   </tr>
                 </thead>
                 {/* <hr className="hr"/> */}
@@ -182,9 +182,9 @@ const Bill = () => {
                   <tbody key={product.productID}>
                     <tr>
                       <td>{product.productName}</td>
-                      <td>${product.price}</td>
+                      <td>￦{product.price}</td>
                       <td>{product.amount}</td>
-                      <td>${product.delivery}</td>
+                      <td>￦{product.delivery}</td>
                     </tr>
                   </tbody>
                 ))}
@@ -192,20 +192,20 @@ const Bill = () => {
             </div>
             <hr />
             <div className="titlePrice">
-              <p>Total:</p>
-              <p>${order.totalPrice}</p>
+              <p>총:</p>
+              <p>￦{order.totalPrice}</p>
             </div>
             <div className="place-on">
-              <p>Place on: {order.orderDate}</p>
-              <p>Payment method: {order.payment}</p>
+              <p>에 놓다: {order.orderDate}</p>
+              <p>결제수단: {order.payment}</p>
               <form onSubmit={handleSubmit}>
                 <select value={status} onChange={handleStatus}>
-                  <option value="pending">Pending</option>
-                  <option value="completed">Completed</option>
+                  <option value="pending">보류 중</option>
+                  <option value="completed">완전한</option>
                 </select>
-                <button type='submit' className="btn_completed">Confirm</button>
+                <button type='submit' className="btn_completed">확인하다</button>
               </form>
-              <p>Delivery: {order.delivery}</p>
+              <p>배달: {order.delivery}</p>
             </div>
           </div>
         ))}
@@ -213,7 +213,7 @@ const Bill = () => {
       </section>
       <section>
       <form className="box_containner_commend">
-        <p>Review</p>
+        <p>검토</p>
         <div className="star">
           {[1, 2, 3, 4, 5].map((star) => (
             <span
@@ -232,14 +232,14 @@ const Bill = () => {
             id="multiline-input"
             value={note.commend}
             onChange={handleChange}
-            placeholder="Your opinion..."
+            placeholder="당신의 의견..."
             maxLength="300"
             required
           />
           <button
             type="submit" className="btn_commend"
           >
-            Commend
+            기리다
           </button>
         </div>
       </form>

@@ -172,6 +172,7 @@ body {
 
 
 .Count_product {
+    width: 100%;
     display: flex;
     gap: 1rem;
     padding: 25px 0;
@@ -185,6 +186,7 @@ body {
 }
 
 .btnBut {
+    width: 50%;
     background-color: #ff5016ec;
     color: #FFF;
     border: 1px solid #FF4F16;
@@ -197,6 +199,7 @@ body {
 }
 
 .btnAdd {
+    width: 50%;
     border: #FF4F16 1px solid;
     color: #FF4F16;
     cursor: pointer;
@@ -362,7 +365,7 @@ body {
 /* ------------------last Item------------------ */
 
 .txtContentproduct {
-    width: 80%;
+    width: 100%;
     margin-top: 2.5rem;
 }
 

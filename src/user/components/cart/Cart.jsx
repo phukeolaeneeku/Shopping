@@ -92,8 +92,8 @@ const Cart = () => {
                   <img src={product.images[0]} alt='img'></img>
                   <div className='box_item_text'>
                     
-                    <p>Name: {product.productName}</p>
-                    <p>Price: ${product.price}</p>
+                    <p>이름: {product.productName}</p>
+                    <p>가격: ￦{product.price}</p>
                   </div>
                 </div>
                 <div className='box_icon_order'>
@@ -120,26 +120,26 @@ const Cart = () => {
         </div>
             {products.length > 0 ?
         <div className='box_item_total'>
-          <h1>Cart Total</h1>
+          <h1>장바구니 합계</h1>
           <div className='box_item_total_text'>
-            <p>Subtotal:</p>
-            <p><input type="text" value={"$ " + price} onChange={() => { }} /></p>
+            <p>소계:</p>
+            <p><input type="text" value={"￦ " + price} onChange={() => { }} /></p>
           </div>
           <hr />
           <div className='box_item_total_text'>
-            <p>Shipping: </p>
-            <p><input type="text" value={"$ " + shipping} onChange={() => { }} /></p>
+            <p>배송: </p>
+            <p><input type="text" value={"￦ " + shipping} onChange={() => { }} /></p>
           </div>
           <hr />
           <div className='box_item_total_text'>
-            <h3>Total: </h3>
-            <p><input type="text" value={"$ " + grandTotal} onChange={() => { }} /></p>
+            <h3>총: </h3>
+            <p><input type="text" value={"￦ " + grandTotal} onChange={() => { }} /></p>
           </div>
           <div className='btn'>
-            <Link to="/" className="Continues_btn">Continues Shop</Link>
-            <button type='submit' className="checkout_btn">Checkout</button>
+            <Link to="/" className="Continues_btn">계속 쇼핑하기</Link>
+            <button type='submit' className="checkout_btn">점검</button>
           </div>
-        </div>: <p className='cart'>Your cart is empty</p> }
+        </div>: <p className='cart'>장바구니가 비어 있습니다.</p> }
       </form>
       <Menu />
     </>

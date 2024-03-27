@@ -142,7 +142,7 @@ function ProductDetails() {
       <div className="contentBody">
         <Link to="/" className="box_container_back_icons_back">
           <IoIosArrowBack id="icons_back" />
-          <p>Back</p>
+          <p>뒤쪽에</p>
         </Link>
         {filteredProducts.map((product) => (
         <div key={product.productID}>
@@ -165,10 +165,10 @@ function ProductDetails() {
 
             <form onSubmit={handleSubmit}>
               <div className="txtContentproduct">
-                <h1 className="txt_nameP">Name: {product.productName}</h1>
-                <p className="money_txt">Price: ￦{product.price}</p>
+                <h1 className="txt_nameP">식품명: {product.productName}</h1>
+                <p className="money_txt">가격: ￦{product.price}</p>
                 
-                <p className="txt_description">Review: {product.review}</p>
+                <p className="txt_description">검토: {product.review}</p>
 
                 <div className="hr">
                   <hr />
@@ -198,10 +198,10 @@ function ProductDetails() {
                 </div>
                 <div className="Count_product">
                   <button type="submit" className="echbtn btnBut">
-                    Buy Now
+                  지금 구매
                   </button>
                   <button type="submit" className="echbtn btnAdd">
-                    Add To Cart
+                  장바구니에 추가
                   </button>
                 </div>
               </div>

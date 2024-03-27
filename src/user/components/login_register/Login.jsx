@@ -7,7 +7,7 @@ import axios from "axios";
 
 
 const Login = () => {
-  const login_en = "Login";
+  const login_en = "로그인";
 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -77,22 +77,22 @@ const Login = () => {
               <MdArrowBack id="iconBack" />
             </Link>
             <h2 className="box_container_login_text">{login_en}</h2>
-            <p className="box_pleaselogin">Please Log in to use the service!</p>
+            <p className="box_pleaselogin">서비스를 이용하시려면 로그인을 해주세요!</p>
             <div className="input">
-              <label>Email</label>
+              <label>이메일</label>
               <input
                 className="input_form"
                 type="email"
-                placeholder="Enter Your Email"
+                placeholder="이메일을 입력하세요"
                 value={email}
                 onChange={handleEmail}
                 required
               />
-              <label>Password</label>
+              <label>비밀번호</label>
               <input
                 className="input_form"
                 type="password"
-                placeholder="Enter Your Password"
+                placeholder="비밀번호를 입력하세요"
                 value={pass}
                 onChange={handlePass}
                 required
@@ -106,26 +106,26 @@ const Login = () => {
             )}
 
             <div className="forgot_password">
-              Forgot your password?{" "}
+            비밀번호를 잊어 버렸습니까?{" "}
               <Link to={"/forgotpassword"} className="findpassword">
-                Find password
+              비밀번호 찾기
               </Link>
             </div>
 
             <div className="loginbtn_login">
               <button type="submit" className="login_btn" onClick={Login}>
-                Login
+              로그인
               </button>
             </div>
             <div className="googlebtn_btn">
               <p className="box_dont">
-                Is this your first time?
+              이번이 처음이신가요?
                 <Link to={"/register"} className="loginmoreLink">
-                  Register
+                등록하다
                 </Link>
               </p>
               <div className="google_account">
-                Sign up with your social media account
+              미디어 계정으로 가입하세요
               </div>
               <Link className="google-login">
                 <svg
@@ -158,7 +158,7 @@ const Login = () => {
           </div>
         </form>
       </section>
-      {loginSuccess && <div className="alert_success">Login successful!</div>}
+      {loginSuccess && <div className="alert_success">성공적 로그인!</div>}
     </>
   );
 };

@@ -13,7 +13,7 @@ const Privacy = () => {
             <Link to="/more" className="box_iconBack_terms">
               <MdArrowBack id='iconBack_terms'/>
             </Link>
-            <h2>Privacy policy</h2>
+            <h2>개인 정보 정책</h2>
             <div className="container_terms">
               <p>Ex sint legimus prodesset vis, cum cu suas persequeris. 
               Eu qui essent option temporibus, aliquip adipiscing eu

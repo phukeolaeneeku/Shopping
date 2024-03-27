@@ -13,9 +13,9 @@ const Header = ({ handleSearch }) => {
   const location = useLocation();
 
   const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "Intro", path: "/text" },
-    { label: "Orders", path: "/order" },
+    { label: "집", path: "/" },
+    { label: "소개", path: "/text" },
+    { label: "명령", path: "/order" },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,7 +61,7 @@ const Header = ({ handleSearch }) => {
                 {/* Here is search bar */}
                 <input
                   type="text"
-                  placeholder="Search products ..."
+                  placeholder="제품 검색..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />

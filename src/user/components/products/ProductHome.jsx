@@ -98,7 +98,7 @@ const ProductHome = () => {
       <section id="product1">
         <div className="productHead_content">
           <h1 className="htxthead">
-            <span className="spennofStyle"></span>POPULAR MENU
+            <span className="spennofStyle"></span>인기 메뉴
           </h1>
         </div>
         <div className="contentImageProducts1">
@@ -120,7 +120,7 @@ const ProductHome = () => {
                       <p>
                         ￦{product.price}
                       </p>
-                      <p>Review: {product.review}</p>
+                      <p>검토: {product.review}</p>
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const ProductHome = () => {
         <div className="content_itemBox">
           <div className="container_product">
             <h3 className="htxthead">
-              <span className="spennofStyle"></span>ALL MENU
+              <span className="spennofStyle"></span>모든 메뉴
             </h3>
           </div>
           <div className="contentImageProducts2">
@@ -151,7 +151,7 @@ const ProductHome = () => {
                     <p>
                       ￦{product.price} 
                     </p>
-                    <p>Review: {product.review}</p>
+                    <p>검토: {product.review}</p>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,4 @@
 
-.header_box_management{
-    padding: 40px 10px 10px 10px;
-}
 .header_box_management p{
     font-size: 17px;
     font-weight: 600;
@@ -11,6 +8,7 @@
 .MorePage {
     width: 60%;
     margin: auto;
+    margin-top: 7rem;
 }
 
 
@@ -20,10 +18,17 @@
     justify-content: space-between;
     padding: 0 20px 10px 12px;
 }
-
 #icons_back {
     width: 25px;
     height: 25px;
+}
+
+.box_icon_back{
+    display: block;
+    align-items: center;
+}
+.Box_haed_management h3{
+    text-align: center;
 }
 
 
