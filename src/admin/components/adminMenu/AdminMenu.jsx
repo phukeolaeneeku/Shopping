@@ -39,77 +39,75 @@ const AdminMenu = () => {
     setShowConfirmation(false);
   };
 
-  // image handle logo store nmae
-  const [mainImageStore, setMainImageStore] = useState(null);
-
-  const handleImageStoreName = (e) => {
-    const file = e.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setMainImageStore([file]);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
   // image handle logo
-  const [mainImages, setMainImages] = useState(null);
+  const [mainImage, setMainImage] = useState(null);
 
-  const handleImageStoreLogo = (e) => {
+  const handleImage = (e) => {
     const file = e.target.files[0];
 
     if (file) {
       const reader = new FileReader();
 
       reader.onloadend = () => {
-        setMainImages([file]);
+        setMainImage([file]);
       };
 
       reader.readAsDataURL(file);
     }
   };
+  // image handle Name
+  const [mainImageName, setMainImageName] = useState(null);
 
-  // Choose logo image
-  const [isPopupimage, setPopupimage] = useState(false);
-
-  const togglePopupimage = () => {
-    setPopupimage(!isPopupimage);
-  };
-
-
-  // Choose logo image store
-  const [isPopupimg, setPopupimg] = useState(false);
-
-  const togglePopupimg = () => {
-    setPopupimg(!isPopupimg);
-  };
-
-
-
-  // image handle store
-  const [mainImg, setMainImg] = useState(null);
-
-  const handleImageStore = (e) => {
+  const handleImageName = (e) => {
     const file = e.target.files[0];
 
     if (file) {
       const reader = new FileReader();
 
       reader.onloadend = () => {
-        setMainImg([file]);
+        setMainImageName([file]);
       };
 
       reader.readAsDataURL(file);
     }
   };
-  // Choose store
-  const [isPopupimageStore, setPopupimageStore] = useState(false);
 
-  const togglePopupimageStore = () => {
-    setPopupimageStore(!isPopupimageStore);
+  const [isPopupLogoimage, setPopupLogoimage] = useState(false);
+  const [isPopupNameimage, setPopupNameimage] = useState(false);
+
+  const [isPopUp, setIsPopUp] = useState("");
+
+  const togglePopupimageName = () => {
+    setPopupNameimage(!isPopupNameimage);
+    setIsPopUp("name");
+  };
+
+  const togglePopupimageLogo = () => {
+    setPopupLogoimage(!isPopupLogoimage);
+    setIsPopUp("logo");
+  };
+
+  const closeToggle = () => {
+    setPopupLogoimage(false);
+    setIsPopUp("");
+    setMainImage(null);
+  };
+  const closeToggleName = () => {
+    setPopupNameimage(false);
+    setIsPopUp("");
+    setMainImageName(null);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isPopUp === "name") {
+      console.log("Submit image name");
+    } else if (isPopUp === "logo") {
+      console.log("Submit image logo");
+    }
+
+    setMainImage(null);
+    setIsPopUp("");
   };
 
   return (
@@ -179,80 +177,48 @@ const AdminMenu = () => {
               <span className="logo_store">
                 <div className="image_logo_storename">
                   <Link to="/">
-                    {mainImageStore && mainImageStore.length > 0 ? (
-                      <img src={URL.createObjectURL(mainImageStore[0])} />
-                    ) : (
-                      <img src={storename} className="box_logo_storename"></img>
-                    )}
-                    <input
-                      type="file"
-                      id="img_store"
-                      onChange={handleImageStoreName}
-                      required
-                    />
+                    <img src={storename} className="box_logo_storename"></img>
                   </Link>
 
                   <div className="edit_image_logo_store">
                     <CiCamera
                       id="box_icon_camera_product"
-                      onClick={togglePopupimg}
+                      onClick={togglePopupimageName}
                     />
                   </div>
                 </div>
-
-                <div className="image_logo">
-                  {mainImages && mainImages.length > 0 ? (
-                    <img src={URL.createObjectURL(mainImages[0])} />
-                  ) : (
-                    <img src={Logo} className="box_store_logo"></img>
-                  )}
-                  <input
-                    type="file"
-                    id="image"
-                    onChange={handleImageStoreLogo}
-                    required
-                  />
-                  <div className="edit_image_logo">
-                    <CiCamera
-                      id="box_icon_camera_product"
-                      onClick={togglePopupimage}
-                    />
-                  </div>
-                </div>
-
-                {isPopupimage && (
-                  <form className="background_addproductpopup_box">
+                {isPopupNameimage && (
+                  <form
+                    className="background_addproductpopup_box"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="hover_addproductpopup_box_image">
                       <div className="box_input_image">
-                        <p>로고 이미지 편집</p>
-
-                        <label className="popup_Border_Boximagae">
-                          {mainImages && mainImages.length > 0 ? (
-                            <img
-                              src={URL.createObjectURL(mainImages[0])}
-                              alt="logo"
-                            />
+                        <p>이름 이미지 수정</p>
+                        <input
+                          type="file"
+                          id="img"
+                          onChange={handleImageName}
+                          required
+                        />
+                        <label htmlFor="img" className="popup_Border_Boximagae">
+                          {mainImageName && mainImageName.length > 0 ? (
+                            <img src={URL.createObjectURL(mainImageName[0])} />
                           ) : (
                             <img src={imageicon} alt="logo" />
                           )}
-                          <input
-                            type="file"
-                            id="img"
-                            onChange={handleImageStoreLogo}
-                            required
-                          />
                         </label>
                       </div>
                       <div className="btn_foasdf">
                         <button
                           className="btn_cancel btn_addproducttxt_popup"
-                          onClick={togglePopupimage}
+                          onClick={closeToggleName}
                         >
                           아니요
                         </button>
                         <button
-                          to="#"
                           className="btn_confirm btn_addproducttxt_popup"
+                          type="submit"
                         >
                           업데이트
                         </button>
@@ -261,39 +227,48 @@ const AdminMenu = () => {
                   </form>
                 )}
 
-                {isPopupimg && (
-                  <form className="background_addproductpopup_box">
+                <div className="image_logo">
+                  <img src={Logo} className="box_store_logo"></img>
+                  <div className="edit_image_logo">
+                    <CiCamera
+                      id="box_icon_camera_product"
+                      onClick={togglePopupimageLogo}
+                    />
+                  </div>
+                </div>
+
+                {isPopupLogoimage && (
+                  <form
+                    className="background_addproductpopup_box"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="hover_addproductpopup_box_image">
                       <div className="box_input_image">
-                        <p>매장 이미지 수정</p>
-
-                        <label className="popup_Border_Boximagae">
-                          {mainImg && mainImg.length > 0 ? (
-                            <img
-                              src={URL.createObjectURL(mainImg[0])}
-                              alt="logo"
-                            />
+                        <p>로고 이미지 편집</p>
+                        <input
+                          type="file"
+                          id="img"
+                          onChange={handleImage}
+                          required
+                        />
+                        <label htmlFor="img" className="popup_Border_Boximagae">
+                          {mainImage && mainImage.length > 0 ? (
+                            <img src={URL.createObjectURL(mainImage[0])} />
                           ) : (
                             <img src={imageicon} alt="logo" />
                           )}
-                          <input
-                            type="file"
-                            id="img"
-                            onChange={handleImageStore}
-                            required
-                          />
                         </label>
                       </div>
                       <div className="btn_foasdf">
                         <button
                           className="btn_cancel btn_addproducttxt_popup"
-                          onClick={togglePopupimg}
+                          onClick={closeToggle}
                         >
                           아니요
                         </button>
                         <button
-                          to="#"
                           className="btn_confirm btn_addproducttxt_popup"
+                          type="submit"
                         >
                           업데이트
                         </button>
