@@ -55,7 +55,7 @@ const AdminMenu = () => {
       reader.readAsDataURL(file);
     }
   };
-  // image handle logo store logo
+  // image handle logo
   const [mainImages, setMainImages] = useState(null);
 
   const handleImageStoreLogo = (e) => {
@@ -77,6 +77,39 @@ const AdminMenu = () => {
 
   const togglePopupimage = () => {
     setPopupimage(!isPopupimage);
+  };
+
+
+  // Choose logo image store
+  const [isPopupimg, setPopupimg] = useState(false);
+
+  const togglePopupimg = () => {
+    setPopupimg(!isPopupimg);
+  };
+
+
+
+  // image handle store
+  const [mainImg, setMainImg] = useState(null);
+
+  const handleImageStore = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setMainImg([file]);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+  // Choose store
+  const [isPopupimageStore, setPopupimageStore] = useState(false);
+
+  const togglePopupimageStore = () => {
+    setPopupimageStore(!isPopupimageStore);
   };
 
   return (
@@ -162,7 +195,7 @@ const AdminMenu = () => {
                   <div className="edit_image_logo_store">
                     <CiCamera
                       id="box_icon_camera_product"
-                      onClick={togglePopupimage}
+                      onClick={togglePopupimg}
                     />
                   </div>
                 </div>
@@ -220,7 +253,47 @@ const AdminMenu = () => {
                         <button
                           to="#"
                           className="btn_confirm btn_addproducttxt_popup"
-                          onClick={togglePopupimage}
+                        >
+                          업데이트
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                )}
+
+                {isPopupimg && (
+                  <form className="background_addproductpopup_box">
+                    <div className="hover_addproductpopup_box_image">
+                      <div className="box_input_image">
+                        <p>매장 이미지 수정</p>
+
+                        <label className="popup_Border_Boximagae">
+                          {mainImg && mainImg.length > 0 ? (
+                            <img
+                              src={URL.createObjectURL(mainImg[0])}
+                              alt="logo"
+                            />
+                          ) : (
+                            <img src={imageicon} alt="logo" />
+                          )}
+                          <input
+                            type="file"
+                            id="img"
+                            onChange={handleImageStore}
+                            required
+                          />
+                        </label>
+                      </div>
+                      <div className="btn_foasdf">
+                        <button
+                          className="btn_cancel btn_addproducttxt_popup"
+                          onClick={togglePopupimg}
+                        >
+                          아니요
+                        </button>
+                        <button
+                          to="#"
+                          className="btn_confirm btn_addproducttxt_popup"
                         >
                           업데이트
                         </button>
