@@ -39,7 +39,7 @@ const AdminMenu = () => {
     setShowConfirmation(false);
   };
 
-  // image handle logo
+  // image handle logo store name
   const [mainImage, setMainImage] = useState(null);
 
   const handleImage = (e) => {
@@ -55,47 +55,25 @@ const AdminMenu = () => {
       reader.readAsDataURL(file);
     }
   };
-  // image handle Name
-  const [mainImageName, setMainImageName] = useState(null);
 
-  const handleImageName = (e) => {
-    const file = e.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setMainImageName([file]);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const [isPopupLogoimage, setPopupLogoimage] = useState(false);
-  const [isPopupNameimage, setPopupNameimage] = useState(false);
+  const [isPopupimage, setPopupimage] = useState(false);
 
   const [isPopUp, setIsPopUp] = useState("");
 
   const togglePopupimageName = () => {
-    setPopupNameimage(!isPopupNameimage);
-    setIsPopUp("name");
+    setPopupimage(!isPopupimage);
+    setIsPopUp("이름 이미지 수정");
   };
 
   const togglePopupimageLogo = () => {
-    setPopupLogoimage(!isPopupLogoimage);
-    setIsPopUp("logo");
+    setPopupimage(!isPopupimage);
+    setIsPopUp("로고 이미지 편집");
   };
 
   const closeToggle = () => {
-    setPopupLogoimage(false);
+    setPopupimage(false);
     setIsPopUp("");
     setMainImage(null);
-  };
-  const closeToggleName = () => {
-    setPopupNameimage(false);
-    setIsPopUp("");
-    setMainImageName(null);
   };
 
   const handleSubmit = (event) => {
@@ -187,45 +165,6 @@ const AdminMenu = () => {
                     />
                   </div>
                 </div>
-                {isPopupNameimage && (
-                  <form
-                    className="background_addproductpopup_box"
-                    onSubmit={handleSubmit}
-                  >
-                    <div className="hover_addproductpopup_box_image">
-                      <div className="box_input_image">
-                        <p>이름 이미지 수정</p>
-                        <input
-                          type="file"
-                          id="img"
-                          onChange={handleImageName}
-                          required
-                        />
-                        <label htmlFor="img" className="popup_Border_Boximagae">
-                          {mainImageName && mainImageName.length > 0 ? (
-                            <img src={URL.createObjectURL(mainImageName[0])} />
-                          ) : (
-                            <img src={imageicon} alt="logo" />
-                          )}
-                        </label>
-                      </div>
-                      <div className="btn_foasdf">
-                        <button
-                          className="btn_cancel btn_addproducttxt_popup"
-                          onClick={closeToggleName}
-                        >
-                          아니요
-                        </button>
-                        <button
-                          className="btn_confirm btn_addproducttxt_popup"
-                          type="submit"
-                        >
-                          업데이트
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                )}
 
                 <div className="image_logo">
                   <img src={Logo} className="box_store_logo"></img>
@@ -237,14 +176,14 @@ const AdminMenu = () => {
                   </div>
                 </div>
 
-                {isPopupLogoimage && (
+                {isPopupimage && (
                   <form
                     className="background_addproductpopup_box"
                     onSubmit={handleSubmit}
                   >
                     <div className="hover_addproductpopup_box_image">
                       <div className="box_input_image">
-                        <p>로고 이미지 편집</p>
+                      <p> {isPopUp} </p>
                         <input
                           type="file"
                           id="img"
