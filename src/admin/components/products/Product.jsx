@@ -461,7 +461,7 @@ const Product = () => {
                   <p>제품 이름 수정</p>
                   <input
                     type="text"
-                    placeholder="Product name..."
+                    placeholder="상품명..."
                     className="input_of_txtAddproduct"
                   />
                 </div>
@@ -487,7 +487,7 @@ const Product = () => {
                   <p>제품 가격 수정</p>
                   <input
                     type="text"
-                    placeholder="Product price..."
+                    placeholder="제품 가격..."
                     className="input_of_txtAddproduct"
                   />
                 </div>
@@ -511,7 +511,7 @@ const Product = () => {
                 <div className="box_input">
                   <p>인기 편집</p>
                   <div className="container_popular">
-                    <label htmlFor="popular">Popular</label>
+                    <label htmlFor="popular">인기 있는</label>
                     <input
                       type="checkbox"
                       id="popular"
