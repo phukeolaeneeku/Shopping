@@ -144,23 +144,28 @@ const AdminMenu = () => {
           <div className="right">
             <div className="logo">
               <span className="logo_store">
-                <Link to="/dashboard" className="image_logo_storename">
-                  {mainImageStore && mainImageStore.length > 0 ? (
-                    <img src={URL.createObjectURL(mainImageStore[0])} />
-                  ) : (
-                    <img src={storename} className="box_logo_storename"></img>
-                  )}
-                  <input
-                    type="file"
-                    id="img_store"
-                    onChange={handleImageStoreName}
-                    required
-                  />
+                <div className="image_logo_storename">
+                  <Link to="/">
+                    {mainImageStore && mainImageStore.length > 0 ? (
+                      <img src={URL.createObjectURL(mainImageStore[0])} />
+                    ) : (
+                      <img src={storename} className="box_logo_storename"></img>
+                    )}
+                    <input
+                      type="file"
+                      id="img_store"
+                      onChange={handleImageStoreName}
+                      required
+                    />
+                  </Link>
 
                   <div className="edit_image_logo_store">
-                    <CiCamera id="box_icon_camera_product" onClick={togglePopupimage}/>
+                    <CiCamera
+                      id="box_icon_camera_product"
+                      onClick={togglePopupimage}
+                    />
                   </div>
-                </Link>
+                </div>
 
                 <div className="image_logo">
                   {mainImages && mainImages.length > 0 ? (
@@ -175,7 +180,10 @@ const AdminMenu = () => {
                     required
                   />
                   <div className="edit_image_logo">
-                    <CiCamera id="box_icon_camera_product" onClick={togglePopupimage}/>
+                    <CiCamera
+                      id="box_icon_camera_product"
+                      onClick={togglePopupimage}
+                    />
                   </div>
                 </div>
 
@@ -192,7 +200,7 @@ const AdminMenu = () => {
                               alt="logo"
                             />
                           ) : (
-                            <img src={imageicon} alt="logo"/>
+                            <img src={imageicon} alt="logo" />
                           )}
                           <input
                             type="file"

@@ -198,13 +198,8 @@ const Bill = () => {
             <div className="place-on">
               <p>에 놓다: {order.orderDate}</p>
               <p>결제수단: {order.payment}</p>
-              <form onSubmit={handleSubmit}>
-                <select value={status} onChange={handleStatus}>
-                  <option value="pending">보류 중</option>
-                  <option value="completed">완전한</option>
-                </select>
-                <button type='submit' className="btn_completed">확인하다</button>
-              </form>
+              <p>연락하다: +86520</p>
+              <p>상태: Pending</p>
               <p>배달: {order.delivery}</p>
             </div>
           </div>
