@@ -425,6 +425,7 @@ const Product = () => {
                   </div>
 
                   <div className="txtOFproduct">
+                    <div></div>
                     <div
                       className="box_icon_MdOutlineEdit"
                       onClick={() => openConfirmationPopup(product.productID)}
@@ -432,6 +433,7 @@ const Product = () => {
                       <li>음식 이름: {product.productName}</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
+
                     <div
                       className="box_icon_MdOutlineEdit"
                       onClick={() =>
@@ -441,6 +443,7 @@ const Product = () => {
                       <li>가격: ￦{product.price}</li>
                       <MdOutlineEdit id="icon_edit" />
                     </div>
+
                     <div
                       className="box_icon_MdOutlineEdit"
                       onClick={() => openConfirmationPopular(product.productID)}

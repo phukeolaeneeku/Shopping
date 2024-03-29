@@ -92,7 +92,7 @@ const Header = ({ handleSearch }) => {
                 </div>
                 <div>
                   <Link to="/login" className="head_colorr">
-                    <p>Login</p>
+                    <p>로그인</p>
                     
                     <BiLogIn className="login" />
                   </Link>

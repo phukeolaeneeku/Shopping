@@ -3,6 +3,7 @@ import "./css/register.css";
 import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import axios from "axios";
+import Header from "../header/Header";
 
 const Register = () => {
   const locataion = useLocation();
@@ -97,6 +98,7 @@ const Register = () => {
 
   return (
     <>
+      <Header/>
       <section>
         <div className="box_forgot">
           <Link to="/login" className="box_iconBack">

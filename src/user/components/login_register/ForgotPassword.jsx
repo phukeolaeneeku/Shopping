@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./css/forgotpassword.css"
 import { Link } from 'react-router-dom';
 import { MdArrowBack } from "react-icons/md";
+import Header from "../header/Header";
   
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ const ForgotPassword = () => {
 
   return (
     <>
+      <Header/>
       <section>
         <div className="box_forgot">
           <Link to="/login" className="box_iconBack_forgot">
