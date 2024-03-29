@@ -8,11 +8,11 @@ body {
 }
 
 .board{
-    padding: 2rem;
-    width: 84%;
+    padding: 4rem;
+    width: 100%;
     overflow: hidden;
     margin: auto;
-    margin-left: 15%;
+    margin-left: 16%;
     position: relative;
 }
 
@@ -20,7 +20,7 @@ body {
 .containerBox_db {
     display: grid;
     justify-content: center;
-    width: 777px;
+    width: 900px;
     height: 348px;
     border-radius: 20px;
     border: 1px solid #F8F9FA;
@@ -42,8 +42,8 @@ body {
 
 .board .manage-target .manage .menu-box {
     display: grid;
-    width: 180px;
-    height: 184px;
+    width: 190px;
+    height: 194px;
     text-align: center;
     align-items: center;
     margin: 0 0.2rem;
