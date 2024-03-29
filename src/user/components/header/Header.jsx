@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "../../../img/Logo.png";
 import storename from "../../../img/storename.png";
 import { AiFillDashboard } from "react-icons/ai";
+import { FaYoutube } from "react-icons/fa";
 
 const Header = ({ handleSearch }) => {
   // For authenticate user
@@ -71,6 +72,11 @@ const Header = ({ handleSearch }) => {
               <div className="boxsearchContainer">
                   <Link to="/cart">
                     <FaCartShopping className="head_colorr" />
+                  </Link>
+              </div>
+              <div className="boxsearchContainer">
+                  <Link to="https://www.youtube.com/">
+                    <FaYoutube className="head_colorr" />
                   </Link>
               </div>
               <div className="icon_account_login">
