@@ -13,6 +13,11 @@
     background: #FFF;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.10);
 }
+.container_body_adminuser {
+    width: 100%;
+    z-index: 999;
+    padding: 88px 20px 20px 255px;
+}
 
 .btn_box_Cont {
     display: flex;
