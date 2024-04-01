@@ -20,8 +20,8 @@ body {
 .containerBox_db {
     display: grid;
     justify-content: center;
-    width: 777px;
-    height: 348px;
+    width: 1300px;
+    height: 500px;
     border-radius: 20px;
     border: 1px solid #F8F9FA;
     background: #FFF;
@@ -31,6 +31,8 @@ body {
 
 .containerBox_db .contentBox_db {
     display: flex;
+    gap: 1.5rem;
+    margin-top: -5rem;
 }
 
 /* manage */
@@ -42,8 +44,8 @@ body {
 
 .board .manage-target .manage .menu-box {
     display: grid;
-    width: 180px;
-    height: 184px;
+    width: 280px;
+    height: 284px;
     text-align: center;
     align-items: center;
     margin: 0 0.2rem;

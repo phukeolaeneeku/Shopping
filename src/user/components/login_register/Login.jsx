@@ -4,6 +4,7 @@ import "./css/login.css";
 import { MdArrowBack } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../header/Header";
 
 
 const Login = () => {
@@ -70,6 +71,7 @@ const Login = () => {
 
   return (
     <>
+      <Header/>
       <section>
         <form className="box_container_login2">
           <div className="cover">
@@ -159,6 +161,7 @@ const Login = () => {
         </form>
       </section>
       {loginSuccess && <div className="alert_success">성공적 로그인!</div>}
+      
     </>
   );
 };

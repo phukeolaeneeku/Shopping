@@ -1,7 +1,11 @@
 /* Header */
+#header{
+    width: 100%;
+    background-color: aqua;
+}
 #header .navbar {
     width: 100%;
-    height: 80px;
+    height: 90px;
     z-index: 999;
     top: 0;
     background-color: #fff;
@@ -10,9 +14,10 @@
 }
 
 .headWithBox {
-    width: 85%;
+    width: 100%;
     justify-content: space-between;
     margin: 0 auto;
+    /* background-color: #FF4F16; */
 }
 
 #header .navbar,
@@ -40,12 +45,10 @@
 }
 
 #header .navbar {
+    width: 100%;
     list-style-type: none;
     display: flex;
-}
-
-#header .navbar {
-    width: 100%;
+    align-items: center;
 }
 
 .linkLi {
@@ -75,7 +78,7 @@
 
 .ulHead_box,
 .boxsearchContainer {
-    width: 60%;
+    width: 65%;
     gap: 3rem;
     font-size: 1.3rem;
     display: flex;
@@ -116,7 +119,13 @@
 .head_colorr {
     color: #3a3a3a;
     display: flex;
-    font-size: 1.4rem;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.head_colorr p{
+    display: flex;
+    align-items: center;
+    width: 70px;
 }
 
 .iconSearch {
@@ -135,6 +144,21 @@
 /* Banner */
 #banner div {
     margin-top: 2rem;
+}
+
+.storename{
+    position: relative;
+    cursor: pointer;
+    width: 130px;
+    height: 12vh;
+    overflow: hidden;
+}
+.storename img{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
 }
 
 
