@@ -149,7 +149,7 @@ const ProductHome = () => {
                       {product.productName}
                     </h4>
                     <p>
-                      ￦{product.price} 
+                       {product.price} 
                     </p>
                     <p>검토: {product.review}</p>
                   </div>
